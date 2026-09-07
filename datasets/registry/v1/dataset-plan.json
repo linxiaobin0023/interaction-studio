@@ -1,0 +1,49 @@
+{
+  "plan_version": "1.0.0",
+  "provenance": "PROJECT_OWNED_SYNTHETIC",
+  "character_id": "CHAR_PROD_001",
+  "product_sku": "SKU_PROD_PACIFIER_001",
+  "datasets": [
+    {
+      "dataset": "DEVELOPMENT",
+      "case_count": 30,
+      "interaction_counts": {"MOUTH": 12, "NEAR_MOUTH": 8, "HAND_HELD": 10},
+      "pose_counts": {"GREEN": 24, "YELLOW": 6, "RED": 0},
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "sealed": false
+    },
+    {
+      "dataset": "VALIDATION",
+      "case_count": 20,
+      "interaction_counts": {"MOUTH": 8, "NEAR_MOUTH": 5, "HAND_HELD": 7},
+      "pose_counts": {"GREEN": 16, "YELLOW": 4, "RED": 0},
+      "prompt_family": "VAL_SCENE_FAMILY_V1",
+      "sealed": true
+    },
+    {
+      "dataset": "FORMAL",
+      "case_count": 24,
+      "interaction_counts": {"MOUTH": 8, "NEAR_MOUTH": 8, "HAND_HELD": 8},
+      "pose_counts": {"GREEN": 20, "YELLOW": 4, "RED": 0},
+      "prompt_family": "FORMAL_SCENE_FAMILY_V1",
+      "sealed": true,
+      "hidden_until": "FROZEN_BUILD"
+    },
+    {
+      "dataset": "GENERALIZATION",
+      "case_count": 12,
+      "interaction_counts": {"MOUTH": 4, "NEAR_MOUTH": 4, "HAND_HELD": 4},
+      "pose_counts": {"GREEN": 10, "YELLOW": 2, "RED": 0},
+      "prompt_family": "GEN_SCENE_FAMILY_V1",
+      "sealed": true
+    }
+  ],
+  "independence_rules": [
+    "NO_CASE_BASE_FILE_REUSE_ACROSS_DATASETS",
+    "NO_CROP_COLOR_BACKGROUND_OR_GEOMETRIC_DERIVATION_ACROSS_DATASETS",
+    "UNIQUE_PROMPT_ID_AND_GENERATION_JOB_ID_PER_CASE",
+    "DISTINCT_PROMPT_FAMILY_PER_DATASET",
+    "VALIDATION_AND_FORMAL_HASH_FROZEN_BEFORE_PARAMETER_SELECTION",
+    "FORMAL_CONTENT_NOT_READ_BY_DEVELOPMENT_OR_REPAIR_WORKFLOWS"
+  ]
+}

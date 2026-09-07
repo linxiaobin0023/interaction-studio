@@ -1,0 +1,19 @@
+{
+  "reports": [
+    {
+      "normal_startup": true
+    },
+    {
+      "nested_preview_resources": true
+    },
+    {
+      "missing_script_visible_recovery": true
+    },
+    {
+      "retry_recovers": true
+    },
+    {
+      "render_error_visible_recovery": true
+    }
+  ]
+}

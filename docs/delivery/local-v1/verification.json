@@ -1,0 +1,24 @@
+{
+  "scope": "LOCAL_USABLE_DELIVERY_USER_CONFIRMED",
+  "model_integration": "DEFERRED_BY_USER",
+  "backend_tests": {
+    "passed": 142,
+    "warnings": 4
+  },
+  "frontend_logic_tests": {
+    "passed": 6
+  },
+  "typecheck": "PASS",
+  "format_lint": "PASS",
+  "frontend_build": "PASS",
+  "docker_build": "PASS",
+  "postgres_http_auth_jobs_qc_evidence": "PASS",
+  "live_restore": "PASS",
+  "populated_restore": "PASS",
+  "recover_command": "PASS",
+  "isolated_install": "PASS",
+  "sealed_inputs_and_g0_integrity": "PASS",
+  "browser_visual_click_acceptance": "NOT_PERFORMED",
+  "formal_acceptance": "NOT_PERFORMED",
+  "image": "sha256:0f75d948993ad26253d2bc550e575ce1a06ed1a4cf9dfa3feaeec4b87c598da5"
+}

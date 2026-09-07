@@ -1,0 +1,40 @@
+{
+  "result_version": "1.0.0",
+  "gate": "DEVELOPMENT_VALIDATION_INPUT_READINESS",
+  "decision_id": "INPUT-READINESS-2026-09-05-V1",
+  "status": "PASS_INTERNAL",
+  "gate_effect": "INPUTS_READY_CONTINUE_G1_AND_G2_PREPARATION",
+  "full_implementation_allowed": false,
+  "closed_conditions": [
+    "DEVELOPMENT_DATASET_30_OF_30",
+    "VALIDATION_DATASET_20_OF_20_AND_SEALED"
+  ],
+  "open_conditions": [
+    "PINNED_G2_PROVIDER_BENCHMARK_AVAILABLE",
+    "FROZEN_EDIT_WORKFLOW_AND_IDENTICAL_MASKS_PER_PROVIDER",
+    "PRE_REGISTERED_REPEATABILITY_DECISION_RULE"
+  ],
+  "evidence": [
+    {
+      "path": "datasets/development/v1/seal.json",
+      "sha256": "2e4f46b5e11d4021f98623a05985882b6fcb1eaf7dc41b679d06724ef83ba0fd"
+    },
+    {
+      "path": "datasets/development/v1/evidence/admission.json",
+      "sha256": "33c11611d1b38450ed87232816f81e3161d451b2a8fb431b8d6b352322a5d90b"
+    },
+    {
+      "path": "datasets/validation/v1/seal.json",
+      "sha256": "7c85ebdd0212f40489f8b598d4c467c773be999656c8633791dd4ece5a729c8e"
+    },
+    {
+      "path": "datasets/validation/v1/evidence/admission.json",
+      "sha256": "67802ea3b7fca22615072a497bb635afbe1eb2bd32b6c2aeb7bc399e49ed886f"
+    },
+    {
+      "path": "docs/benchmarks/g2-input-plan-v1.json",
+      "sha256": "b2804eab74331c485fa7c95c8dabd864a0b470cd40a593784c3777c669afaed5"
+    }
+  ],
+  "scope_note": "Input engineering admission only. No G2 performance result, no full G1 completion, no Formal access, no Object Lock claim."
+}

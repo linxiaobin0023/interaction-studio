@@ -1,0 +1,95 @@
+{
+  "reports": [
+    {
+      "live_api": true,
+      "counts": {
+        "QUEUED": 0,
+        "RUNNING": 0,
+        "SUCCEEDED": 0,
+        "FAILED": 0
+      },
+      "pending_review": 0,
+      "quality": {
+        "product": {
+          "passed": 0,
+          "reviewed": 0,
+          "rate": null
+        },
+        "interaction": {
+          "passed": 0,
+          "reviewed": 0,
+          "rate": null
+        },
+        "identity": {
+          "passed": 0,
+          "reviewed": 0,
+          "rate": null
+        },
+        "scene": {
+          "passed": 0,
+          "reviewed": 0,
+          "rate": null
+        },
+        "overall": {
+          "passed": 0,
+          "reviewed": 0,
+          "rate": null
+        }
+      },
+      "scope": "LOCAL_DEVELOPMENT_ONLY"
+    },
+    {
+      "route": "/cases",
+      "title": "案例中心 · Interaction Studio"
+    },
+    {
+      "route": "/review",
+      "title": "质量评审 · Interaction Studio"
+    },
+    {
+      "route": "/assets",
+      "title": "素材中心 · Interaction Studio"
+    },
+    {
+      "route": "/preflight",
+      "title": "Preflight 中心 · Interaction Studio"
+    },
+    {
+      "route": "/algorithms",
+      "title": "算法与模板 · Interaction Studio"
+    },
+    {
+      "route": "/workflows",
+      "title": "模型与工作流 · Interaction Studio"
+    },
+    {
+      "route": "/test-runs",
+      "title": "批量测试中心 · Interaction Studio"
+    },
+    {
+      "route": "/analytics",
+      "title": "效果分析 · Interaction Studio"
+    },
+    {
+      "route": "/trace",
+      "title": "过程追踪 / Replay · Interaction Studio"
+    },
+    {
+      "login_layout": 1912,
+      "no_overflow": true
+    },
+    {
+      "login_layout": 768,
+      "no_overflow": true
+    },
+    {
+      "login_layout": 390,
+      "no_overflow": true
+    },
+    {
+      "login_layout": 320,
+      "no_overflow": true
+    }
+  ],
+  "errors": []
+}

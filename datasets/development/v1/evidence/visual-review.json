@@ -1,0 +1,307 @@
+{
+  "review_version": "1.0.0",
+  "reviewer": "CODEX_PROJECT_LEAD",
+  "review_method": "VISUAL_ENGINEERING_REVIEW_OF_EACH_IMAGE_AGAINST_CANONICAL",
+  "reviewed_at": "2026-09-05T06:15:13.642565+00:00",
+  "manifest_sha256": "878e29472b49c9b665f1b6ba3ebf0b67f9400165436c4844f853b7e29dd9abf0",
+  "canonical_sha256": "e0e55a979c54cecd9ad99dc0c9096399adb935890a6676cd9b180d21ba903aff",
+  "lineage_paths": [
+    "PROMPTS.md",
+    "generation-plan-2026-09-05.json",
+    "generation-results-2026-09-05.json",
+    "replacement-plan-2026-09-05.json",
+    "evidence/legacy-mock-prompts.md"
+  ],
+  "cases": [
+    {
+      "case_id": "DEV_MOUTH_001",
+      "asset_sha256": "bc27facdf6c7564eb08c6c27221a97387a510f5a9bd8914145c1e17fadb18bc0",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_002",
+      "asset_sha256": "54f1a2e4c04b06ee3f358077541ef50e4a3d804c67c87e18d3195f0e111b31e5",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_003",
+      "asset_sha256": "0aa5690d4115aed66922045f365b13bc9072a03c41ea2f3a9fc9be4058104540",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_NEAR_001",
+      "asset_sha256": "762c799351c56901bf449be691133eb1a635efb8fc7269d9f7139176891b4378",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_NEAR_002",
+      "asset_sha256": "c943c98732e742bb509a1ac902fe7a794fce790d09d7384840b331dd7fb461f8",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_HAND_001",
+      "asset_sha256": "2a418ca71f4003573b70e6c7532da21dd7861508b20def75fdd5980dd31692d3",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "DEV_HAND_002",
+      "asset_sha256": "ae84b72574c12c56533a718f198a2ebfb88bdaf5b991b8b58ce313f1c2b42787",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "DEV_HAND_003",
+      "asset_sha256": "c44037af6ed971aaf2b83aa80640692b0244d69be986019adb2cc746f3618006",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "DEV_HAND_004",
+      "asset_sha256": "25c8f4117ec6791eade532e7d51ed44c99d64b4aa2939ff97796eca761c23042",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "DEV_HAND_005",
+      "asset_sha256": "e8dfcdf12e3731cac9d378ac14596a3dbc4630824f3e272aa9b18b79c57810bd",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "DEV_HAND_006",
+      "asset_sha256": "72e3a6e98a69383d5eb118a6ec8eb37c4c828e4012e6b2d002835e07f723261c",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "DEV_HAND_007",
+      "asset_sha256": "6437996bf4c77d068f9f2d9e57f5e3328df89b195718b2456618a60dcc457cf7",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "DEV_HAND_008",
+      "asset_sha256": "4e77491757aa8e3f452aab79020a3efb48b1838b7b726b54aa1c60023e706510",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "DEV_MOUTH_004",
+      "asset_sha256": "3db3bbf54572f2bdd7651595e4b8a45b39d763d5ac50e9336f648dc81f0dceaa",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_005",
+      "asset_sha256": "2dee66eec34bf61733a0a21e52b83d2679459a32d914474ddd3ac25cae6675cd",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_006",
+      "asset_sha256": "4b87e6fd44a8203f6a838d4a670993633ffaee0f3b60d598568bd7a502b20b62",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_007",
+      "asset_sha256": "e1bc1bb2f383c648e991d4140b97586fa5005ec745d081fc8429b69f2a241d5e",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_008",
+      "asset_sha256": "7bda189246be5a38fabf940252c35841225fb9277f05a12140710b63ea4f2fdb",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_009",
+      "asset_sha256": "d3d42507fdfc4c4dedf62427bb46aad404e1626a975ac5eb9a65eb9d15681e38",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_010",
+      "asset_sha256": "d0934e52a52b5efabe7e6375aa993f39ba6223cb824c1da50befbadf6f9df0e0",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_011",
+      "asset_sha256": "83b7503957df15646c673fd38ff5b6d997c029fb3730ba6f7e92b45df1f5f35f",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_MOUTH_012",
+      "asset_sha256": "d4a6d3d22bfcb16c187261043fbe8defebc9705e459f2171ff2ce3ad7dc86ceb",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_NEAR_003",
+      "asset_sha256": "e0eea8ae9bc3b1157b8d4d683ef6d80f37d9cdd9a95a6f547fba2ef51555f766",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_NEAR_004",
+      "asset_sha256": "10c24228c3bd3789d952edf9824bb4704052941d14fd8358894004cd4143dcb4",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_NEAR_005",
+      "asset_sha256": "6e6a8c210d00588b757ca8f5dd806c242014918203bce309191d759303c9782b",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_NEAR_006",
+      "asset_sha256": "7d40f4dc3e87c563cf9542b403abeb4a992cc1c8a513c0bd1ed06b3d5affac3d",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_NEAR_007",
+      "asset_sha256": "acadc2c8819fc1a92ae871226875351dfaaaf6afc8c2d7b821d68c73f8f2c1ff",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_NEAR_008",
+      "asset_sha256": "ebc5a4dd0221269907c05ad6a62aaecb97dc8f15f92a71880785425ebac58fa2",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Fictional canonical identity visually consistent; closed unobstructed lips; no product. Pose zone is based on MediaPipe evidence, not requested angle."
+    },
+    {
+      "case_id": "DEV_HAND_009",
+      "asset_sha256": "3e120a3ff6aeb01b11244af25cc8ff8c28458bc40895f1479dd8ceccb14bc9ad",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "DEV_HAND_010",
+      "asset_sha256": "2e696f8cd95e312690df014ed7c8678ef694ba2e45882000eeed5e4becc2ed11",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Natural single target hand, thumb/index placement space visible; fingers may be naturally curled. Requires later placement/occlusion evaluation; not product-contact QC.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    }
+  ]
+}

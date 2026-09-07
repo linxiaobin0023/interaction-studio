@@ -1,0 +1,75 @@
+{
+  "report_version": "1.0.0",
+  "dataset": "VALIDATION",
+  "status": "READY",
+  "errors": [],
+  "manifest_sha256": "d9bb44a0f3fdd75f24798d2f2922202f142dc7dfc69e08956673cf66b4b55648",
+  "case_count": 20,
+  "interaction_counts": {
+    "HAND_HELD": 7,
+    "MOUTH": 8,
+    "NEAR_MOUTH": 5
+  },
+  "measured_pose_counts": {
+    "GREEN": 16,
+    "YELLOW": 4
+  },
+  "peers": [
+    {
+      "dataset": "DEVELOPMENT",
+      "manifest_sha256": "878e29472b49c9b665f1b6ba3ebf0b67f9400165436c4844f853b7e29dd9abf0"
+    }
+  ],
+  "formal_eligible": false,
+  "limitations": [
+    "Visual identity/anatomy review is engineering review, not Formal QC.",
+    "Independence uses hashes and generation lineage; no semantic proof.",
+    "Built-in image generation is not a pinned inference benchmark."
+  ],
+  "evidence": [
+    {
+      "path": "datasets/validation/v1/snapshot-manifest.json",
+      "sha256": "d9bb44a0f3fdd75f24798d2f2922202f142dc7dfc69e08956673cf66b4b55648"
+    },
+    {
+      "path": "datasets/validation/v1/case-index.json",
+      "sha256": "488f0c48a6fe09024fa703dae39671881a021821a68db12e0bbfb990fc047033"
+    },
+    {
+      "path": "datasets/validation/v1/evidence/landmarks.json",
+      "sha256": "f98d410c9a05d77befc7777fe5bcf1503f010359b1cb9ae1bf6aaf2c7cc24d88"
+    },
+    {
+      "path": "datasets/validation/v1/evidence/visual-review.json",
+      "sha256": "316517707a333a64fd15e516acb0e148125fdc933040cac2a823b39e8c584a4e"
+    },
+    {
+      "path": "datasets/registry/v1/dataset-plan.json",
+      "sha256": "eda796e304393e96fceed3196e6c54e5e78f5a38f999c07ba8acf7e7c3f91874"
+    },
+    {
+      "path": "workers/landmarks/models.json",
+      "sha256": "49896fe6c5c5edd7243988180b2109014fcf6cdd551f3a8f89d8baae3152eab4"
+    },
+    {
+      "path": "assets/production/character/v1/character_front_v1.png",
+      "sha256": "e0e55a979c54cecd9ad99dc0c9096399adb935890a6676cd9b180d21ba903aff"
+    },
+    {
+      "path": "datasets/validation/v1/PROMPTS.md",
+      "sha256": "a8818a87e60e0667fefee7e0785e57ed549384e99b9083211da3da6be1ee3934"
+    },
+    {
+      "path": "datasets/validation/v1/generation-plan.json",
+      "sha256": "dc94e94c8ac2fbabf005e2c7c8ef1f59b787520487fc0ef4420d571c5812cfd4"
+    },
+    {
+      "path": "datasets/validation/v1/generation-results.json",
+      "sha256": "0e6393db396baa58d885ff63cc8e2b73d8d5f24f18744f9f576c82a1737c5bb1"
+    },
+    {
+      "path": "datasets/validation/v1/replacement-plan.json",
+      "sha256": "63f2a3c560db9a8e6a5c2ac807b30751e2ff2fc4826690875a57cb720d5a3e74"
+    }
+  ]
+}

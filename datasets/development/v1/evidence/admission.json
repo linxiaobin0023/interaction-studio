@@ -1,0 +1,74 @@
+{
+  "report_version": "1.0.0",
+  "dataset": "DEVELOPMENT",
+  "status": "READY",
+  "errors": [],
+  "manifest_sha256": "878e29472b49c9b665f1b6ba3ebf0b67f9400165436c4844f853b7e29dd9abf0",
+  "case_count": 30,
+  "interaction_counts": {
+    "HAND_HELD": 10,
+    "MOUTH": 12,
+    "NEAR_MOUTH": 8
+  },
+  "measured_pose_counts": {
+    "GREEN": 24,
+    "YELLOW": 6
+  },
+  "peers": [],
+  "formal_eligible": false,
+  "limitations": [
+    "Visual identity/anatomy review is engineering review, not Formal QC.",
+    "Independence uses hashes and generation lineage; no semantic proof.",
+    "Built-in image generation is not a pinned inference benchmark."
+  ],
+  "evidence": [
+    {
+      "path": "datasets/development/v1/snapshot-manifest.json",
+      "sha256": "878e29472b49c9b665f1b6ba3ebf0b67f9400165436c4844f853b7e29dd9abf0"
+    },
+    {
+      "path": "datasets/development/v1/case-index.json",
+      "sha256": "b3d3dfff172cbdcada41e7035f4a3244282f0baaf784cdd8f43a3460774a2a67"
+    },
+    {
+      "path": "datasets/development/v1/evidence/landmarks.json",
+      "sha256": "bb1e4bea7d51a3a9020c8a3bb8d685dd99bc82dffe645d81651916567f5b526a"
+    },
+    {
+      "path": "datasets/development/v1/evidence/visual-review.json",
+      "sha256": "f502b58e777cef15c94c687706697fbff3ba8a9737b6715a5a47fbae2e2f9085"
+    },
+    {
+      "path": "datasets/registry/v1/dataset-plan.json",
+      "sha256": "eda796e304393e96fceed3196e6c54e5e78f5a38f999c07ba8acf7e7c3f91874"
+    },
+    {
+      "path": "workers/landmarks/models.json",
+      "sha256": "49896fe6c5c5edd7243988180b2109014fcf6cdd551f3a8f89d8baae3152eab4"
+    },
+    {
+      "path": "assets/production/character/v1/character_front_v1.png",
+      "sha256": "e0e55a979c54cecd9ad99dc0c9096399adb935890a6676cd9b180d21ba903aff"
+    },
+    {
+      "path": "datasets/development/v1/PROMPTS.md",
+      "sha256": "c673023d45a2f53748245748628f6d99f7bf6b34b17d14ebca1481e85141507a"
+    },
+    {
+      "path": "datasets/development/v1/generation-plan-2026-09-05.json",
+      "sha256": "336444ff7f9de5455492cbec981cee5c47c65606b874a7cdba9732f1bccfce89"
+    },
+    {
+      "path": "datasets/development/v1/generation-results-2026-09-05.json",
+      "sha256": "4062efc8d5fa406c9ec10b0ef014e923571d9d50ca74f97bc98e8b1b145f0dfb"
+    },
+    {
+      "path": "datasets/development/v1/replacement-plan-2026-09-05.json",
+      "sha256": "222b786bf12993712eb32ac540e1c618c9f3b9b51524d9b3ab484945bcd1074f"
+    },
+    {
+      "path": "datasets/development/v1/evidence/legacy-mock-prompts.md",
+      "sha256": "0c78b9bdf97bbf965adef9eac8c13c87c50ce1a907f33e898a7f2862d8406238"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "master_version": "1.0.0",
+  "product_sku": "SKU_PROD_PACIFIER_001",
+  "coordinate_system": "RIGHT_HANDED_X_RIGHT_Y_UP_Z_TOWARD_CAMERA",
+  "units": "NORMALIZED_PRODUCT_UNIT",
+  "geometry": {
+    "shield": {
+      "type": "SMOOTH_UNION_ELLIPSOIDS_WITH_CYLINDER_DIFFERENCE",
+      "lobe_centers_x": [-0.36, 0.36],
+      "lobe_center_y": 0.02,
+      "lobe_half_extents": [0.78, 0.82, 0.15],
+      "waist_center": [0, -0.09, 0],
+      "waist_half_extents": [0.83, 0.68, 0.17],
+      "ventilation_hole_radius": 0.13,
+      "ventilation_hole_centers": [[-0.48, 0.12], [0.48, 0.12]]
+    },
+    "button": {"type": "CYLINDER_Z", "center": [0, 0.02, 0.22], "radius": 0.36, "half_depth": 0.12},
+    "ring": {"type": "TORUS_Z", "center": [0, -0.49, 0.29], "major_radius": 0.5, "minor_radius": 0.075},
+    "nipple": {"type": "ELLIPSOID", "center": [0, 0.73, -0.11], "half_extents": [0.24, 0.46, 0.26]}
+  },
+  "materials": {
+    "sage_body": {
+      "base_color_srgb": [151, 164, 132],
+      "roughness": 0.38,
+      "transmission": 0.18,
+      "specular": 0.42
+    },
+    "clear_nipple": {
+      "base_color_srgb": [232, 240, 235],
+      "roughness": 0.18,
+      "transmission": 0.78,
+      "specular": 0.62
+    }
+  },
+  "camera": {
+    "projection": "PERSPECTIVE",
+    "vertical_fov_degrees": 34,
+    "distance": 4.2,
+    "target": [0, 0, 0]
+  },
+  "views": [
+    {"view_id": "FRONT_00", "yaw": 0, "pitch": 0},
+    {"view_id": "RIGHT15_00", "yaw": 15, "pitch": 0},
+    {"view_id": "LEFT30_UP15", "yaw": -30, "pitch": 15},
+    {"view_id": "RIGHT30_UP15", "yaw": 30, "pitch": 15},
+    {"view_id": "LEFT45_00", "yaw": -45, "pitch": 0},
+    {"view_id": "RIGHT45_00", "yaw": 45, "pitch": 0},
+    {"view_id": "RIGHT45_UP15", "yaw": 45, "pitch": 15},
+    {"view_id": "LEFT60_UP15", "yaw": -60, "pitch": 15},
+    {"view_id": "LEFT90_00", "yaw": -90, "pitch": 0},
+    {"view_id": "RIGHT90_00", "yaw": 90, "pitch": 0},
+    {"view_id": "BACK_00", "yaw": 180, "pitch": 0}
+  ]
+}

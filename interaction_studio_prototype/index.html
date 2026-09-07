@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Interaction Studio · 开发级产品原型</title>
+<style>
+:root{
+  --bg:#f4f6fa;--panel:#fff;--panel2:#fafbfe;--ink:#172033;--muted:#778198;--line:#e5e9f1;
+  --primary:#5c5bd6;--primary2:#817df1;--ok:#1f9c6b;--warn:#d88b19;--bad:#d94d4d;--info:#4e73d8;
+  --side:#101827;--side2:#202b47;--shadow:0 8px 26px rgba(31,42,75,.08);--shadow2:0 24px 70px rgba(20,28,48,.18);
+  --r:15px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+.app{display:grid;grid-template-columns:244px minmax(0,1fr);min-height:100vh}
+.sidebar{background:linear-gradient(180deg,#111827,#0c1422);color:#cbd5e1;position:sticky;top:0;height:100vh;overflow:auto;padding:16px 12px}
+.brand{padding:8px 9px 16px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:10px}
+.brand-row{display:flex;align-items:center;gap:10px}.logo{width:37px;height:37px;border-radius:12px;background:linear-gradient(135deg,#8581ff,#5653ca);display:grid;place-items:center;color:#fff;font-weight:900;box-shadow:0 10px 26px rgba(92,91,214,.28)}
+.brand h1{margin:0;font-size:15px;color:#fff}.brand p{margin:3px 0 0;font-size:11px;color:#8794af}
+.role-switch{display:flex;background:#182239;border:1px solid rgba(255,255,255,.06);padding:3px;border-radius:10px;margin:10px 8px 2px}
+.role-switch button{flex:1;border:0;background:transparent;color:#7f8ba5;border-radius:8px;padding:7px 5px;font-size:10px;font-weight:800}.role-switch button.active{background:#2a3552;color:#fff}
+.nav-title{font-size:10px;color:#62708c;text-transform:uppercase;letter-spacing:.12em;padding:13px 10px 5px}
+.nav{width:100%;border:0;background:transparent;color:#aeb9ce;display:flex;align-items:center;gap:10px;text-align:left;padding:10px 11px;border-radius:10px;margin:2px 0}.nav:hover{background:rgba(255,255,255,.05);color:#fff}.nav.active{background:#202a45;color:#fff;box-shadow:inset 3px 0 0 #8986ff}.nav.hidden-role{display:none}
+.nav-icon{width:20px;text-align:center;font-size:15px}.nav-badge{margin-left:auto;font-size:10px;color:#adbad8;background:#2a3656;padding:2px 6px;border-radius:999px}
+.main{min-width:0}.topbar{height:68px;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:0 22px;position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between}
+.crumb{font-size:11px;color:var(--muted)}.topbar h2{font-size:17px;margin:1px 0 0}.top-actions{display:flex;gap:8px;align-items:center}
+.btn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:10px;padding:8px 12px;font-weight:700;box-shadow:0 1px 1px rgba(0,0,0,.02)}.btn:hover{border-color:#cfd5e4}.btn.primary{background:var(--primary);border-color:var(--primary);color:#fff}.btn.soft{background:#f0efff;border-color:#dedcff;color:#5049ba}.btn.ghost{border-color:transparent;background:transparent;box-shadow:none}.btn.small{padding:6px 9px;font-size:11px}.btn.danger{background:#fff0f0;border-color:#f4cccc;color:#a63838}
+.content{padding:22px;max-width:1620px;margin:auto}.page{display:none}.page.active{display:block}
+.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:17px}.page-head h3{margin:0;font-size:23px}.page-head p{margin:4px 0 0;color:var(--muted)}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(2,minmax(0,1fr))}.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:16px;min-width:0}.card h4{margin:0 0 12px;font-size:15px}.card h5{margin:0 0 6px;font-size:12px}
+.metric .label{font-size:11px;color:var(--muted)}.metric .value{font-size:27px;font-weight:850;margin:7px 0 2px}.metric .sub{font-size:11px;color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:5px;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800}.status.good{background:#e9f8f1;color:#177c57}.status.warn{background:#fff4df;color:#966208}.status.bad{background:#ffecec;color:#a83939}.status.info{background:#edf1ff;color:#4a5db9}.status.gray{background:#f0f2f6;color:#697183}.status .s-dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.table-wrap{overflow:auto}.table{width:100%;border-collapse:collapse;white-space:nowrap}.table th,.table td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left}.table th{background:#fafbfe;color:var(--muted);font-size:11px}.table tr:hover td{background:#fbfcff}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.search{min-width:220px;border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:#fff;color:var(--ink)}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:14px}.tab{border:0;background:transparent;color:var(--muted);font-weight:700;padding:10px 12px;border-bottom:2px solid transparent}.tab.active{color:var(--primary);border-color:var(--primary)}
+.callout{border:1px solid #dee3f6;border-left:4px solid var(--primary);background:#f5f6ff;border-radius:11px;padding:10px 12px;color:#45506b}.callout.good{background:#eff9f5;border-color:#d1eee1;border-left-color:var(--ok);color:#356554}.callout.warn{background:#fff8e9;border-color:#efdfb7;border-left-color:var(--warn);color:#705525}.callout.bad{background:#fff0f0;border-color:#f0cece;border-left-color:var(--bad);color:#723a3a}
+.progress{height:7px;border-radius:999px;overflow:hidden;background:#edf0f6}.progress i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--primary),var(--primary2))}
+.asset-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.asset{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;cursor:pointer}.asset.selected{outline:2px solid var(--primary);outline-offset:1px}.asset-img{height:148px;background:linear-gradient(135deg,#e8ecf5,#f5eee8);position:relative;display:grid;place-items:center}.asset-body{padding:11px}.asset-body b{display:block}.asset-body small{color:var(--muted)}.asset-check{position:absolute;right:9px;top:9px;width:22px;height:22px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--ok);font-weight:900;box-shadow:0 3px 12px rgba(0,0,0,.11)}
+.face-thumb{width:70px;height:82px;border-radius:48% 48% 43% 43%;background:#efc6a5;position:relative}.face-thumb:before{content:"";position:absolute;left:-4px;right:-4px;top:-8px;height:33px;background:#493a37;border-radius:55% 55% 28% 28%}.face-thumb:after{content:"";position:absolute;left:27px;bottom:18px;width:17px;height:5px;border-bottom:2px solid #b76b6b;border-radius:50%}
+.pac-thumb{width:86px;height:60px;position:relative}.pac-thumb .shield{position:absolute;left:22px;top:10px;width:45px;height:40px;border-radius:50%;background:rgba(205,226,226,.84);border:3px solid rgba(95,148,153,.5)}.pac-thumb .nip{position:absolute;left:0;top:24px;width:30px;height:13px;border-radius:50% 12% 12% 50%;background:rgba(219,232,228,.86)}.pac-thumb .ring{position:absolute;right:0;top:17px;width:30px;height:30px;border:5px solid rgba(111,158,162,.78);border-radius:50%}
+.pipeline{display:flex;align-items:flex-start;overflow:auto;padding:4px 0}.pipe-step{min-width:126px;position:relative;padding-right:20px}.pipe-step:after{content:"";position:absolute;left:29px;right:0;top:14px;height:2px;background:#e1e5ed}.pipe-step:last-child:after{display:none}.pipe-dot{width:28px;height:28px;border-radius:50%;background:#edf0f5;border:5px solid white;box-shadow:0 0 0 1px #dbe0e9;position:relative;z-index:2}.pipe-step.done .pipe-dot{background:var(--ok)}.pipe-step.current .pipe-dot{background:var(--primary)}.pipe-step.warn .pipe-dot{background:var(--warn)}.pipe-step b{display:block;font-size:11px;margin-top:6px}.pipe-step span{font-size:10px;color:var(--muted)}
+.split{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(350px,.72fr);gap:14px}.studio-card{padding:0;overflow:hidden}.studio-head{height:54px;padding:0 15px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}.studio-head .left{display:flex;align-items:center;gap:9px}
+.studio-canvas{height:640px;background:#192232;position:relative;display:grid;place-items:center;overflow:hidden}.canvas-toolbar{position:absolute;left:14px;top:14px;display:flex;gap:5px;z-index:8}.tool{width:34px;height:34px;border:1px solid rgba(255,255,255,.13);background:rgba(18,25,40,.78);color:#dce4f6;border-radius:9px;display:grid;place-items:center}.tool.active{background:var(--primary);border-color:#8985f4}.zoom{position:absolute;right:14px;top:14px;background:rgba(18,25,40,.78);color:#dce4f6;border-radius:9px;padding:7px 9px;font-size:11px}
+.photo{width:78%;height:86%;background:linear-gradient(180deg,#f2e8df,#ddd7d4);border-radius:18px;position:relative;overflow:hidden;box-shadow:0 28px 60px rgba(0,0,0,.3)}.room-window{position:absolute;left:7%;top:7%;width:27%;height:44%;background:linear-gradient(135deg,#d4ecff,#fbfeff);border:8px solid #fff}.room-bed{position:absolute;left:8%;right:8%;bottom:6%;height:34%;background:#b7a39b;border-radius:38px 38px 15px 15px}.room-bed:after{content:"";position:absolute;left:4%;right:4%;top:18%;height:4px;background:rgba(255,255,255,.23)}
+.person{position:absolute;left:42%;top:9%;width:44%;height:83%}.body{position:absolute;left:8%;top:46%;width:84%;height:55%;background:#95aac4;border-radius:44% 44% 12% 12%}.neck{position:absolute;left:42%;top:38%;width:20%;height:16%;background:#eec5a6}.head{position:absolute;left:24%;top:0;width:48%;aspect-ratio:1/.98;background:#efc7a8;border-radius:48% 52% 47% 53%;box-shadow:inset -13px -8px 0 rgba(151,91,70,.05)}.hair{position:absolute;left:-9%;top:-7%;width:116%;height:45%;background:#493a37;border-radius:60% 58% 30% 30%;transform:rotate(-3deg)}.eye{position:absolute;top:45%;width:5%;height:3%;background:#41332f;border-radius:50%}.eye.l{left:37%}.eye.r{right:35%}.nose{position:absolute;left:51%;top:53%;width:4%;height:11%;border-right:2px solid rgba(150,92,72,.22)}.mouth{position:absolute;left:45%;top:68%;width:16%;height:4%;border-bottom:3px solid #b96c6b;border-radius:50%}.ear{position:absolute;right:-3%;top:43%;width:8%;height:14%;background:#e8bd9f;border-radius:50%}.hand{position:absolute;right:-14%;top:58%;width:32%;height:10%;background:#efc7a8;border-radius:50px;transform:rotate(-18deg)}.hand:after{content:"";position:absolute;right:-8px;top:-5px;width:30px;height:12px;background:#efc7a8;border-radius:12px;transform:rotate(16deg)}
+.pacifier{position:absolute;left:57%;top:35%;width:14%;height:12%;transform:rotate(-5deg);filter:drop-shadow(2px 4px 5px rgba(0,0,0,.18));z-index:4}.pac-shield{position:absolute;left:22%;top:18%;width:56%;height:62%;border-radius:50%;background:rgba(207,229,228,.78);border:3px solid rgba(94,147,153,.5)}.pac-nipple{position:absolute;left:-17%;top:40%;width:43%;height:20%;border-radius:50% 8% 8% 50%;background:rgba(220,233,228,.74)}.pac-ring{position:absolute;right:-23%;top:27%;width:42%;height:42%;border:5px solid rgba(112,158,163,.78);border-radius:50%}.roi{position:absolute;left:52%;top:30%;width:23%;height:23%;border:2px dashed #8d8cff;background:rgba(104,102,236,.08);border-radius:12px;z-index:2}.anchor{position:absolute;width:9px;height:9px;border-radius:50%;background:#746ff0;border:2px solid #fff;box-shadow:0 0 0 1px #514ebc;z-index:6}.a1{left:59%;top:38%}.a2{left:66%;top:38%}.a3{left:63%;top:42%}
+.layer-panel{position:absolute;right:13px;bottom:13px;width:188px;background:rgba(20,27,43,.88);color:#dce4f5;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:10px;backdrop-filter:blur(10px)}.layer{display:flex;align-items:center;gap:7px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:10px}.layer:last-child{border:0}.eye-dot{width:8px;height:8px;border-radius:50%;background:#70d6ad}
+.panel-stack{display:grid;gap:12px}.panel-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.field label{display:block;font-size:10px;color:var(--muted);margin-bottom:4px}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:9px;padding:8px 9px;background:#fff;color:var(--ink)}.field input[type=range]{padding:0}
+.segmented{display:flex;background:#f0f2f7;padding:3px;border-radius:10px}.seg-btn{flex:1;border:0;background:transparent;padding:7px 6px;border-radius:8px;color:var(--muted);font-weight:700;font-size:11px}.seg-btn.active{background:#fff;color:var(--primary);box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.candidates{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.candidate{border:1px solid var(--line);border-radius:11px;overflow:hidden;cursor:pointer}.candidate.active{border:2px solid var(--primary)}.cand-img{height:105px;background:linear-gradient(135deg,#efe5dd,#d8e0e9);position:relative}.cand-img:before{content:"";position:absolute;width:50px;height:60px;border-radius:48%;background:#eec4a6;left:42%;top:18%}.cand-img:after{content:"";position:absolute;width:24px;height:17px;border-radius:50%;background:rgba(197,221,222,.8);left:53%;top:47%;border:2px solid rgba(90,145,150,.45)}.cand-meta{padding:7px 8px;font-size:10px;color:var(--muted)}.cand-meta b{color:var(--ink);font-size:11px}
+.score-row{display:grid;grid-template-columns:102px 1fr 55px;gap:9px;align-items:center;margin:8px 0}.score-row span{font-size:11px}.score-bar{height:7px;background:#edf0f5;border-radius:999px;overflow:hidden}.score-bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#61c5a4,#249a71)}.score-bar.warn i{background:linear-gradient(90deg,#f1bc59,#d78a18)}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.preview{border:1px solid var(--line);border-radius:13px;overflow:hidden}.preview-head{padding:8px 10px;background:#fafbfe;border-bottom:1px solid var(--line);font-weight:700}.preview-img{height:300px;background:linear-gradient(135deg,#eee5de,#dbe4ed);display:grid;place-items:center}.bigface{width:130px;height:145px;border-radius:48%;background:#efc6a7;position:relative}.bigface:before{content:"";position:absolute;left:-8px;right:-8px;top:-15px;height:58px;border-radius:60% 60% 30% 30%;background:#463735}.bigface.with-pac:after{content:"";position:absolute;width:48px;height:34px;border-radius:50%;background:rgba(207,228,229,.8);left:54%;top:65%;border:3px solid rgba(95,148,153,.48)}
+.qc-dims{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.qc-dim{border:1px solid var(--line);border-radius:11px;padding:11px;text-align:center;cursor:pointer}.qc-dim strong{display:block;font-size:15px}.qc-dim.pass{background:#eff9f5;border-color:#cfe9de}.qc-dim.fail{background:#fff0f0;border-color:#f1cccc}
+.chart{height:185px;display:flex;align-items:flex-end;gap:16px;padding:10px 4px 0}.bar-col{flex:1;text-align:center;color:var(--muted);font-size:10px}.bar-col i{display:block;margin:auto;width:34px;background:linear-gradient(180deg,#8177f3,#5d55da);border-radius:8px 8px 3px 3px;min-height:5px}.bar-col b{display:block;color:var(--ink);margin-top:4px}
+.timeline-events{border-left:2px solid #e6eaf2;margin-left:8px;padding-left:18px}.timeline-event{position:relative;padding:0 0 15px}.timeline-event:before{content:"";position:absolute;left:-24px;top:4px;width:10px;height:10px;border-radius:50%;background:#fff;border:3px solid var(--primary)}.timeline-event b{font-size:11px}.timeline-event small{display:block;color:var(--muted)}
+.config-grid{display:grid;grid-template-columns:260px 1fr;gap:14px}.config-list{border-right:1px solid var(--line);padding-right:10px}.config-item{padding:10px;border-radius:10px;cursor:pointer;margin-bottom:4px}.config-item:hover{background:#f6f7fb}.config-item.active{background:#efefff;color:#4e47bb}.config-item b{display:block}.config-item small{color:var(--muted)}
+.json{font:12px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;background:#151c2b;color:#dce4ff;border-radius:11px;padding:12px;white-space:pre-wrap}
+.wizard-steps{display:flex;gap:0;overflow:auto;margin-bottom:14px}.wstep{min-width:140px;position:relative;padding-right:22px}.wstep:after{content:"";position:absolute;top:13px;left:27px;right:0;height:2px;background:#e2e6ee}.wstep:last-child:after{display:none}.wstep i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#edf0f5;color:#7d879a;font-style:normal;font-size:11px;font-weight:900;position:relative;z-index:2}.wstep.active i{background:var(--primary);color:#fff}.wstep.done i{background:var(--ok);color:#fff}.wstep b{display:block;font-size:11px;margin-top:5px}
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.42);display:none;place-items:center;z-index:100}.modal.show{display:grid}.modal-box{width:min(900px,94vw);max-height:88vh;overflow:auto;background:#fff;border-radius:18px;box-shadow:var(--shadow2);padding:20px}
+.drawer{position:fixed;right:-470px;top:0;width:450px;height:100vh;background:#fff;z-index:100;box-shadow:-20px 0 60px rgba(19,28,48,.2);transition:.25s;padding:20px;overflow:auto}.drawer.show{right:0}.overlay{position:fixed;inset:0;background:rgba(15,23,42,.35);z-index:90;display:none}.overlay.show{display:block}
+.toast{position:fixed;right:22px;bottom:22px;background:#172033;color:#fff;padding:10px 13px;border-radius:10px;box-shadow:var(--shadow2);opacity:0;transform:translateY(10px);transition:.2s;z-index:150}.toast.show{opacity:1;transform:none}
+@media(max-width:1180px){.app{grid-template-columns:78px 1fr}.brand h1,.brand p,.role-switch,.nav span:not(.nav-icon),.nav-title,.nav-badge{display:none}.brand{padding:8px}.nav{justify-content:center}.g4{grid-template-columns:repeat(2,1fr)}.asset-grid{grid-template-columns:repeat(2,1fr)}.split,.config-grid{grid-template-columns:1fr}.config-list{border-right:0;border-bottom:1px solid var(--line);padding-bottom:10px}.studio-canvas{height:520px}}
+@media(max-width:760px){.app{display:block}.sidebar{height:auto;position:relative;display:flex;overflow:auto;padding:7px}.brand,.nav-title{display:none}.nav{width:auto;min-width:46px}.content{padding:12px}.g2,.g3,.g4,.asset-grid,.compare{grid-template-columns:1fr}.topbar{padding:0 12px}.studio-canvas{height:420px}.qc-dims{grid-template-columns:repeat(2,1fr)}}
+
+.real-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.photo .real-photo{z-index:0}.photo-overlay{position:absolute;inset:0;pointer-events:none;z-index:3}.real-thumb{width:100%;height:100%;object-fit:cover}.mock-tag{position:absolute;left:10px;bottom:10px;background:rgba(15,23,42,.76);color:white;font-size:10px;padding:4px 7px;border-radius:8px;backdrop-filter:blur(6px)}.gate-strip{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:12px 14px;border-radius:12px;border:1px solid #d8eadf;background:#f0faf5;margin-bottom:14px}.gate-strip.warn{background:#fff8e9;border-color:#efdfb7}.gate-main{display:flex;gap:10px;align-items:center}.gate-main strong{font-size:14px}.gate-meta{font-size:11px;color:var(--muted)}.blind-lock{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:9px;background:#f1f3f8;color:#5e687c;font-size:11px;font-weight:700}.pipeline-banner{display:flex;gap:8px;align-items:flex-start;padding:9px 10px;border-radius:10px;background:#f4f5ff;border:1px solid #dfe1ff;color:#4f55a8;font-size:11px;margin-top:10px}.advanced-link{border:0;background:transparent;color:#7a8396;padding:5px 0;font-size:10px;text-decoration:underline;box-shadow:none}.qc-standard{font-size:10px;color:var(--muted);margin-top:5px;line-height:1.45}.qc-dim.locked-fail{box-shadow:inset 0 0 0 2px #d94d4d}.infer-panel{border:1px solid var(--line);border-radius:11px;background:#fafbfe;padding:10px;margin-top:10px}.infer-step{display:flex;justify-content:space-between;gap:8px;padding:5px 0;font-size:10px;border-bottom:1px dashed #e2e6ef}.infer-step:last-child{border-bottom:0}.infer-step.active{color:var(--primary);font-weight:800}.material-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}.mat-sample{height:72px;border:1px solid var(--line);border-radius:10px;position:relative;overflow:hidden;display:grid;place-items:center;font-size:10px;color:#667085}.mat-sample.black{background:#171717;color:#fff}.mat-sample.gray{background:#929292;color:#fff}.mat-sample.white{background:#fff}.mat-sample.layer{background:linear-gradient(135deg,#e9f4f2,#dce8ff)}.route-reason{white-space:normal;min-width:210px}.gen-compare{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0 14px}.risk-pill{padding:5px 8px;border-radius:999px;font-size:10px;font-weight:800;background:#eef7f3;color:#23805c}.risk-pill.warn{background:#fff1d9;color:#9a6509}.center-meter{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin-top:8px}.center-meter .meter{height:7px;background:#edf0f5;border-radius:99px;overflow:hidden}.center-meter .meter i{display:block;height:100%;width:48%;background:linear-gradient(90deg,#26a06c,#d88b19);border-radius:99px}
+
+<style>
+.readiness-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+.readiness-cell{border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff}
+.readiness-cell b{display:block;font-size:15px}.readiness-cell small{color:var(--muted)}
+.cure-box{display:none;margin-top:12px;padding:12px;border:1px solid #f0d4ad;background:#fff8e9;border-radius:12px}
+.cure-box.show{display:block}.cure-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
+.formal-lock{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#f5f6fb;border:1px solid #e0e4ef;border-radius:12px;padding:11px 12px;margin-bottom:12px}
+.attempt-counter{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-bottom:9px}.counter-pill{font-size:11px;font-weight:800;padding:5px 8px;border-radius:8px;background:#f1f3f8;color:#525d73}.counter-pill.primary{background:#efefff;color:#514bb6}.counter-pill.retry{background:#fff4df;color:#976309}
+.gate-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.gate-card{border:1px solid var(--line);border-radius:12px;padding:11px}.gate-card .gate-name{color:var(--muted);font-size:10px}.gate-card strong{display:block;font-size:14px;margin:4px 0}.gate-card.good{background:#eff9f5;border-color:#d1eadf}.gate-card.warn{background:#fff8e9;border-color:#efdfb8}.gate-card.bad{background:#fff0f0;border-color:#f0cece}
+.repair-panel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.repair-metric{border:1px solid var(--line);border-radius:12px;padding:11px;background:#fafbfe}.repair-metric small{display:block;color:var(--muted)}.repair-metric strong{display:block;font-size:20px;margin-top:4px}
+.accuracy-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.accuracy-card{border:1px solid var(--line);border-radius:12px;padding:11px}.accuracy-card small{color:var(--muted)}.accuracy-card strong{font-size:18px;display:block;margin:4px 0}
+.mask-stack{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.mask-item{padding:10px;border:1px solid var(--line);border-radius:10px;background:#fbfcff}.mask-swatch{height:46px;border-radius:8px;margin-bottom:7px;background:linear-gradient(135deg,rgba(91,91,214,.15),rgba(31,156,107,.28));border:1px dashed #8b8be8}
+.license-table td:nth-child(4){font-weight:700}
+.evidence-card{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fafbfe}.hash-chain{font:11px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;background:#151c2b;color:#dfe6ff;padding:11px;border-radius:10px;overflow:auto}
+.no-go-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}.no-go-row{border:1px solid var(--line);border-radius:10px;padding:9px 10px;display:flex;align-items:flex-start;gap:8px}.no-go-row b{font-size:11px}.no-go-row small{display:block;color:var(--muted)}
+.gold-overlay{position:absolute;left:42.5%;top:37.5%;width:18%;height:20%;border:1.5px solid rgba(255,196,75,.95);border-radius:12px;z-index:3;pointer-events:none;box-shadow:0 0 0 1px rgba(255,255,255,.25) inset}.gold-label{position:absolute;left:42.5%;top:34%;font-size:9px;background:#f7b84b;color:#33230a;padding:2px 5px;border-radius:5px;z-index:5}
+.formal-row td{background:#fbfbfd}.lock-icon{font-size:12px;color:#6d7486}
+@media(max-width:900px){.readiness-grid,.gate-board,.repair-panel,.accuracy-grid{grid-template-columns:repeat(2,1fr)}.no-go-list{grid-template-columns:1fr}}
+
+<style>
+.final-state{background:#fff0e7;color:#a55a15;border:1px solid #f1c994}
+.cure-progress{margin-top:9px;height:8px;border-radius:999px;background:#f2e8d8;overflow:hidden;position:relative}
+.cure-progress i{display:block;height:100%;width:62%;background:linear-gradient(90deg,#e8ad42,#d8821c);border-radius:999px;animation:curePulse 1.4s ease-in-out infinite alternate}
+@keyframes curePulse{from{opacity:.65}to{opacity:1}}
+.condition-list{margin-top:8px;padding:8px 9px;background:rgba(255,255,255,.65);border-radius:9px;border:1px dashed rgba(216,139,25,.45);font-size:10px;line-height:1.6}
+.gold-overlay.edge{border-color:#f0a72c!important;box-shadow:0 0 0 2px rgba(240,167,44,.18)}
+.gold-overlay.unsafe{border-color:#d94d4d!important;box-shadow:0 0 0 2px rgba(217,77,77,.18)}
+.gold-tooltip{position:absolute;left:42.5%;top:29.5%;z-index:8;background:rgba(20,27,43,.92);color:#fff;padding:7px 8px;border-radius:8px;font-size:9px;display:none;pointer-events:none}
+.gold-overlay:hover + .gold-tooltip{display:block}
+.readonly-qc{opacity:.65;pointer-events:none;filter:grayscale(.08)}
+.readonly-banner{display:none;margin-bottom:10px}.readonly-banner.show{display:flex}
+.live-update{display:none;color:#4e73d8;font-size:10px;margin-top:6px}.live-update.show{display:block}
+.evidence-status-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:10px}
+.evidence-status{border:1px solid var(--line);border-radius:10px;padding:9px;background:#fff}
+.evidence-status b{display:block;font-size:12px}.evidence-status small{color:var(--muted)}
+.event-bound{border-left-color:#7f7af1!important}
+.gold-list{display:none;margin-top:10px}.gold-list.show{display:block}
+.time-breakdown{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}.tiny-chip{font-size:9px;padding:3px 6px;border-radius:99px;background:#f0f2f7;color:#65708a}
+.route-disabled{opacity:.48;text-decoration:line-through}
+@media(max-width:760px){.accuracy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.evidence-status-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.accuracy-grid,.evidence-status-grid{grid-template-columns:1fr}}
+
+<style>
+/* ---- Visual polish pass ---- */
+:focus-visible{outline:2px solid var(--primary)!important;outline-offset:2px!important;border-radius:8px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{box-shadow:0 0 0 3px rgba(92,91,214,.12)}
+.table th,.table td{padding-top:12px;padding-bottom:12px}
+.timeline-event{padding-bottom:18px}
+.qc-standard,.gate-meta,.gate-name,.asset-body small,.field label,.pipe-step span,.metric .sub{font-size:11px!important;line-height:1.6}
+.status.warn.conditional,.gate-card.warn{border-style:dashed}
+.final-state{font-size:11px!important;font-weight:850!important}
+.split{grid-template-columns:minmax(0,1.5fr) minmax(380px,.85fr)}
+.modal{backdrop-filter:blur(2px)}
+.overlay{backdrop-filter:blur(2px)}
+.advanced-btn{opacity:.66;font-size:10px!important;border-style:dashed!important}
+.advanced-hint{font-size:10px;color:var(--muted);margin-top:6px;line-height:1.55}
+.spinner{display:inline-block;width:12px;height:12px;border:2px solid rgba(255,255,255,.38);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.valid-flash{animation:validFlash 1s ease}
+@keyframes validFlash{0%{box-shadow:0 0 0 0 rgba(31,156,107,.45)}40%{box-shadow:0 0 0 8px rgba(31,156,107,.12)}100%{box-shadow:0 0 0 0 rgba(31,156,107,0)}}
+.range-safe{accent-color:var(--primary)}
+.range-edge{accent-color:var(--warn)}
+.range-unsafe{accent-color:var(--bad)}
+.qc-dim{position:relative}
+.qc-dim.fail:before{content:"";position:absolute;left:8px;top:8px;width:8px;height:8px;border-radius:50%;background:var(--bad);box-shadow:0 0 0 3px rgba(217,77,77,.12)}
+.repair-success{display:inline-flex;align-items:center;gap:4px;color:var(--ok);font-weight:800;font-size:10px}
+.repair-success:before{content:"✓";width:15px;height:15px;border-radius:50%;display:grid;place-items:center;background:#e6f7ef;color:var(--ok);font-size:10px}
+.uplift-arrow{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 8px;margin-top:8px;border:1px solid var(--line);border-radius:12px;background:#fbfcff}
+.uplift-node{text-align:center;min-width:90px}.uplift-node small{display:block;color:var(--muted)}.uplift-node strong{font-size:24px;display:block}
+.uplift-arr{font-size:22px;color:var(--primary);font-weight:900;position:relative}
+.uplift-arr em{position:absolute;left:50%;transform:translateX(-50%);top:-16px;font-style:normal;font-size:10px;color:var(--ok);white-space:nowrap}
+.range-ci{height:28px;position:relative;margin-top:7px;background:#f1f3f7;border-radius:9px}
+.range-ci .axis{position:absolute;left:8%;right:8%;top:13px;height:2px;background:#d9deea}
+.range-ci .band{position:absolute;left:35%;width:46%;top:9px;height:10px;border-radius:99px;background:rgba(92,91,214,.2);border:1px solid #7d78ea}
+.range-ci .point{position:absolute;left:62%;top:6px;width:16px;height:16px;border-radius:50%;background:var(--primary);border:3px solid #fff;box-shadow:0 0 0 1px var(--primary)}
+.range-ci .lab{position:absolute;top:22px;font-size:9px;color:var(--muted)}.range-ci .lab.l{left:33%}.range-ci .lab.r{left:79%}
+.threshold-bar{height:9px;background:#edf0f5;border-radius:99px;position:relative;overflow:visible;margin-top:8px}
+.threshold-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#69c8a7,#2aa071)}
+.threshold-bar:after{content:"";position:absolute;right:0;top:-4px;height:17px;border-right:2px dashed var(--bad)}
+.threshold-bar.warn i{background:linear-gradient(90deg,#efbd5e,#d98b19)}
+.donut-wrap{display:flex;align-items:center;gap:18px}.donut{width:150px;height:150px;border-radius:50%;background:conic-gradient(#5c5bd6 0 42%,#2da876 42% 60%,#df9440 60% 84%,#8691aa 84% 100%);position:relative}.donut:after{content:"";position:absolute;inset:31px;background:#fff;border-radius:50%}.donut-center{position:absolute;inset:0;display:grid;place-items:center;z-index:2;text-align:center;font-weight:850}.donut-center small{display:block;color:var(--muted);font-weight:600}
+.legend-list{display:grid;gap:7px}.legend-row{display:flex;align-items:center;gap:8px;font-size:11px}.legend-sq{width:10px;height:10px;border-radius:3px}
+.sensitivity-chart{width:100%;height:210px;border:1px solid var(--line);border-radius:12px;background:#fbfcff;padding:8px}
+.sensitivity-chart svg{width:100%;height:100%}.chart-grid{stroke:#e5e9f1;stroke-width:1}.chart-line{fill:none;stroke:var(--primary);stroke-width:3}.chart-point{fill:#fff;stroke:var(--primary);stroke-width:3}.chart-gate{stroke:var(--bad);stroke-width:1.5;stroke-dasharray:5 4}.chart-label{font-size:10px;fill:#7b8498}.chart-value{font-size:10px;fill:#30394e;font-weight:700}
+.gold-tooltip{min-width:175px}
+.deadline-urgent{color:var(--bad)!important;font-weight:850}
+.json-lines{counter-reset:line}.json-line{display:block;position:relative;padding-left:30px;white-space:pre}.json-line:before{counter-increment:line;content:counter(line);position:absolute;left:0;width:20px;text-align:right;color:#69748e;border-right:1px solid #394359;padding-right:7px}
+.formal-row .lock-icon{margin-right:4px}
+@media(max-width:760px){.split{grid-template-columns:1fr}.accuracy-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.donut-wrap{flex-direction:column;align-items:flex-start}}
+@media(max-width:480px){.accuracy-grid{grid-template-columns:1fr}}
+
+<style>
+/* =========================================================
+   B2B SaaS visual layer
+   ========================================================= */
+:root{
+  --bg:#f8fafc;
+  --panel:#ffffff;
+  --panel2:#fbfcfe;
+  --ink:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --primary:#635bff;
+  --primary2:#8b84ff;
+  --ok:#16a36d;
+  --warn:#d97706;
+  --bad:#dc2626;
+  --info:#2563eb;
+  --side:#ffffff;
+  --side2:#f3f4f6;
+  --shadow:0 1px 2px rgba(15,23,42,.04),0 4px 12px rgba(15,23,42,.04);
+  --shadow2:0 18px 55px rgba(15,23,42,.16);
+  --r:12px;
+}
+html,body{background:#f8fafc}
+.app{grid-template-columns:248px minmax(0,1fr)}
+.sidebar{
+  background:#fff;
+  color:#334155;
+  border-right:1px solid #e2e8f0;
+  padding:14px 10px;
+}
+.brand{
+  border-bottom:0;
+  padding:8px 8px 12px;
+  margin-bottom:6px;
+}
+.logo{
+  width:32px;height:32px;border-radius:9px;
+  background:linear-gradient(135deg,#6d64ff,#4f46e5);
+  box-shadow:none;
+}
+.brand h1{color:#0f172a;font-size:14px}
+.brand p{color:#94a3b8;font-size:10px}
+.role-switch{
+  background:#f1f5f9;
+  border:1px solid #e2e8f0;
+  margin:4px 6px 10px;
+  padding:2px;
+}
+.role-switch button{color:#64748b}
+.role-switch button.active{
+  background:#fff;color:#0f172a;
+  box-shadow:0 1px 3px rgba(15,23,42,.08)
+}
+.nav-title{
+  color:#94a3b8;
+  padding:13px 10px 5px;
+  font-size:9px;
+  letter-spacing:.1em;
+}
+.nav{
+  color:#475569;
+  padding:9px 10px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:12px;
+}
+.nav:hover{background:#f8fafc;color:#0f172a}
+.nav.active{
+  background:#f1f0ff;
+  color:#4f46e5;
+  box-shadow:none;
+}
+.nav-badge{
+  background:#f1f5f9;
+  color:#64748b;
+}
+.topbar{
+  height:64px;
+  background:rgba(255,255,255,.92);
+  border-bottom:1px solid #e2e8f0;
+  padding:0 24px;
+}
+.topbar h2{font-size:15px}
+.crumb{font-size:10px;color:#94a3b8}
+.content{padding:20px 24px 32px;max-width:none}
+.page-head{margin-bottom:16px}
+.page-head h3{font-size:20px;letter-spacing:-.02em}
+.page-head p{font-size:12px;color:#64748b}
+.card{
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  box-shadow:0 1px 2px rgba(15,23,42,.03);
+  padding:15px;
+}
+.card h4{font-size:13px}
+.metric .label{
+  font-size:10px;
+  color:#94a3b8;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  font-weight:700;
+}
+.metric .value{font-size:24px;letter-spacing:-.02em}
+.metric .sub{font-size:10px;color:#94a3b8}
+.btn{
+  border-radius:8px;
+  padding:7px 10px;
+  font-size:12px;
+  box-shadow:none;
+}
+.btn.primary{
+  background:#635bff;
+  border-color:#635bff;
+}
+.btn.primary:hover{background:#554df0}
+.btn.soft{
+  background:#f4f3ff;
+  border-color:#e4e2ff;
+  color:#5148d8;
+}
+.status{
+  border-radius:999px;
+  padding:3px 7px;
+  font-size:10px;
+  font-weight:700;
+}
+.table th{
+  background:#fbfcfe;
+  color:#94a3b8;
+  font-size:10px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+}
+.table td{font-size:12px}
+.table tr:hover td{background:#fafbff}
+.search{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:8px;
+  min-width:210px;
+}
+.tabs{margin-bottom:12px}
+.tab{font-size:11px;padding:9px 10px}
+.tab.active{color:#4f46e5;border-color:#635bff}
+.callout{
+  border-radius:9px;
+  font-size:11px;
+}
+.progress{height:6px}
+.formal-lock{
+  background:#fbfcfe;
+  border:1px solid #e2e8f0;
+  border-radius:10px;
+}
+.gate-card,.readiness-cell,.repair-metric,.accuracy-card,.mask-item,.evidence-card,.evidence-status{
+  border-radius:10px;
+  box-shadow:none;
+}
+.config-item{border-radius:8px}
+.config-item.active{background:#f3f2ff;color:#4f46e5}
+.json{
+  border-radius:9px;
+  background:#0f172a;
+}
+.studio-card{
+  border-radius:12px;
+  box-shadow:0 1px 2px rgba(15,23,42,.03);
+}
+.studio-head{
+  background:#fff;
+  height:50px;
+}
+.studio-canvas{
+  background:#111827;
+}
+.panel-stack .card{
+  box-shadow:none;
+}
+.segmented{
+  background:#f1f5f9;
+  border-radius:8px;
+  padding:2px;
+}
+.seg-btn{
+  border-radius:7px;
+  font-size:10px;
+}
+.seg-btn.active{
+  color:#4f46e5;
+  box-shadow:0 1px 3px rgba(15,23,42,.08)
+}
+.candidate{
+  border-radius:9px;
+}
+.candidate.active{
+  border-color:#635bff;
+  box-shadow:0 0 0 1px #635bff inset;
+}
+.qc-dim{
+  border-radius:9px;
+}
+.asset{
+  border-radius:10px;
+  box-shadow:none;
+}
+.asset.selected{
+  outline-color:#635bff;
+}
+.asset-body b{font-size:12px}
+.asset-body small{font-size:10px}
+.pipeline-banner{
+  background:#fafaff;
+  border-color:#e5e3ff;
+}
+.modal-box,.drawer{
+  border-radius:14px;
+}
+.toolbar{gap:6px}
+.page-head .toolbar .btn{height:32px}
+
+/* SaaS workspace chrome */
+.saas-workspace{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin:4px 6px 10px;
+  padding:8px 9px;
+  border:1px solid #e2e8f0;
+  border-radius:9px;
+  background:#fff;
+}
+.saas-workspace .ws-left{display:flex;align-items:center;gap:8px;min-width:0}
+.saas-workspace .ws-logo{
+  width:24px;height:24px;border-radius:7px;
+  display:grid;place-items:center;
+  background:#eef2ff;color:#4f46e5;
+  font-size:10px;font-weight:800;
+}
+.saas-workspace b{font-size:11px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.saas-workspace small{display:block;color:#94a3b8;font-size:9px}
+.saas-workspace .chev{color:#94a3b8;font-size:10px}
+.global-search{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  width:min(420px,42vw);
+  height:34px;
+  padding:0 10px;
+  border:1px solid #e2e8f0;
+  border-radius:8px;
+  background:#f8fafc;
+  color:#94a3b8;
+  margin-left:18px;
+}
+.global-search kbd{
+  margin-left:auto;
+  padding:1px 5px;
+  border:1px solid #dbe1ea;
+  background:#fff;
+  border-radius:5px;
+  font-size:9px;
+  color:#94a3b8;
+  box-shadow:0 1px 1px rgba(15,23,42,.03);
+}
+.top-left-wrap{display:flex;align-items:center;min-width:0}
+.user-avatar{
+  width:30px;height:30px;border-radius:50%;
+  background:linear-gradient(135deg,#ede9fe,#ddd6fe);
+  color:#5b21b6;
+  display:grid;place-items:center;
+  font-size:10px;font-weight:800;
+  border:1px solid #ddd6fe;
+}
+.saas-page-shell{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  padding:10px 12px;
+  margin-bottom:12px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#64748b;
+  font-size:11px;
+}
+.saas-page-shell .sep{color:#cbd5e1}
+.saas-page-shell strong{color:#0f172a}
+
+/* flatter charts */
+.donut{box-shadow:inset 0 0 0 1px rgba(15,23,42,.04)}
+.sensitivity-chart{background:#fff}
+.threshold-bar{height:7px}
+.range-ci{background:#f8fafc}
+.final-state{border-radius:999px}
+@media(max-width:1180px){
+  .global-search{display:none}
+}
+</style>
+</style>
+</style>
+</style>
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-row"><div class="logo">IS</div><div><h1>Interaction Studio</h1><p>人物-奶嘴交互一致性</p></div></div></div>
+  <div class="saas-workspace"><div class="ws-left"><div class="ws-logo">IS</div><div><b>Pacifier Lab</b><small>Production Workspace</small></div></div><span class="chev">⌄</span></div>
+  <div class="role-switch"><button class="active" data-role="operator">内容运营</button><button data-role="technical">技术管理</button></div>
+
+  <div class="nav-title operator-group">生产</div>
+  <button class="nav active operator-nav technical-nav" data-page="home"><span class="nav-icon">◫</span><span>生产概览</span></button>
+  <button class="nav operator-nav technical-nav" data-page="cases"><span class="nav-icon">▦</span><span>案例中心</span><span class="nav-badge">25</span></button>
+  <button class="nav operator-nav technical-nav" data-page="studio"><span class="nav-icon">✥</span><span>生成工作台</span></button>
+  <button class="nav operator-nav technical-nav" data-page="review"><span class="nav-icon">✓</span><span>质量评审</span><span class="nav-badge">6</span></button>
+  <div class="nav-title operator-group">素材</div>
+  <button class="nav operator-nav technical-nav" data-page="assets"><span class="nav-icon">▧</span><span>素材中心</span></button>
+
+  <div class="nav-title technical-group hidden-role">技术管理</div>
+  <button class="nav technical-nav hidden-role" data-page="preflight"><span class="nav-icon">◎</span><span>Preflight 中心</span></button>
+  <button class="nav technical-nav hidden-role" data-page="algorithm"><span class="nav-icon">⌘</span><span>算法与模板</span></button>
+  <button class="nav technical-nav hidden-role" data-page="model"><span class="nav-icon">⬡</span><span>模型与工作流</span></button>
+  <button class="nav technical-nav hidden-role" data-page="batch"><span class="nav-icon">▤</span><span>批量测试中心</span></button>
+  <button class="nav technical-nav hidden-role" data-page="analysis"><span class="nav-icon">⌁</span><span>效果分析</span></button>
+  <button class="nav technical-nav hidden-role" data-page="trace"><span class="nav-icon">⟲</span><span>过程追踪</span></button>
+</aside>
+
+<main class="main">
+  <div class="topbar">
+    <div class="top-left-wrap">
+      <div><div class="crumb">Interaction Studio / <span id="crumb">生产概览</span></div><h2 id="topTitle">生产概览</h2></div>
+      <div class="global-search"><span>⌕</span><span>Search cases, assets, workflows...</span><kbd>⌘ K</kbd></div>
+    </div>
+    <div class="top-actions"><span class="status info" id="roleLabel">内容运营</span><button class="btn soft" onclick="openDevDrawer()">开发说明</button><button class="btn primary" onclick="openCaseWizard()">新建案例</button><div class="user-avatar">OP</div></div>
+  </div>
+
+  <div class="content">
+    <!-- HOME -->
+    <section class="page active" id="home"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Overview</strong></div>
+      <div class="page-head"><div><h3>生产概览</h3><p>素材就绪、案例生产和质量状态的统一入口。</p></div><span class="status good"><span class="s-dot"></span>服务正常</span></div>
+      <div class="grid g4">
+        <div class="card metric"><div class="label">今日待处理</div><div class="value">8</div><div class="sub">3 Mouth · 3 Hand · 2 Near-mouth</div></div>
+        <div class="card metric"><div class="label">Technical Pass</div><div class="value" style="color:var(--primary)">56%</div><div class="sub">演示 · 14 / 25</div></div>
+        <div class="card metric"><div class="label">Attempt 1 Pass</div><div class="value">44%</div><div class="sub">11 / 25</div></div>
+        <div class="card metric"><div class="label">平均人工处理</div><div class="value" style="color:var(--ok)">5m 12s</div><div class="sub">Placement + QC</div><div class="time-breakdown"><span class="tiny-chip">Mouth 4m30s</span><span class="tiny-chip">Hand 6m20s</span><span class="tiny-chip">Near 5m10s</span></div></div>
+      </div>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><h4>当前队列</h4><button class="btn ghost small" onclick="goPage('cases')">查看全部 →</button></div><div class="table-wrap"><table class="table"><thead><tr><th>Case</th><th>交互</th><th>姿态</th><th>阶段</th><th>状态</th></tr></thead><tbody>
+          <tr><td><b>D012</b><small style="display:block;color:var(--muted)">卧室窗边 · 左45°</small></td><td>Mouth</td><td>Green</td><td>Placement</td><td><span class="status info">处理中</span></td></tr>
+          <tr><td><b>D014</b><small style="display:block;color:var(--muted)">沙发 · 手持</small></td><td>Hand-held</td><td>Yellow</td><td>QC</td><td><span class="status warn">待复核</span></td></tr>
+          <tr><td><b>D018</b><small style="display:block;color:var(--muted)">儿童房 · 正面</small></td><td>Mouth</td><td>Green</td><td>Attempt 2</td><td><span class="status warn">Repair</span></td></tr>
+          <tr><td><b>D021</b><small style="display:block;color:var(--muted)">床边 · 近嘴</small></td><td>Near-mouth</td><td>Green</td><td>Completed</td><td><span class="status good">PASS</span></td></tr>
+        </tbody></table></div></div>
+        <div class="card"><h4>单 Case 生产链</h4><div class="pipeline"><div class="pipe-step done"><div class="pipe-dot"></div><b>输入检查</b><span>Case Base / SKU</span></div><div class="pipe-step done"><div class="pipe-dot"></div><b>自动定位</b><span>Anchor / Snap</span></div><div class="pipe-step current"><div class="pipe-dot"></div><b>Contact Edit</b><span>局部生成</span></div><div class="pipe-step"><div class="pipe-dot"></div><b>QC</b><span>五维评审</span></div><div class="pipe-step"><div class="pipe-dot"></div><b>完成</b><span>归档</span></div></div><div class="callout" style="margin-top:14px"><b>运营原则：</b>只暴露 Auto Snap、安全微调、Preset、Candidate 与 QC；模型、Mask 算法、路由规则放技术管理端。</div></div>
+      </div>
+      <div class="grid g3" style="margin-top:14px">
+        <div class="card"><h4>素材就绪</h4><div style="display:flex;justify-content:space-between"><span>Canonical Base</span><b>7 / 7</b></div><div class="progress"><i style="width:100%"></i></div><div style="height:10px"></div><div style="display:flex;justify-content:space-between"><span>Product Views</span><b>6 / 6</b></div><div class="progress"><i style="width:100%"></i></div><div style="height:10px"></div><div style="display:flex;justify-content:space-between"><span>Case Base</span><b>25 / 25</b></div><div class="progress"><i style="width:100%"></i></div></div>
+        <div class="card"><h4>质量分布</h4><div class="score-row"><span>Product</span><div class="score-bar"><i style="width:88%"></i></div><b>88%</b></div><div class="score-row"><span>Interaction</span><div class="score-bar warn"><i style="width:64%"></i></div><b>64%</b></div><div class="score-row"><span>Identity</span><div class="score-bar"><i style="width:84%"></i></div><b>84%</b></div><div class="score-row"><span>Scene</span><div class="score-bar"><i style="width:80%"></i></div><b>80%</b></div><div class="score-row"><span>Overall</span><div class="score-bar warn"><i style="width:56%"></i></div><b>56%</b></div></div>
+        <div class="card"><div style="display:flex;justify-content:space-between;align-items:center"><h4>最近异常</h4><span class="status good">Expert Brush 12% / ≤20%</span></div><div class="timeline-events"><div class="timeline-event"><b>H03 · Finger Occlusion</b><small>D014 · 18分钟前</small></div><div class="timeline-event"><b>F11 · Wrong Bite</b><small>D018 · 42分钟前</small></div><div class="timeline-event"><b>F41 · Lighting Mismatch</b><small>D009 · 1小时前</small></div></div></div>
+      </div>
+    </section>
+
+    <!-- ASSETS -->
+    <section class="page" id="assets"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Assets</strong></div>
+      <div class="page-head"><div><h3>素材中心</h3><p>人物参考、Case Base、商品视角、材质和 Anchor 的统一管理。</p></div><div class="toolbar"><button class="btn">批量导入</button><button class="btn primary">上传素材</button></div></div>
+      <div class="gate-strip" id="readinessStrip"><div class="gate-main"><span class="status good" id="readinessStatus">READINESS PASS</span><div><strong>Case Base Readiness Gate</strong><div class="gate-meta" id="readinessMeta">Formal 25/25 已登记 · Asset Readiness Manifest 已生成 · 可进入 Preflight</div></div></div><div class="toolbar"><button class="btn small">查看 Manifest</button><button class="btn small" id="readinessDemoBtn" onclick="toggleReadinessIssue()">查看缺失态</button></div></div>
+<div class="readiness-grid">
+  <div class="readiness-cell"><small>Development</small><b>6 / 6</b><span class="status good">Ready</span></div>
+  <div class="readiness-cell"><small>Validation</small><b>4 / 4</b><span class="status good">Ready</span></div>
+  <div class="readiness-cell"><small>Formal</small><b id="formalReadyCount">25 / 25</b><span class="status good" id="formalReadyBadge">Frozen</span></div>
+  <div class="readiness-cell"><small>Cure Period</small><b id="cureStatus">未启动</b><span class="status gray">Not Active</span></div>
+</div>
+<div class="cure-box" id="cureBox"><b>Case Base 不足 · Cure Period 还剩 2天 14小时</b><div style="color:var(--muted);margin-top:4px">Formal 23/25；缺失 F018-BASE、F023-BASE。Cure Period 到期前必须选择处理路径。</div><div class="cure-progress"><i></i></div><div style="display:flex;justify-content:space-between;color:var(--muted);font-size:9px;margin-top:4px"><span>已使用 38%</span><span class="deadline-urgent" id="cureDeadline">Deadline: 2026-09-06 18:00</span></div><div class="cure-actions"><button class="btn small" onclick="confirmCurePath('补充 Case Base')">补充 Case Base</button><button class="btn small" onclick="confirmCurePath('转 Base Generation')">转 Base Generation</button><button class="btn small danger" onclick="confirmCurePath('暂停该阶段')">暂停该阶段</button></div></div>
+      <div class="tabs" id="assetTabs"><button class="tab active" data-tab="character">Canonical Base</button><button class="tab" data-tab="casebase">Case Base</button><button class="tab" data-tab="product">Product Views</button><button class="tab" data-tab="material">材质 / Anchor</button></div>
+      <div class="toolbar" style="margin-bottom:12px"><input class="search" placeholder="搜索素材名称 / 标签"/><select class="search" style="min-width:150px"><option>全部状态</option><option>Ready</option><option>Conditional</option></select></div>
+      <div class="asset-grid" id="assetGrid">
+        <div class="asset" data-type="character"><div class="asset-img"><div class="asset-check">✓</div><div class="face-thumb"></div></div><div class="asset-body"><b>CH-FRONT-01</b><small>正脸 · 无遮挡 · Ready</small></div></div>
+        <div class="asset" data-type="character"><div class="asset-img"><div class="asset-check">✓</div><div class="face-thumb" style="transform:rotateY(12deg)"></div></div><div class="asset-body"><b>CH-L45-01</b><small>左45° · 无遮挡 · Ready</small></div></div>
+        <div class="asset" data-type="character"><div class="asset-img"><div class="asset-check">✓</div><div class="face-thumb" style="transform:rotateY(-12deg)"></div></div><div class="asset-body"><b>CH-R45-01</b><small>右45° · 无遮挡 · Ready</small></div></div>
+        <div class="asset" data-type="character"><div class="asset-img"><div class="asset-check">✓</div><div class="face-thumb"></div></div><div class="asset-body"><b>CH-FRONT-02</b><small>正脸 · 自然张嘴 · Ready</small></div></div>
+
+        <div class="asset" data-type="casebase" style="display:none"><div class="asset-img"><div class="asset-check">✓</div><img class="real-thumb" src="assets/mock_01.webp"/><span class="mock-tag">Mock · Mouth</span></div><div class="asset-body"><b>D012-BASE</b><small>卧室窗边 · 左45°</small></div></div>
+        <div class="asset" data-type="casebase" style="display:none"><div class="asset-img"><div class="asset-check">✓</div><img class="real-thumb" src="assets/mock_02.webp"/><span class="mock-tag">Mock · Hand</span></div><div class="asset-body"><b>D014-BASE</b><small>沙发 · Hand-held</small></div></div>
+        <div class="asset" data-type="casebase" style="display:none"><div class="asset-img"><div class="asset-check">✓</div><img class="real-thumb" src="assets/mock_03.webp"/><span class="mock-tag">Mock · Near-mouth</span></div><div class="asset-body"><b>D018-BASE</b><small>儿童房 · 正面</small></div></div>
+        <div class="asset" data-type="casebase" style="display:none"><div class="asset-img" style="background:linear-gradient(135deg,#dce6ed,#e8dfd9)"><div class="asset-check">✓</div><div class="face-thumb"></div></div><div class="asset-body"><b>D021-BASE</b><small>床边 · Near-mouth</small></div></div>
+
+        <div class="asset" data-type="product" style="display:none"><div class="asset-img"><div class="asset-check">✓</div><div class="pac-thumb"><div class="nip"></div><div class="shield"></div><div class="ring"></div></div></div><div class="asset-body"><b>SKU-FRONT</b><small>0° · TRANSLUCENT · residual ±12°</small></div></div>
+        <div class="asset" data-type="product" style="display:none"><div class="asset-img"><div class="asset-check">✓</div><div class="pac-thumb" style="transform:rotate(-10deg)"><div class="nip"></div><div class="shield"></div><div class="ring"></div></div></div><div class="asset-body"><b>SKU-L45</b><small>-45° · TRANSLUCENT · residual ±12°</small></div></div>
+        <div class="asset" data-type="product" style="display:none"><div class="asset-img"><div class="asset-check">✓</div><div class="pac-thumb" style="transform:rotate(10deg)"><div class="nip"></div><div class="shield"></div><div class="ring"></div></div></div><div class="asset-body"><b>SKU-R45</b><small>45° · TRANSLUCENT · residual ±12°</small></div></div>
+        <div class="asset" data-type="product" style="display:none"><div class="asset-img"><div class="asset-check">✓</div><div class="pac-thumb" style="transform:rotate(-20deg)"><div class="nip"></div><div class="shield"></div><div class="ring"></div></div></div><div class="asset-body"><b>SKU-LSIDE</b><small>-75° · Conditional · residual ±8°</small></div></div>
+
+        <div class="asset" data-type="material" style="display:none"><div class="asset-img"><div class="pac-thumb"><div class="nip"></div><div class="shield"></div><div class="ring"></div></div></div><div class="asset-body"><b>Transmission Pack</b><small>Black / Gray / White reference</small></div></div>
+        <div class="asset" data-type="material" style="display:none"><div class="asset-img"><div style="width:86px;height:60px;border:2px dashed #6a63d9;border-radius:12px;position:relative"><i style="position:absolute;width:8px;height:8px;background:#5c5bd6;border-radius:50%;left:8px;top:25px"></i><i style="position:absolute;width:8px;height:8px;background:#5c5bd6;border-radius:50%;left:40px;top:14px"></i><i style="position:absolute;width:8px;height:8px;background:#5c5bd6;border-radius:50%;right:7px;top:26px"></i></div></div><div class="asset-body"><b>Product Anchors</b><small>nipple_tip / shield / ring</small></div></div>
+      </div>
+    </section>
+
+    <!-- CASES -->
+    <section class="page" id="cases"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Cases</strong></div>
+      <div class="page-head"><div><h3>案例中心</h3><p>案例的输入、交互类型、Attempt、QC 和结果状态。</p></div><button class="btn primary" onclick="openCaseWizard()">+ 新建案例</button></div>
+      <div class="formal-lock"><div><b>🔒 Formal Freeze</b><div style="font-size:11px;color:var(--muted)">Frozen Build 启动后：Formal Case 只读、禁止删除、禁止增加 Business Attempt、禁止 Case 级特调。</div></div><span class="status good">🔒 Build 8f3d92a</span></div>
+      <div class="toolbar" style="margin-bottom:12px"><input class="search" placeholder="搜索 Case ID / 场景"/><select class="search" style="min-width:150px"><option>全部数据集</option><option>Development</option><option>Validation</option><option>Formal</option><option>Generalization</option></select><select class="search" style="min-width:140px"><option>全部交互</option><option>Mouth</option><option>Hand-held</option><option>Near-mouth</option></select><select class="search" style="min-width:140px"><option>全部状态</option><option>Prepared</option><option>Generating</option><option>Review</option><option>PASS</option><option>FAIL</option></select></div>
+      <div class="card"><div class="table-wrap"><table class="table"><thead><tr><th>Case</th><th>Dataset</th><th>Case Base</th><th>交互</th><th>Pose</th><th>Business Attempt</th><th>Infra Retry</th><th>阶段</th><th>状态</th><th></th></tr></thead><tbody>
+        <tr><td><b>D012</b></td><td>Development</td><td>D012-BASE</td><td>Mouth</td><td><span class="status good">Green</span></td><td><span class="status info">1 / 2</span></td><td>0 / 2</td><td>Placement</td><td><span class="status info">处理中</span></td><td><button class="btn ghost small" onclick="goPage('studio')">打开</button></td></tr>
+        <tr><td><b>D014</b></td><td>Development</td><td>D014-BASE</td><td>Hand-held</td><td><span class="status warn">Yellow</span></td><td><span class="status warn">2 / 2</span> <span class="status final-state">⚠ Final</span></td><td>1 / 2</td><td>QC</td><td><span class="status warn">待复核</span></td><td><button class="btn ghost small" onclick="goPage('review')">评审</button></td></tr>
+        <tr><td><b>V003</b></td><td>Validation</td><td>V003-BASE</td><td>Mouth</td><td><span class="status good">Green</span></td><td>2 / 2</td><td>0 / 2</td><td>Completed</td><td><span class="status good">PASS</span></td><td><span class="lock-icon">🔒 只读</span></td></tr>
+        <tr class="formal-row"><td><b>F007</b><small style="display:block;color:var(--muted)">Blind executed</small></td><td>Formal</td><td>🔒 F007-BASE</td><td>Near-mouth</td><td><span class="status good">Green</span></td><td>1 / 2</td><td>0 / 2</td><td>Completed</td><td><span class="status good">PASS</span> <span class="repair-success">Repair 生效</span></td><td><button class="btn ghost small">查看</button></td></tr>
+        <tr class="formal-row"><td><b>F011</b><small style="display:block;color:var(--muted)">Blind executed</small></td><td>Formal</td><td>🔒 F011-BASE</td><td>Mouth</td><td><span class="status warn">Yellow</span></td><td>2 / 2</td><td>0 / 2</td><td>Completed</td><td><span class="status bad">FAIL</span></td><td><button class="btn ghost small" onclick="goPage('trace')">追踪</button></td></tr>
+      </tbody></table></div></div>
+    </section>
+
+    <!-- STUDIO -->
+    <section class="page" id="studio"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Studio</strong></div>
+      <div class="page-head"><div><h3>生成工作台</h3><p>Case Base → 自动定位 → Product Preserve → Contact Edit → Candidate。</p></div><div class="toolbar"><span class="status info">D012 · Development</span><button class="btn">保存草稿</button></div></div>
+      <div class="split">
+        <div class="card studio-card">
+          <div class="studio-head"><div class="left"><b>D012 · 卧室窗边</b><span class="status good" id="modeBadge">Mouth</span><span class="status good">Green Pose</span></div><div class="toolbar"><button class="btn ghost small">原图</button><button class="btn ghost small">网格</button><button class="btn ghost small">Mask</button></div></div>
+          <div class="studio-canvas">
+            <div class="canvas-toolbar"><button class="tool active">↖</button><button class="tool">✥</button><button class="tool">◫</button><button class="tool">✎</button></div><div class="zoom">100%</div>
+            <div class="photo"><img id="studioRealPhoto" class="real-photo" src="assets/mock_01.webp"/><div class="photo-overlay"><div class="gold-label">Gold Ref</div><div class="gold-overlay" id="goldOverlay"></div><div class="gold-tooltip">Gold Placement<br/>center=(0.501, 0.468)<br/>Center: +0.8%（偏右）<br/>Rotation: -4.0°<br/>Scale: 1.00</div><div class="roi" id="roi" style="left:43%;top:38%;width:18%;height:20%"></div><div class="anchor a1" style="left:48%;top:45%"></div><div class="anchor a2" style="left:53%;top:45%"></div><div class="anchor a3" style="left:50%;top:49%"></div></div><div class="layer-panel"><b style="font-size:11px">Layers</b><div class="layer"><span class="eye-dot"></span>Contact Edit</div><div class="layer"><span class="eye-dot"></span>Product Core</div><div class="layer"><span class="eye-dot"></span>Occlusion</div><div class="layer"><span class="eye-dot"></span>Case Base</div></div></div>
+          </div>
+        </div>
+        <div class="panel-stack">
+          <div class="card"><div class="panel-title"><h4>交互设置</h4><span class="status info">Step 1 / 4</span></div><div class="segmented" id="modeSeg"><button class="seg-btn active" data-mode="mouth">Mouth</button><button class="seg-btn" data-mode="hand">Hand-held</button><button class="seg-btn" data-mode="near">Near-mouth</button></div><div class="pipeline-banner" id="pipelineBanner"><b>Mouth 独立 Pipeline</b><span>Face Landmark · Bite Template · Mouth Occlusion · Mouth Repair</span></div><div class="form-grid" style="margin-top:10px"><div class="field"><label>模板</label><select id="templateSel"><option>MOUTH_LEFT_45</option><option>MOUTH_FRONT</option></select></div><div class="field"><label>商品视角</label><select><option>SKU-L45 (-45°)</option><option>SKU-FRONT (0°)</option></select></div><div class="field"><label>Target Yaw</label><input value="-38°" readonly/></div><div class="field"><label>Residual</label><input value="7° / Gate 12°" readonly/></div></div><button class="btn primary" style="width:100%;margin-top:10px" id="snapBtn">Auto Snap</button></div>
+          <div class="card"><div class="panel-title"><h4>安全范围微调</h4><span class="status good" id="accuracyStatus">Safe</span></div><div class="field"><label>X 偏移 <span id="xv">0%</span></label><input id="xr" type="range" min="-10" max="10" value="0"/></div><div class="field"><label>Scale <span id="sv">100%</span></label><input id="sr" type="range" min="92" max="108" value="100"/></div><div class="field"><label>Rotation <span id="rv">-5°</span></label><input id="rr" type="range" min="-14" max="4" value="-5"/></div><div class="center-meter"><div><div style="font-size:10px;color:var(--muted)">Center Error</div><div class="meter"><i id="centerMeter"></i></div></div><b id="centerErr">2.4% / Gate 5%</b></div><div id="sensHint" class="callout good" style="margin-top:8px">当前位于 Sensitivity Study 安全区。</div></div>
+          <div class="card" id="presetCard"><div class="panel-title"><h4>Mouth Occlusion</h4><span class="status gray">Preset</span></div><div class="segmented"><button class="seg-btn">Conservative</button><button class="seg-btn active">Medium</button><button class="seg-btn">Aggressive</button></div><button class="advanced-link" style="width:100%;margin-top:10px" onclick="showAdvancedWarn('Mouth')">仅在 Preset 无法满足时使用 · Expert Brush</button></div>
+          <div class="card"><div class="panel-title"><h4>生成</h4><span class="status gray" id="attemptState">Prepared</span></div>
+<div class="attempt-counter"><span class="counter-pill primary">Business Attempt <b id="businessAttemptCounter">1 / 2</b></span><span class="counter-pill retry">Infra Retry <b id="infraRetryCounter">0 / 2</b></span><span class="counter-pill">VALID_OUTPUT 才扣 Attempt</span></div><div class="toolbar"><button class="btn primary" style="flex:1" id="generateBtn">生成 Attempt 1</button><button class="btn small" id="infraRetryDemoBtn" onclick="simulateInfraRetry()">模拟 Infra Retry</button></div><div class="infer-panel" id="inferPanel"><div class="infer-step active"><span>PREPARED</span><b>Ready</b></div><div class="infer-step"><span>INFERENCE_STARTED</span><b>—</b></div><div class="infer-step"><span>INFRA RETRY</span><b>0 / 2</b></div><div class="infer-step"><span>OUTPUT_PERSISTED</span><b>—</b></div><div class="infer-step"><span>VALID_OUTPUT</span><b>—</b></div></div><div class="candidates" style="margin-top:10px" id="candidateArea"><div class="candidate active"><div class="cand-img"></div><div class="cand-meta"><b>Attempt 1</b><br/>Product 92 · Interaction 68<br/><span class="status warn" style="margin-top:4px">Contact-only</span></div></div><div class="candidate"><div class="cand-img" style="filter:saturate(.92)"></div><div class="cand-meta"><b>Repair</b><br/>Product 94 · Interaction 84<br/><span class="status good" style="margin-top:4px">Uplift +16pp</span></div></div></div><button class="btn soft" style="width:100%;margin-top:10px" onclick="goPage('review')">进入质量评审</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEW -->
+    <section class="page" id="review"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Review</strong></div>
+      <div class="page-head"><div><h3>质量评审</h3><p>候选对比、五维 QC、失败原因和 Repair 决策。</p></div><div class="toolbar"><button class="btn small" onclick="toggleFormalReviewMode()">切换 Formal 只读演示</button><button class="btn" onclick="goPage('studio')">退回编辑</button><button class="btn primary" id="approveBtn">确认结果</button></div></div><div class="formal-lock readonly-banner" id="formalReviewBanner"><div><b>🔒 Formal QC · Read Only</b><div style="font-size:11px;color:var(--muted)">Formal 执行期五维结果由冻结评审流程提交；当前页面禁止修改、退回编辑、改判和追加 Attempt。</div></div><span class="status good">LOCKED</span></div>
+      <div class="grid g2">
+        <div class="card"><h4>Before / After</h4><div class="compare"><div class="preview"><div class="preview-head">Case Base / Near-mouth Mock</div><div class="preview-img" style="padding:0"><img src="assets/mock_03.webp" style="width:100%;height:100%;object-fit:cover"/></div></div><div class="preview"><div class="preview-head">Candidate · Mouth Mock</div><div class="preview-img" style="padding:0"><img src="assets/mock_01.webp" style="width:100%;height:100%;object-fit:cover"/></div></div></div></div>
+        <div class="card" id="qcEditableArea"><h4>五维 QC</h4><div class="callout" style="margin-bottom:10px"><b>Technical PASS = 五维全部 PASS。</b> 任一维度 FAIL，则整体 FAIL；FAIL 后必须填写 Failure Reason 才能重新改为 PASS。</div><div class="qc-dims"><div class="qc-dim pass" data-qc data-name="Product"><span>Product</span><strong>PASS</strong><div class="qc-standard">结构、比例、颜色、材质、孔位、挡板、环形结构正确</div></div><div class="qc-dim pass" data-qc data-name="Interaction"><span>Interaction</span><strong>PASS</strong><div class="qc-standard">无悬浮、穿模、错误咬合/握持，遮挡合理</div></div><div class="qc-dim pass" data-qc data-name="Identity"><span>Identity</span><strong>PASS</strong><div class="qc-standard">人物核心五官、脸型、年龄感稳定</div></div><div class="qc-dim pass" data-qc data-name="Scene"><span>Scene</span><strong>PASS</strong><div class="qc-standard">光照、透视、边缘、景深和色温自然</div></div><div class="qc-dim pass" data-qc data-name="Overall"><span>Overall</span><strong>PASS</strong><div class="qc-standard">无明显 AI 瑕疵，可发布或仅需轻微后处理</div></div></div><div style="height:14px"></div><div class="score-row"><span>Product</span><div class="score-bar"><i style="width:94%"></i></div><b>94</b></div><div class="score-row"><span>Interaction</span><div class="score-bar"><i style="width:84%"></i></div><b>84</b></div><div class="score-row"><span>Identity</span><div class="score-bar"><i style="width:90%"></i></div><b>90</b></div><div class="score-row"><span>Scene</span><div class="score-bar"><i style="width:86%"></i></div><b>86</b></div><div class="field" style="margin-top:12px"><label>Failure Reason（仅 FAIL 时必填）</label><select><option>—</option><option>F11 Wrong Bite</option><option>F13 Lip Occlusion</option><option>H01 Wrong Grip</option><option>H02 Finger Penetration</option><option>H03 Product-Finger Occlusion</option><option>H04 Hand Anatomy Failure</option><option>H05 Grip Anchor Drift</option><option>H06 Product Rotation Error</option><option>F41 Lighting Mismatch</option></select></div><div class="callout good" id="qcResult" style="margin-top:12px"><b>Technical PASS</b> · 五维全部通过</div></div>
+      </div>
+      <div class="card" style="margin-top:14px"><h4>Attempt 记录</h4><div class="table-wrap"><table class="table"><thead><tr><th>Attempt</th><th>Failure Class</th><th>Route</th><th>Workflow</th><th>耗时</th><th>结果</th><th></th></tr></thead><tbody><tr><td>A1</td><td><span class="status warn">Contact-only</span></td><td>Preserve + Contact Edit</td><td>WF_MOUTH_CONTACT@v4</td><td>91s</td><td><span class="status warn">Interaction FAIL</span></td><td><button class="btn ghost small">查看</button></td></tr><tr><td>A2 <span class="status final-state">⚠ Final</span></td><td>Contact-only</td><td>Mouth Contact Repair</td><td>WF_MOUTH_REPAIR@v2</td><td>67s</td><td><span class="status good">PASS</span></td><td><button class="btn ghost small">查看</button></td></tr></tbody></table></div></div>
+    </section>
+
+    <!-- PREFLIGHT -->
+    <section class="page" id="preflight"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Preflight</strong></div>
+      <div class="page-head"><div><h3>Preflight 中心</h3><p>对人物、商品、手部、材质和姿态进行正式算法链路前置检查。</p></div><button class="btn primary" id="runPreflight">运行 Preflight</button></div><div class="gate-strip warn"><div class="gate-main"><span class="status warn">FORMAL CONDITION</span><div><strong>No-Go 汇总：当前可继续 Validation，但 Hand 为 Conditional</strong><div class="gate-meta">Formal 准入条件尚未全部转绿；Hand 核心范围需补验证数据。</div></div></div><button class="btn small" onclick="openNoGoModal()">查看 No-Go 决策</button></div>
+<div class="gate-board" style="margin-top:12px">
+  <div class="gate-card good"><div class="gate-name">Face / Mouth Gate</div><strong>PASS</strong><small>45° Mouth ROI 94%</small></div>
+  <div class="gate-card warn" id="handGateCard"><div class="gate-name">Hand Gate</div><strong id="handGateStrong">CONDITIONAL</strong><small id="handGateSmall">Hand Repair Pool 12 / 15</small><div class="condition-list" id="handGateConditions">进入 Formal 前必须满足：① Repair Pool ≥15 ② ≥5 个不同 Hand Base Case ③ Hand Preflight PASS</div><button class="btn small" style="margin-top:7px" onclick="toggleHandGate()">模拟补齐 → PASS</button><div class="live-update" id="gateUpdateMsg">状态已更新，No-Go 诊断已同步。</div></div>
+  <div class="gate-card good"><div class="gate-name">Product / Residual</div><strong>PASS</strong><small>Max residual 9° ≤12°</small></div>
+  <div class="gate-card good"><div class="gate-name">Material Gate</div><strong>PASS</strong><small>TRANSLUCENT · 分层可用</small></div>
+</div>
+      <div class="grid g4">
+        <div class="card metric"><div class="label">Mouth Geometry</div><div class="value" style="color:var(--ok)">PASS</div><div class="sub">45° ROI Detection 94%</div></div>
+        <div class="card metric"><div class="label">Product Placement</div><div class="value" style="color:var(--ok)">PASS</div><div class="sub">Max residual 9°</div></div>
+        <div class="card metric"><div class="label">Hand Geometry</div><div class="value" style="color:var(--warn)">COND.</div><div class="sub">1 / 5 需人工 Grip</div></div>
+        <div class="card metric"><div class="label">Material</div><div class="value" style="color:var(--ok)">PASS</div><div class="sub">Transmission Assets Ready</div></div>
+      </div>
+      <div class="card" style="margin-top:14px"><h4>Material Preflight · TRANSLUCENT</h4><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><div><span class="status good">Transmission Enabled</span> <span class="status good">Specular Layer Ready</span></div><small style="color:var(--muted)">Product: SKU001</small></div><div class="material-strip"><div class="mat-sample black">Black BG</div><div class="mat-sample gray">Gray BG</div><div class="mat-sample white">White BG</div><div class="mat-sample layer">Transmission / Specular</div></div></div>
+      <div class="grid g2" style="margin-top:14px">
+        <div class="card"><h4>检查明细</h4><div class="table-wrap"><table class="table"><thead><tr><th>Check</th><th>Target</th><th>Observed</th><th>Status</th></tr></thead><tbody><tr><td>Face Detection</td><td>100%</td><td>100%</td><td><span class="status good">PASS</span></td></tr><tr><td>45° Mouth ROI</td><td>≥90%</td><td>94%</td><td><span class="status good">PASS</span></td></tr><tr><td>Residual Angle</td><td>≤12°</td><td>9°</td><td><span class="status good">PASS</span></td></tr><tr><td>Hand Anchor</td><td>≥80%</td><td>78%</td><td><span class="status warn">COND.</span></td></tr><tr><td>Material Composite</td><td>Visual PASS</td><td>PASS</td><td><span class="status good">PASS</span></td></tr></tbody></table></div></div>
+        <div class="card"><h4>Pose Zone</h4><div class="score-row"><span>Green</span><div class="score-bar"><i style="width:80%"></i></div><b>80%</b></div><div class="score-row"><span>Yellow</span><div class="score-bar warn"><i style="width:20%"></i></div><b>20%</b></div><div class="score-row"><span>Red</span><div class="score-bar"><i style="width:0%"></i></div><b>0%</b></div><div class="callout good" style="margin-top:12px">当前 Case Mix 可进入一期测试。</div></div>
+      </div>
+    </section>
+
+    <!-- ALGORITHM -->
+    <section class="page" id="algorithm"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Algorithms</strong></div>
+      <div class="page-head"><div><h3>算法与模板</h3><p>管理 Bite / Grip Template、Pose Zone、Residual Angle、Occlusion 和 Anchor 配置。</p></div><button class="btn primary" onclick="toast('配置已保存为新版本（演示）')">保存新版本</button></div>
+      <div class="card">
+        <div class="config-grid">
+          <div class="config-list" id="algoList">
+            <div class="config-item active" data-config="bite"><b>Bite Templates</b><small>6 个启用模板</small></div>
+            <div class="config-item" data-config="grip"><b>Grip Templates</b><small>4 个启用模板</small></div>
+            <div class="config-item" data-config="pose"><b>Pose Safety Zone</b><small>Green / Yellow / Red</small></div>
+            <div class="config-item" data-config="residual"><b>Residual Angle</b><small>按 Product View 管理</small></div>
+            <div class="config-item" data-config="occlusion"><b>Occlusion Preset</b><small>Conservative / Medium / Aggressive</small></div>
+            <div class="config-item" data-config="anchor"><b>Product Anchors</b><small>6 个关键 Anchor</small></div>
+          </div>
+          <div id="algoDetail">
+            <div class="grid g2"><div><h4>MOUTH_LEFT_45</h4><div class="form-grid"><div class="field"><label>Center Offset X</label><input value="0.00"/></div><div class="field"><label>Center Offset Y</label><input value="0.02"/></div><div class="field"><label>Axis Offset</label><input value="-5°"/></div><div class="field"><label>Insertion Ratio</label><input value="0.68"/></div></div><div style="height:10px"></div><div class="field"><label>Default Occlusion</label><select><option>Medium</option><option>Conservative</option><option>Aggressive</option></select></div></div><div><h4>配置预览</h4><div class="json" id="algoJson"><div class="json-lines"><span class="json-line">{</span><span class="json-line">  "template_id": "MOUTH_LEFT_45",</span><span class="json-line">  "angle_class": "LEFT_45",</span><span class="json-line">  "center_offset": [0.00, 0.02],</span><span class="json-line">  "axis_offset_deg": -5,</span><span class="json-line">  "insertion_ratio": 0.68,</span><span class="json-line">  "default_occlusion": "medium"</span><span class="json-line">}</span></div></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px"><div style="display:flex;justify-content:space-between;align-items:center"><h4>Mask Debug · Product Preserve 分层</h4><span class="status info">技术视图</span></div><div class="mask-stack">
+<div class="mask-item"><div class="mask-swatch"></div><b>M_product</b><small>完整商品区域</small></div>
+<div class="mask-item"><div class="mask-swatch" style="background:linear-gradient(135deg,rgba(31,156,107,.18),rgba(31,156,107,.5))"></div><b>M_core</b><small>绝对保护主体</small></div>
+<div class="mask-item"><div class="mask-swatch" style="background:linear-gradient(135deg,rgba(216,139,25,.12),rgba(216,139,25,.42))"></div><b>M_transition</b><small>边缘融合区域</small></div>
+<div class="mask-item"><div class="mask-swatch" style="background:linear-gradient(135deg,rgba(217,77,77,.12),rgba(217,77,77,.42))"></div><b>M_contact</b><small>嘴 / 手接触区</small></div>
+<div class="mask-item"><div class="mask-swatch" style="background:linear-gradient(135deg,rgba(78,115,216,.12),rgba(78,115,216,.45))"></div><b>M_occlusion</b><small>允许前景遮挡商品</small></div>
+<div class="mask-item"><div class="mask-swatch" style="background:linear-gradient(135deg,rgba(91,91,214,.12),rgba(91,91,214,.42))"></div><b>M_visible_core</b><small>最终恢复真实商品像素</small></div>
+</div></div>
+<div class="grid g3" style="margin-top:14px">
+        <div class="card metric"><div class="label">Template Versions</div><div class="value">12</div><div class="sub">当前启用 10</div></div>
+        <div class="card metric"><div class="label">Sensitivity Gate</div><div class="value">5%</div><div class="sub">演示 · Center Error safe zone</div></div>
+        <div class="card metric"><div class="label">Expert Mask Rate</div><div class="value" style="color:var(--ok)">12%</div><div class="sub">目标 ≤20%</div></div>
+      </div>
+    </section>
+
+    <!-- MODEL -->
+    <section class="page" id="model"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Models & Workflows</strong></div>
+      <div class="page-head"><div><h3>模型与工作流</h3><p>模型注册、Workflow 版本、Route Policy、Prompt/参数和稳定性结果。</p></div><button class="btn primary">注册 Workflow</button></div>
+      <div class="grid g3">
+        <div class="card metric"><div class="label">Active Models</div><div class="value">3</div><div class="sub">Local 2 · API 1</div></div>
+        <div class="card metric"><div class="label">Active Workflows</div><div class="value">5</div><div class="sub">Mouth / Hand / Repair / Fast</div></div>
+        <div class="card metric"><div class="label">Repeatability</div><div class="value" style="color:var(--ok)">92%</div><div class="sub">同输入业务标签一致率</div></div>
+      </div>
+      <div class="card" style="margin-top:14px"><h4>Route Policy</h4><div class="table-wrap"><table class="table"><thead><tr><th>Category</th><th>Attempt 1</th><th>Attempt 2</th><th>决策依据</th><th>状态</th></tr></thead><tbody><tr id="mouthRouteRow"><td>Mouth / Green</td><td>WF_MOUTH_CONTACT@v4</td><td id="mouthAttempt2Route">WF_MOUTH_REPAIR@v2</td><td class="route-reason" id="mouthRouteReason">Measured Repair Uplift +12pp ≥ 8pp · Enabled</td><td><span class="status good">Active</span></td></tr><tr><td>Hand / Green</td><td>WF_HAND_CONTACT@v2</td><td>WF_HAND_REPAIR@v1</td><td class="route-reason">Hand Repair Pool 12/15 · evidence insufficient</td><td><span class="status warn">Conditional</span></td></tr><tr><td>Near-mouth</td><td>WF_FAST_PATH@v3</td><td>—</td><td class="route-reason">Fast Path Artifact 4% ≤ 5%</td><td><span class="status good">Active</span></td></tr><tr><td>Yellow Pose</td><td>Preserve + Manual Confirm</td><td>Category Route</td><td class="route-reason">Yellow Pose · operator confirmation required</td><td><span class="status warn">Conditional</span></td></tr></tbody></table></div></div>
+      <div class="grid g2" style="margin-top:14px"><div class="card"><h4>模型稳定性</h4><div class="score-row"><span>Local Edit A</span><div class="score-bar"><i style="width:92%"></i></div><b>92%</b></div><div class="score-row"><span>Local Repair B</span><div class="score-bar"><i style="width:88%"></i></div><b>88%</b></div><div class="score-row"><span>API Fast C</span><div class="score-bar warn"><i style="width:81%"></i></div><b>81%</b></div></div><div class="card"><h4>当前 Workflow</h4><div class="json">WF_MOUTH_CONTACT@v4
+input: case_base, product_view, M_edit
+model: local_edit_a
+seed_policy: fixed-per-attempt
+core_restore: true
+light_match: deterministic
+postprocess: ROI_multiband</div></div></div>
+    <div class="card" style="margin-top:14px"><h4>Model Compliance / License</h4><div class="table-wrap"><table class="table license-table"><thead><tr><th>Model</th><th>Role</th><th>License Review</th><th>Production</th></tr></thead><tbody>
+<tr><td>Local Edit A</td><td>Attempt 1</td><td>Code / Weight / Commercial ✅</td><td style="color:var(--ok)">ALLOWED</td></tr>
+<tr><td>Local Repair B</td><td>Repair</td><td>Code / Weight / Commercial ✅</td><td style="color:var(--ok)">ALLOWED</td></tr>
+<tr><td>Research Candidate</td><td>Benchmark only</td><td>Redistribution ⚠️</td><td style="color:var(--warn)">RESEARCH ONLY</td></tr>
+<tr><td>API Fast C</td><td>Fast Path</td><td>Provider Terms ✅ · Version Pin ⚠️</td><td style="color:var(--warn)">CONDITIONAL</td></tr>
+</tbody></table></div></div></section>
+
+    <!-- BATCH -->
+    <section class="page" id="batch"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Test Runs</strong></div>
+      <div class="page-head"><div><h3>批量测试中心</h3><p>Development、Validation、Formal、Generalization、Repair Pool 与 Repeatability 的统一执行入口。</p></div><button class="btn primary" id="runBatch">创建测试任务</button></div>
+      <div class="tabs" id="batchTabs"><button class="tab active">Development</button><button class="tab">Validation</button><button class="tab">Formal</button><button class="tab">Generalization</button><button class="tab">Repair Pool</button><button class="tab">Repeatability</button></div><div class="gen-compare"><span class="blind-lock">🔒 Formal Blind Mode · Build 已冻结 · 禁止单 Case 特调</span><span class="risk-pill">Formal 56%</span><span class="risk-pill">Generalization 52%</span><span class="risk-pill">Drop 4pp · Safe</span><span class="status info">Repair Pool: Mouth 30 / Hand 12</span></div>
+      <div class="formal-lock"><div><b>🔒 Formal Test Discipline</b><div style="font-size:11px;color:var(--muted)">Build / Model / Prompt / Workflow / Attempt Policy 已冻结；Formal 执行期间无单 Case 编辑、删除、重新调参或追加 Attempt 入口。</div></div><span class="status good">LOCKED</span></div><div class="grid g4">
+        <div class="card metric"><div class="label">Cases</div><div class="value">25</div><div class="sub">当前 Formal Set</div></div>
+        <div class="card metric"><div class="label">Completed</div><div class="value">25</div><div class="sub">100%</div></div>
+        <div class="card metric"><div class="label">Technical Pass</div><div class="value" style="color:var(--primary)">56%</div><div class="sub">14 / 25</div></div>
+        <div class="card metric"><div class="label">System Fail</div><div class="value" style="color:var(--ok)">0</div><div class="sub">Infra retry exhausted = 0</div></div>
+      </div>
+      <div class="card" style="margin-top:14px"><h4>测试任务</h4><div class="table-wrap"><table class="table"><thead><tr><th>Task</th><th>Dataset</th><th>Build</th><th>Cases</th><th>Progress</th><th>Status</th><th></th></tr></thead><tbody><tr><td>FORMAL-20260903-01</td><td>Formal</td><td>build-8f3d92a</td><td>25</td><td>25 / 25</td><td><span class="status good">Completed</span></td><td><button class="btn ghost small">查看结果</button></td></tr><tr><td>REPAIR-MOUTH-07</td><td>Repair Pool</td><td>build-8f3d92a</td><td>30</td><td>30 / 30</td><td><span class="status good">Completed</span></td><td><button class="btn ghost small">分析</button></td></tr><tr><td>REPEAT-FAST-03</td><td>Repeatability</td><td>fast-v3</td><td>25 runs</td><td>20 / 25</td><td><span class="status info">Running</span></td><td><button class="btn ghost small">监控</button></td></tr></tbody></table></div></div>
+    <div class="card" style="margin-top:14px"><h4>Generalization Review Status</h4><div class="repair-panel"><div class="repair-metric"><small>Formal Technical</small><strong>56%</strong></div><div class="repair-metric"><small>Generalization Batch 1</small><strong>52%</strong></div><div class="repair-metric"><small>Delta</small><strong style="color:var(--ok)">-4pp</strong></div><div class="repair-metric"><small>Decision</small><strong>SAFE</strong></div></div><div class="callout good" style="margin-top:10px">首批 10 Case：Drop 4pp ≤20pp，仅记录；未触发 Review / 自动降级条件。</div></div></section>
+
+    <!-- ANALYSIS -->
+    <section class="page" id="analysis"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Analytics</strong></div>
+      <div class="page-head"><div><h3>效果分析</h3><p>Attempt 1、Repair、失败分布、Sensitivity、Pose Mix 和交互类型表现。</p></div><button class="btn">导出分析报告</button></div>
+      <div class="grid g4"><div class="card metric"><div class="label">Attempt 1 Pass</div><div class="value">44%</div></div><div class="card metric"><div class="label">Repair Uplift</div><div class="value" style="color:var(--ok)">+12pp</div><div class="sub">演示 · ≥8pp</div></div><div class="card metric"><div class="label">Technical Pass</div><div class="value" style="color:var(--primary)">56%</div></div><div class="card metric"><div class="label">CV Post P95</div><div class="value">3.8s</div></div></div>
+      <div class="grid g2" style="margin-top:14px"><div class="card"><h4>Interaction Pass by Type</h4><div class="chart"><div class="bar-col"><i style="height:78%"></i><b>78%</b>Mouth</div><div class="bar-col"><i style="height:55%"></i><b>55%</b>Hand</div><div class="bar-col"><i style="height:82%"></i><b>82%</b>Near</div><div class="bar-col"><i style="height:69%"></i><b>69%</b>Overall</div></div></div><div class="card"><h4>Failure Distribution</h4><div class="donut-wrap"><div class="donut"><div class="donut-center">100%<small>Failures</small></div></div><div class="legend-list"><div class="legend-row"><span class="legend-sq" style="background:#5c5bd6"></span>Contact-only · 42%</div><div class="legend-row"><span class="legend-sq" style="background:#2da876"></span>Product-only · 18%</div><div class="legend-row"><span class="legend-sq" style="background:#df9440"></span>Mixed · 24%</div><div class="legend-row"><span class="legend-sq" style="background:#8691aa"></span>Identity/Scene · 16%</div></div></div><div class="score-row"><span>Contact-only</span><div class="score-bar warn"><i style="width:42%"></i></div><b>42%</b></div><div class="score-row"><span>Product-only</span><div class="score-bar"><i style="width:18%"></i></div><b>18%</b></div><div class="score-row"><span>Mixed</span><div class="score-bar warn"><i style="width:24%"></i></div><b>24%</b></div><div class="score-row"><span>Identity/Scene</span><div class="score-bar"><i style="width:16%"></i></div><b>16%</b></div><div class="callout" style="margin-top:10px"><b>U_max：</b>17.6pp · 可继续 Repair Evaluation。</div></div></div>
+      <div class="grid g2" style="margin-top:14px"><div class="card"><h4>Placement Sensitivity</h4><div class="sensitivity-chart"><svg viewBox="0 0 520 190" preserveAspectRatio="none"><line class="chart-grid" x1="45" y1="20" x2="45" y2="155"/><line class="chart-grid" x1="45" y1="155" x2="500" y2="155"/><line class="chart-grid" x1="45" y1="65" x2="500" y2="65"/><line class="chart-grid" x1="45" y1="110" x2="500" y2="110"/><line class="chart-gate" x1="270" y1="15" x2="270" y2="160"/><text class="chart-label" x="274" y="26">Gate 5%</text><polyline class="chart-line" points="90,42 200,52 360,92 470,126"/><circle class="chart-point" cx="90" cy="42" r="5"/><circle class="chart-point" cx="200" cy="52" r="5"/><circle class="chart-point" cx="360" cy="92" r="5"/><circle class="chart-point" cx="470" cy="126" r="5"/><text class="chart-value" x="78" y="34">86%</text><text class="chart-value" x="188" y="44">80%</text><text class="chart-value" x="348" y="84">64%</text><text class="chart-value" x="458" y="118">48%</text><text class="chart-label" x="80" y="175">±2%</text><text class="chart-label" x="190" y="175">±5%</text><text class="chart-label" x="350" y="175">±8%</text><text class="chart-label" x="455" y="175">±10%</text></svg></div><div class="table-wrap" style="margin-top:10px"><table class="table"><thead><tr><th>扰动</th><th>Interaction Pass</th><th>判定</th></tr></thead><tbody><tr><td>Center ±2%</td><td>86%</td><td><span class="status good">Safe</span></td></tr><tr><td>Center ±5%</td><td>80%</td><td><span class="status good">Safe</span></td></tr><tr><td>Center ±8%</td><td>64%</td><td><span class="status warn">Edge</span></td></tr><tr><td>Center ±10%</td><td>48%</td><td><span class="status bad">Unsafe</span></td></tr></tbody></table></div></div><div class="card"><h4>Pose Mix</h4><div class="score-row"><span>Green</span><div class="score-bar"><i style="width:80%"></i></div><b>80%</b></div><div class="score-row"><span>Yellow</span><div class="score-bar warn"><i style="width:20%"></i></div><b>20%</b></div><div class="score-row"><span>Red</span><div class="score-bar"><i style="width:0%"></i></div><b>0%</b></div></div></div>
+    <div class="card" style="margin-top:14px"><div style="display:flex;justify-content:space-between;align-items:center"><h4>Repair Evaluation</h4><button class="btn small" onclick="toggleRepairNoGo()">模拟 U_max &lt; 8pp</button></div>
+<div class="repair-panel">
+<div class="repair-metric"><small>Attempt 1 Pass</small><strong id="repairP1">44%</strong></div>
+<div class="repair-metric"><small>U_max</small><strong id="repairUmax">17.6pp</strong></div>
+<div class="repair-metric"><small>Measured Uplift</small><strong id="repairMeasured" style="color:var(--ok)">+12pp</strong></div>
+<div class="repair-metric"><small>Cluster Bootstrap 95% CI</small><strong id="repairCI">+7 ~ +16pp</strong></div>
+</div><div class="uplift-arrow"><div class="uplift-node"><small>Attempt 1</small><strong>44%</strong></div><div class="uplift-arr"><em>+12pp</em>→</div><div class="uplift-node"><small>After Repair</small><strong style="color:var(--ok)">56%</strong></div></div><div style="margin-top:12px"><h5>Bootstrap 95% CI</h5><div class="range-ci"><div class="axis"></div><div class="band"></div><div class="point"></div><span class="lab l">+7pp</span><span class="lab r">+16pp</span></div></div><div style="margin-top:12px"><h5>Attempt 1 Failure Classification</h5><div class="score-row"><span>Contact-only</span><div class="score-bar warn"><i style="width:42%"></i></div><b>42%</b></div><div class="score-row"><span>Product-only</span><div class="score-bar"><i style="width:18%"></i></div><b>18%</b></div><div class="score-row"><span>Mixed</span><div class="score-bar warn"><i style="width:24%"></i></div><b>24%</b></div><div class="score-row"><span>Identity/Scene</span><div class="score-bar"><i style="width:16%"></i></div><b>16%</b></div></div><div class="callout good" id="repairDecision" style="margin-top:10px"><b>GO：</b>U_max ≥8pp 且实测 Uplift ≥8pp，Mouth Repair 可进入 Attempt 2 Route。</div></div>
+<div class="card" style="margin-top:14px"><h4>运营精度看板 · Gold Case</h4><div class="accuracy-grid">
+<div class="accuracy-card"><small>Center Error P80</small><strong>4.1%</strong><div class="threshold-bar "><i style="width:82%"></i></div><span class="status good">Gate 5%</span></div>
+<div class="accuracy-card"><small>Rotation Error P80</small><strong>5.2°</strong><div class="threshold-bar "><i style="width:74%"></i></div><span class="status good">Gate 7°</span></div>
+<div class="accuracy-card"><small>Scale Error P80</small><strong>6.3%</strong><div class="threshold-bar "><i style="width:79%"></i></div><span class="status good">Gate 8%</span></div>
+<div class="accuracy-card"><small>Expert Brush Rate</small><strong>12%</strong><div class="threshold-bar warn"><i style="width:60%"></i></div><span class="status good">Gate ≤20%</span></div>
+</div><div class="callout" style="margin-top:10px">3 名非技术运营 × 5 个 Gold Case；当前 15/15 已完成。阈值来源于 Placement Sensitivity Study 性能拐点。 <button class="btn ghost small" onclick="toggleGoldList()">展开 Gold Case</button></div><div class="gold-list" id="goldCaseList"><div class="table-wrap"><table class="table"><thead><tr><th>Gold Case</th><th>Operator</th><th>Center</th><th>Rotation</th><th>Scale</th><th>Time</th></tr></thead><tbody><tr><td>G01-Mouth-L45</td><td>OP-A</td><td>3.8%</td><td>4.6°</td><td>5.9%</td><td>5m02s</td></tr><tr><td>G02-Mouth-Front</td><td>OP-B</td><td>4.1%</td><td>5.1°</td><td>6.3%</td><td>4m48s</td></tr><tr><td>G03-Hand-Pinch</td><td>OP-C</td><td>4.7%</td><td>5.8°</td><td>7.1%</td><td>6m12s</td></tr><tr><td>G04-Near-L45</td><td>OP-A</td><td>3.2%</td><td>4.0°</td><td>5.4%</td><td>4m31s</td></tr><tr><td>G05-Hand-Front</td><td>OP-B</td><td>4.3%</td><td>5.5°</td><td>6.8%</td><td>6m05s</td></tr></tbody></table></div></div></div></section>
+
+    <!-- TRACE -->
+    <section class="page" id="trace"><div class="saas-page-shell"><span>Pacifier Lab</span><span class="sep">/</span><strong>Trace & Replay</strong></div>
+      <div class="page-head"><div><h3>过程追踪与 Replay</h3><p>用于失败归因、操作回放和算法问题定位。</p></div><div class="toolbar"><button class="btn">导出 Evidence</button><button class="btn primary">Replay</button></div></div>
+      <div class="grid g2"><div class="card"><h4>Case D012 · 原子操作</h4><div class="timeline-events"><div class="timeline-event event-bound" data-event="AUTO_SNAP|SKU-L45|residual=7"><b>10:21:04 · AUTO_SNAP</b><small>SKU-L45 · residual=7°</small></div><div class="timeline-event event-bound" data-event="PLACEMENT_TRANSLATE|dx=-4.2|dy=1.8"><b>10:21:11 · PLACEMENT_TRANSLATE</b><small>dx=-4.2px · dy=+1.8px</small></div><div class="timeline-event event-bound" data-event="OCCLUSION_MEDIUM|from=conservative|to=medium"><b>10:21:19 · OCCLUSION_MEDIUM</b><small>Conservative → Medium</small></div><div class="timeline-event event-bound" data-event="ATTEMPT_1|VALID_OUTPUT|Interaction=FAIL"><b>10:23:03 · ATTEMPT_1</b><small>Valid Output · Interaction FAIL</small></div><div class="timeline-event event-bound" data-event="ATTEMPT_2_REPAIR|Mouth|PASS"><b>10:24:52 · ATTEMPT_2_REPAIR</b><small>Mouth Contact Repair · PASS</small></div></div></div><div class="card"><h4>版本与证据</h4><div class="table-wrap"><table class="table"><thead><tr><th>Object</th><th>Version</th><th>Hash</th></tr></thead><tbody><tr><td>Case Base</td><td>v1</td><td>41fe...9b21</td></tr><tr><td>Product</td><td>SKU-L45-v3</td><td>882d...a109</td></tr><tr><td>Template</td><td>MOUTH-L45-v4</td><td>61ab...33ce</td></tr><tr><td>Workflow</td><td>WF-MOUTH-v4</td><td>afe1...002d</td></tr><tr><td>Attempt 2</td><td>A2</td><td>9e81...66bb</td></tr></tbody></table></div><div class="callout" style="margin-top:12px"><b>Replay 目的：</b>判断失败来自输入、操作、算法、Workflow 还是模型输出。</div></div></div>
+    <div class="grid g2" style="margin-top:14px">
+<div class="card"><h4>Asset Graph</h4><div class="pipeline"><div class="pipe-step done"><div class="pipe-dot"></div><b>Case Base</b><span>v1</span></div><div class="pipe-step done"><div class="pipe-dot"></div><b>Placement</b><span>v2</span></div><div class="pipe-step done"><div class="pipe-dot"></div><b>Composite</b><span>v1</span></div><div class="pipe-step done"><div class="pipe-dot"></div><b>Attempt A1</b><span>FAIL</span></div><div class="pipe-step current"><div class="pipe-dot"></div><b>Repair A2</b><span>PASS</span></div></div></div>
+<div class="card"><h4>Event Hash Chain · bound to Operation Events</h4><div class="hash-chain" id="hashChainView">calculating...</div></div>
+</div>
+<div class="card" style="margin-top:14px"><h4>Formal Evidence Package</h4><div class="grid g4">
+<div class="evidence-card"><b>Input Manifest</b><small style="display:block;color:var(--muted)">Case Base / Product / Template</small></div>
+<div class="evidence-card"><b>Attempt Outputs</b><small style="display:block;color:var(--muted)">A1 + A2 原始输出</small></div>
+<div class="evidence-card"><b>Operation Events</b><small style="display:block;color:var(--muted)">JSONL + Hash Chain</small></div>
+<div class="evidence-card"><b>QC / Review</b><small style="display:block;color:var(--muted)">Failure + Reviewer</small></div>
+</div><div class="evidence-status-grid"><div class="evidence-status"><b>Manifest SHA256</b><small id="manifestHash">8a42c6...f039</small></div><div class="evidence-status"><b>Versioning</b><small>Enabled</small></div><div class="evidence-status"><b>Object Lock / WORM</b><small style="color:var(--ok)">COMPLIANCE LOCKED</small></div><div class="evidence-status"><b>Retention</b><small>Warranty / 180d max</small></div></div><div class="callout good" style="margin-top:10px"><b>Evidence Ready：</b>SHA256 校验通过 · Object Lock 已启用 · Hash Chain 与当前 Operation Events 动态绑定 · Replay 可用。</div></div></section>
+  </div>
+</main>
+</div>
+
+<!-- Case Wizard -->
+<div class="modal" id="caseModal">
+  <div class="modal-box">
+    <div style="display:flex;justify-content:space-between;align-items:center"><div><h3 style="margin:0">新建案例</h3><p style="margin:3px 0 0;color:var(--muted)">创建可进入生产工作台的 Case</p></div><button class="btn small" onclick="closeCaseWizard()">关闭</button></div>
+    <div class="wizard-steps" style="margin-top:16px"><div class="wstep active"><i>1</i><b>基础信息</b></div><div class="wstep"><i>2</i><b>输入素材</b></div><div class="wstep"><i>3</i><b>交互配置</b></div><div class="wstep"><i>4</i><b>确认</b></div></div>
+    <div class="grid g2"><div class="field"><label>Case ID</label><input value="D026"/></div><div class="field"><label>Dataset</label><select><option>Development</option><option>Validation</option><option>Formal</option><option>Generalization</option></select></div><div class="field"><label>Case Base</label><select><option>D026-BASE</option></select></div><div class="field"><label>Interaction</label><select><option>Mouth</option><option>Hand-held</option><option>Near-mouth</option></select></div><div class="field"><label>Target Pose</label><select><option>Green / Left45</option><option>Green / Front</option><option>Yellow / Side</option></select></div><div class="field"><label>Product SKU</label><select><option>SKU001</option></select></div></div>
+    <div class="callout good" style="margin-top:14px"><b>Input Check：</b>Case Base、Product View、Template 均已就绪，可创建。</div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px"><button class="btn" onclick="closeCaseWizard()">取消</button><button class="btn primary" onclick="createCase()">创建并打开</button></div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="closeDevDrawer()"></div>
+<div class="drawer" id="devDrawer">
+  <div style="display:flex;justify-content:space-between;align-items:center"><div><h3 style="margin:0">开发评审信息</h3><p style="margin:3px 0 0;color:var(--muted)">当前页面对应的开发对象</p></div><button class="btn small" onclick="closeDevDrawer()">关闭</button></div>
+  <div id="devContent" style="margin-top:14px"></div>
+</div>
+
+
+<div class="modal" id="cureConfirmModal">
+  <div class="modal-box" style="width:min(620px,94vw)">
+    <div style="display:flex;justify-content:space-between;align-items:center"><div><h3 style="margin:0" id="cureConfirmTitle">确认处理路径</h3><p style="margin:3px 0 0;color:var(--muted)">Case Base Cure Period</p></div><button class="btn small" onclick="closeCureConfirm()">关闭</button></div>
+    <div id="cureConfirmBody" class="callout warn" style="margin-top:14px"></div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:14px"><button class="btn" onclick="closeCureConfirm()">取消</button><button class="btn primary" onclick="applyCurePath()">确认路径</button></div>
+  </div>
+</div>
+
+<div class="modal" id="noGoModal">
+  <div class="modal-box">
+    <div style="display:flex;justify-content:space-between;align-items:center"><div><h3 style="margin:0">Formal No-Go 决策支持</h3><p style="margin:3px 0 0;color:var(--muted)">技术管理视图 · 自动诊断 + 推荐动作</p><div class="live-update" id="noGoUpdateMsg">Gate 状态已更新。</div></div><div class="toolbar"><button class="btn small" onclick="exportNoGoReport()">Export No-Go Report</button><button class="btn small" onclick="closeNoGoModal()">关闭</button></div></div>
+    <div class="no-go-list" style="margin-top:14px">
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Case Base Readiness</b><small>Formal 25/25</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Face / Mouth Preflight</b><small>PASS</small></div></div>
+      <div class="no-go-row" id="noGoHandRow"><span class="status warn" id="noGoHandStatus">COND</span><div><b>Hand Core Scope</b><small id="noGoHandText">Repair Pool 12/15，需补数据</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Residual Angle</b><small>max 9° ≤12°</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Material Preflight</b><small>TRANSLUCENT PASS</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>U_max</b><small>17.6pp ≥8pp</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Measured Repair</b><small>+12pp ≥8pp</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Fast Path Stability</b><small>Artifact 4%</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Operation Accuracy</b><small>P80 within Gate</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Expert Brush Rate</b><small>12% ≤20%</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Same-input Repeatability</b><small>92%</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>CV Postprocess SLA</b><small>P95 3.8s</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Model License</b><small>正式主链合规</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Formal Freeze</b><small>Build locked</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Evidence / Replay</b><small>Ready</small></div></div>
+      <div class="no-go-row"><span class="status good">OK</span><div><b>Storage / System</b><small>No blocking issue</small></div></div>
+    </div>
+    <div class="callout warn" style="margin-top:14px"><b>当前结论：</b>可继续 Validation；Hand 若作为 Formal 核心能力，必须先补齐 Repair Pool 或书面降级为 Conditional。</div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const titles={home:'生产概览',assets:'素材中心',cases:'案例中心',studio:'生成工作台',review:'质量评审',preflight:'Preflight 中心',algorithm:'算法与模板',model:'模型与工作流',batch:'批量测试中心',analysis:'效果分析',trace:'过程追踪与 Replay'};
+const devMap={
+home:['GET /api/dashboard/summary','GET /api/cases?status=in_progress','实体：case, qc_result, workflow_run'],
+assets:['GET/POST /api/assets','POST /api/assets/upload','实体：asset, product_view, material_profile, anchor_profile'],
+cases:['GET/POST /api/cases','GET /api/cases/{id}','实体：case, dataset, case_input'],
+studio:['POST /api/cases/{id}/auto-snap','PATCH /api/cases/{id}/placement','POST /api/cases/{id}/attempts','实体：placement, mask, workflow_run, candidate'],
+review:['POST /api/cases/{id}/qc','POST /api/cases/{id}/review','实体：qc_result, review_result, failure_code'],
+preflight:['POST /api/preflight/jobs','GET /api/preflight/jobs/{id}','实体：preflight_job, preflight_result'],
+algorithm:['GET/POST /api/templates','GET/POST /api/pose-zones','GET/POST /api/anchors','实体：bite_template, grip_template, pose_zone, anchor_profile'],
+model:['GET/POST /api/models','GET/POST /api/workflows','GET/POST /api/route-policy','实体：model_registry, workflow_version, route_policy'],
+batch:['POST /api/test-runs','GET /api/test-runs/{id}','实体：dataset, test_run, test_case_result'],
+analysis:['GET /api/analytics/pass-rate','GET /api/analytics/failures','GET /api/analytics/sensitivity','实体：analytics_view / aggregated query'],
+trace:['GET /api/cases/{id}/events','POST /api/cases/{id}/replay','实体：operation_event, artifact, replay_manifest']
+};
+let currentPage='home',currentRole='operator';
+
+function goPage(id){
+  currentPage=id;
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav').forEach(n=>n.classList.toggle('active',n.dataset.page===id));
+  document.getElementById('topTitle').textContent=titles[id];
+  document.getElementById('crumb').textContent=titles[id];
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.nav').forEach(n=>n.onclick=()=>goPage(n.dataset.page));
+
+document.querySelectorAll('.role-switch button').forEach(b=>b.onclick=()=>{
+  currentRole=b.dataset.role;
+  document.querySelectorAll('.role-switch button').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  const tech=currentRole==='technical';
+  document.querySelectorAll('.technical-group,.technical-nav').forEach(x=>{
+    if(x.classList.contains('operator-nav')) return;
+    x.classList.toggle('hidden-role',!tech);
+  });
+  document.getElementById('roleLabel').textContent=tech?'技术管理':'内容运营';
+  if(!tech && ['preflight','algorithm','model','batch','analysis','trace'].includes(currentPage)) goPage('home');
+  toast('已切换到 '+(tech?'技术管理':'内容运营'));
+});
+
+function showAdvancedWarn(type){toast(type+' Advanced 仅用于 Preset 无法满足的例外 Case；频繁使用会触发模板调整。')}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1700)}
+function openCaseWizard(){document.getElementById('caseModal').classList.add('show')}
+function closeCaseWizard(){document.getElementById('caseModal').classList.remove('show')}
+function createCase(){closeCaseWizard();goPage('studio');toast('D026 已创建并进入生成工作台（演示）')}
+
+function openDevDrawer(){
+  const lines=devMap[currentPage]||[];
+  document.getElementById('devContent').innerHTML='<div class="callout"><b>页面路由：</b> /'+currentPage+'</div><h4 style="margin-top:16px">建议接口 / 数据对象</h4>'+lines.map(x=>'<div style="padding:8px 0;border-bottom:1px solid var(--line)">'+x+'</div>').join('')+'<h4 style="margin-top:16px">评审关注</h4><p style="color:var(--muted)">页面字段、状态、按钮可见性和异常处理应在正式评审后冻结；接口名称为原型级建议，后端可按团队规范调整。</p>';
+  document.getElementById('devDrawer').classList.add('show');document.getElementById('overlay').classList.add('show')
+}
+function closeDevDrawer(){document.getElementById('devDrawer').classList.remove('show');document.getElementById('overlay').classList.remove('show')}
+
+document.querySelectorAll('#assetTabs .tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('#assetTabs .tab').forEach(x=>x.classList.remove('active'));t.classList.add('active');
+  const type=t.dataset.tab;
+  document.querySelectorAll('#assetGrid .asset').forEach(a=>a.style.display=a.dataset.type===type?'block':'none');
+});
+document.querySelectorAll('#assetGrid .asset').forEach(a=>a.onclick=()=>{document.querySelectorAll('#assetGrid .asset').forEach(x=>x.classList.remove('selected'));a.classList.add('selected')});
+
+document.querySelectorAll('#modeSeg .seg-btn').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#modeSeg .seg-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  const mode=b.dataset.mode,badge=document.getElementById('modeBadge'),card=document.getElementById('presetCard'),img=document.getElementById('studioRealPhoto'),roi=document.getElementById('roi'),banner=document.getElementById('pipelineBanner');
+  badge.textContent=mode==='mouth'?'Mouth':mode==='hand'?'Hand-held':'Near-mouth';
+  if(mode==='hand'){
+    img.src='assets/mock_02.webp'; roi.style.left='38%';roi.style.top='49%';roi.style.width='22%';roi.style.height='23%';
+    banner.innerHTML='<b>Hand-held 独立 Pipeline</b><span>Hand Landmark · Grip Template · Finger Layer · Hand Repair；不复用 Mouth Repair 数据。</span>';
+    card.innerHTML='<div class="panel-title"><h4>Hand Grip Preset</h4><span class="status gray">Independent</span></div><div class="segmented"><button class="seg-btn">Ring Front</button><button class="seg-btn active">Ring Pinch</button><button class="seg-btn">Ring Side</button></div><button class="advanced-link" style="width:100%;margin-top:10px" onclick="showAdvancedWarn(\'Hand\')">仅在 Preset 无法满足时使用 · Finger Layer</button>';
+    document.getElementById('templateSel').innerHTML='<option>HAND_LEFT45_RING</option><option>HAND_PINCH</option>';
+  } else if(mode==='near'){
+    img.src='assets/mock_03.webp'; roi.style.left='39%';roi.style.top='39%';roi.style.width='20%';roi.style.height='22%';
+    banner.innerHTML='<b>Near-mouth Pipeline</b><span>Product Placement · Proximity Gate · Light/Blend；默认不启用咬合遮挡。</span>';
+    card.innerHTML='<div class="panel-title"><h4>Near-mouth Preset</h4><span class="status gray">Preset</span></div><div class="segmented"><button class="seg-btn">Near</button><button class="seg-btn active">Closer</button><button class="seg-btn">Touch</button></div>';
+  } else {
+    img.src='assets/mock_01.webp'; roi.style.left='43%';roi.style.top='38%';roi.style.width='18%';roi.style.height='20%';
+    banner.innerHTML='<b>Mouth 独立 Pipeline</b><span>Face Landmark · Bite Template · Mouth Occlusion · Mouth Repair</span>';
+    card.innerHTML='<div class="panel-title"><h4>Mouth Occlusion</h4><span class="status gray">Preset</span></div><div class="segmented"><button class="seg-btn">Conservative</button><button class="seg-btn active">Medium</button><button class="seg-btn">Aggressive</button></div><button class="advanced-link" style="width:100%;margin-top:10px" onclick="showAdvancedWarn(\'Mouth\')">仅在 Preset 无法满足时使用 · Expert Brush</button>';
+    document.getElementById('templateSel').innerHTML='<option>MOUTH_LEFT_45</option><option>MOUTH_FRONT</option>';
+  }
+  toast('已切换 '+badge.textContent+' Pipeline');
+});
+
+document.getElementById('snapBtn').onclick=()=>{
+  document.getElementById('xr').value=0;document.getElementById('sr').value=100;document.getElementById('rr').value=-4;
+  document.getElementById('xv').textContent='0%';document.getElementById('sv').textContent='100%';document.getElementById('rv').textContent='-4°';
+  document.getElementById('sensHint').className='callout good';document.getElementById('sensHint').textContent='Auto Snap 完成：Center Error 2.4%，Gate 5%。';document.getElementById('centerErr').textContent='2.4% / Gate 5%';document.getElementById('centerMeter').style.width='48%';
+  toast('Auto Snap 完成');
+};
+function updatePlacement(){
+  const x=+document.getElementById('xr').value,s=+document.getElementById('sr').value,r=+document.getElementById('rr').value;
+  document.getElementById('xv').textContent=x+'%';document.getElementById('sv').textContent=s+'%';document.getElementById('rv').textContent=r+'°';
+  const err=2.4+Math.abs(x)*.55,safe=err<=5,edge=err>4&&err<=5;
+  const h=document.getElementById('sensHint'),st=document.getElementById('accuracyStatus'),ce=document.getElementById('centerErr'),meter=document.getElementById('centerMeter');
+  ce.textContent=err.toFixed(1)+'% / Gate 5%'; meter.style.width=Math.min(100,err/5*100)+'%';
+  h.className='callout '+(safe&&!edge?'good':'warn');
+  h.textContent=!safe?`超出 Gate：Center Error ${err.toFixed(1)}%，预计 Interaction 风险明显上升，建议重新 Auto Snap。`:edge?`边缘风险：Center Error ${err.toFixed(1)}%，已接近 5% Gate。`:`当前 Center Error ${err.toFixed(1)}%，在安全区。`;
+  st.className='status '+(safe&&!edge?'good':'warn');st.textContent=!safe?'Unsafe':edge?'Edge':'Safe';
+}
+['xr','sr','rr'].forEach(id=>document.getElementById(id).addEventListener('input',updatePlacement));
+document.getElementById('generateBtn').onclick=()=>{
+  const b=document.getElementById('generateBtn'),s=document.getElementById('attemptState'),steps=[...document.querySelectorAll('#inferPanel .infer-step')];
+  b.disabled=true;b.innerHTML='<span class="spinner"></span>INFERENCE_STARTED';s.className='status info';s.innerHTML='<span class="spinner" style="border-color:rgba(92,91,214,.25);border-top-color:var(--primary)"></span>Inference';
+  steps.forEach(x=>x.classList.remove('active'));steps[1].classList.add('active');steps[1].querySelector('b').textContent='Running';
+  setTimeout(()=>{steps[1].classList.remove('active');steps[3].classList.add('active');steps[3].querySelector('b').textContent='Saved';},450);
+  setTimeout(()=>{steps[3].classList.remove('active');steps[4].classList.add('active');steps[4].querySelector('b').textContent='Consumed A1';b.disabled=false;b.textContent='重新生成（开发集）';s.className='status good valid-flash';s.textContent='VALID_OUTPUT';setTimeout(()=>s.classList.remove('valid-flash'),1100);toast('Attempt 1 完成：VALID_OUTPUT，已消耗 1 次 Business Attempt（演示）')},900);
+};
+
+document.querySelectorAll('[data-qc]').forEach(q=>q.onclick=()=>{
+  const isPass=q.classList.contains('pass');
+  if(!isPass){
+    const reason=document.querySelector('#review select').value;
+    if(reason==='—'){toast('FAIL 维度改回 PASS 前必须选择 Failure Reason 并完成复核。');return;}
+  }
+  q.classList.toggle('pass');q.classList.toggle('fail');q.classList.toggle('locked-fail',isPass);
+  q.querySelector('strong').textContent=q.classList.contains('pass')?'PASS':'FAIL';
+  const all=[...document.querySelectorAll('[data-qc]')].every(x=>x.classList.contains('pass'));
+  const r=document.getElementById('qcResult');r.className='callout '+(all?'good':'bad');r.innerHTML=all?'<b>Technical PASS</b> · 五维全部通过':'<b>Technical FAIL</b> · 任一维度 FAIL 即整体 FAIL';
+});
+document.getElementById('approveBtn').onclick=()=>toast('评审结果已保存（演示）');
+
+document.getElementById('runPreflight').onclick=()=>{
+  const b=document.getElementById('runPreflight');b.disabled=true;b.textContent='运行中...';setTimeout(()=>{b.disabled=false;b.textContent='运行 Preflight';toast('Preflight 完成：Mouth PASS · Product PASS · Hand Conditional')},800)
+};
+
+const configs={
+bite:`{
+  "template_id": "MOUTH_LEFT_45",
+  "angle_class": "LEFT_45",
+  "center_offset": [0.00, 0.02],
+  "axis_offset_deg": -5,
+  "insertion_ratio": 0.68,
+  "default_occlusion": "medium"
+}`,
+grip:`{
+  "template_id": "HAND_LEFT45_RING",
+  "grip_type": "ring_pinch",
+  "thumb_zone": "ring_outer_left",
+  "index_zone": "ring_outer_right",
+  "front_layer": "index",
+  "rear_layer": "thumb"
+}`,
+pose:`{
+  "green": {"yaw": 45, "pitch": 15},
+  "yellow": {"yaw": 60, "pitch": 25},
+  "red": "outside_yellow"
+}`,
+residual:`{
+  "SKU-FRONT": {"yaw": 12, "pitch": 8},
+  "SKU-L45": {"yaw": 12, "pitch": 8},
+  "SKU-LSIDE": {"yaw": 8, "pitch": 6}
+}`,
+occlusion:`{
+  "levels": ["conservative","medium","aggressive"],
+  "default": "medium",
+  "expert_mask_threshold": 0.20
+}`,
+anchor:`{
+  "anchors": ["nipple_tip","nipple_base","shield_center","shield_left","shield_right","ring_center"]
+}`};
+document.querySelectorAll('#algoList .config-item').forEach(i=>i.onclick=()=>{
+  document.querySelectorAll('#algoList .config-item').forEach(x=>x.classList.remove('active'));i.classList.add('active');
+  renderJsonWithLines(configs[i.dataset.config]);
+});
+document.getElementById('runBatch').onclick=()=>toast('已创建测试任务 TEST-20260903-04（演示）');
+
+function toggleReadinessIssue(){
+  const box=document.getElementById('cureBox'),strip=document.getElementById('readinessStrip'),
+        st=document.getElementById('readinessStatus'),meta=document.getElementById('readinessMeta'),
+        cnt=document.getElementById('formalReadyCount'),badge=document.getElementById('formalReadyBadge'),
+        btn=document.getElementById('readinessDemoBtn');
+  const issue=!box.classList.contains('show');
+  box.classList.toggle('show',issue);
+  strip.classList.toggle('warn',issue);
+  if(issue){
+    st.className='status warn';st.textContent='READINESS BLOCKED';
+    meta.textContent='Formal 23/25 · 缺失 2 个 Case Base · Cure Period 已启动';
+    cnt.textContent='23 / 25';badge.className='status warn';badge.textContent='Blocked';
+    document.getElementById('cureStatus').textContent='2天14小时';
+    btn.textContent='恢复正常态';
+  }else{
+    st.className='status good';st.textContent='READINESS PASS';
+    meta.textContent='Formal 25/25 已登记 · Asset Readiness Manifest 已生成 · 可进入 Preflight';
+    cnt.textContent='25 / 25';badge.className='status good';badge.textContent='Frozen';
+    document.getElementById('cureStatus').textContent='未启动';
+    btn.textContent='查看缺失态';
+  }
+}
+function openNoGoModal(){document.getElementById('noGoModal').classList.add('show')}
+function closeNoGoModal(){document.getElementById('noGoModal').classList.remove('show')}
+let infraRetryDemoCount=0;
+function simulateInfraRetry(){
+  infraRetryDemoCount++;
+  const retry=document.getElementById('infraRetryCounter');
+  const panel=document.getElementById('inferPanel');
+  const gen=document.getElementById('generateBtn');
+  if(infraRetryDemoCount<=2){
+    retry.textContent=infraRetryDemoCount+' / 2';
+    const steps=panel.querySelectorAll('.infer-step');steps.forEach(x=>x.classList.remove('active'));
+    steps[2].classList.add('active');steps[2].querySelector('b').textContent=infraRetryDemoCount+' / 2 · '+(infraRetryDemoCount===1?'GPU OOM':'Worker Crash');
+    document.getElementById('attemptState').className='status warn';document.getElementById('attemptState').textContent='Infra Retry';
+    toast('Infrastructure Retry '+infraRetryDemoCount+'/2：不消耗 Business Attempt');
+  }else{
+    retry.textContent='2 / 2 exhausted';
+    document.getElementById('attemptState').className='status bad';document.getElementById('attemptState').textContent='SYSTEM_FAIL';
+    gen.disabled=true;gen.textContent='SYSTEM_FAIL · 生成已锁定';
+    toast('Infra Retry 超限：Case → SYSTEM_FAIL，生成按钮已锁定');
+  }
+}
+let repairNoGo=false;
+function toggleRepairNoGo(){
+  repairNoGo=!repairNoGo;
+  const u=document.getElementById('repairUmax'),m=document.getElementById('repairMeasured'),
+        ci=document.getElementById('repairCI'),d=document.getElementById('repairDecision');
+  if(repairNoGo){
+    u.textContent='5.3pp';u.style.color='var(--bad)';
+    m.textContent='—';m.style.color='var(--muted)';
+    ci.textContent='Not Run';
+    d.className='callout bad';
+    d.innerHTML='<b>NO-GO：</b>U_max < 8pp，Repair 不进入正式 Attempt Policy。推荐：①范围收缩 ②专项技术变更 ③Engineering Acceptance；若 Fast Path 已验证稳定，可转 Fast Path。';
+    const r=document.getElementById('mouthAttempt2Route'),reason=document.getElementById('mouthRouteReason');if(r){r.textContent='Repair Disabled';r.classList.add('route-disabled')}if(reason){reason.textContent='U_max 5.3pp < 8pp · Repair unavailable'}
+  }else{
+    u.textContent='17.6pp';u.style.color='';
+    m.textContent='+12pp';m.style.color='var(--ok)';
+    ci.textContent='+7 ~ +16pp';
+    d.className='callout good';
+    d.innerHTML='<b>GO：</b>U_max ≥8pp 且实测 Uplift ≥8pp，Mouth Repair 可进入 Attempt 2 Route。';
+    const r=document.getElementById('mouthAttempt2Route'),reason=document.getElementById('mouthRouteReason');if(r){r.textContent='WF_MOUTH_REPAIR@v2';r.classList.remove('route-disabled')}if(reason){reason.textContent='Measured Repair Uplift +12pp ≥ 8pp · Enabled'}
+  }
+}
+
+
+let cureSelectedPath='';
+function confirmCurePath(path){
+  cureSelectedPath=path;
+  document.getElementById('cureConfirmTitle').textContent='确认：'+path;
+  const map={
+    '补充 Case Base':'继续等待输入资产；Cure Period 保持计时。补齐后重新计算 Readiness Gate。',
+    '转 Base Generation':'新增 Base Image Generation 工作包；预计增加 2–4 个有效工作日，并重新执行 Base Identity / Scene / Pose QC。',
+    '暂停该阶段':'停止进入后续 Preflight / Formal；保留当前资产与检查结果，等待输入恢复。'
+  };
+  document.getElementById('cureConfirmBody').innerHTML='<b>影响：</b>'+map[path];
+  document.getElementById('cureConfirmModal').classList.add('show');
+}
+function closeCureConfirm(){document.getElementById('cureConfirmModal').classList.remove('show')}
+function applyCurePath(){closeCureConfirm();toast('已选择路径：'+cureSelectedPath+'（演示）')}
+
+let handGatePassed=false;
+function toggleHandGate(){
+  handGatePassed=!handGatePassed;
+  const card=document.getElementById('handGateCard'),strong=document.getElementById('handGateStrong'),
+        small=document.getElementById('handGateSmall'),cond=document.getElementById('handGateConditions'),
+        update=document.getElementById('gateUpdateMsg'),ngs=document.getElementById('noGoHandStatus'),
+        ngt=document.getElementById('noGoHandText'),ngu=document.getElementById('noGoUpdateMsg');
+  if(handGatePassed){
+    card.className='gate-card good';strong.textContent='PASS';small.textContent='Hand Repair Pool 15 / 15 · 5 Base Cases';
+    cond.innerHTML='Formal 条件已满足：Repair Pool、Base Case 数量、Hand Preflight 均通过。';
+    ngs.className='status good';ngs.textContent='OK';ngt.textContent='Hand Core Scope validated';
+  }else{
+    card.className='gate-card warn';strong.textContent='CONDITIONAL';small.textContent='Hand Repair Pool 12 / 15';
+    cond.innerHTML='进入 Formal 前必须满足：① Repair Pool ≥15 ② ≥5 个不同 Hand Base Case ③ Hand Preflight PASS';
+    ngs.className='status warn';ngs.textContent='COND';ngt.textContent='Repair Pool 12/15，需补数据';
+  }
+  update.classList.add('show');ngu.classList.add('show');
+  setTimeout(()=>{update.classList.remove('show');ngu.classList.remove('show')},2200);
+}
+function exportNoGoReport(){
+  const data='Interaction Studio No-Go Report\\nGenerated: '+new Date().toISOString()+'\\nHand Gate: '+(handGatePassed?'PASS':'CONDITIONAL')+'\\nU_max: '+document.getElementById('repairUmax').textContent+'\\n';
+  const blob=new Blob([data],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='no-go-report.txt';a.click();URL.revokeObjectURL(a.href);
+}
+let formalReviewReadOnly=false;
+function toggleFormalReviewMode(){
+  formalReviewReadOnly=!formalReviewReadOnly;
+  const area=document.getElementById('qcEditableArea'),banner=document.getElementById('formalReviewBanner'),approve=document.getElementById('approveBtn');
+  area.classList.toggle('readonly-qc',formalReviewReadOnly);banner.classList.toggle('show',formalReviewReadOnly);
+  approve.disabled=formalReviewReadOnly;
+  toast(formalReviewReadOnly?'Formal QC 已切换为只读':'已恢复 Development 可编辑评审');
+}
+function toggleGoldList(){document.getElementById('goldCaseList').classList.toggle('show')}
+function simpleHash(str){
+  let h=2166136261;
+  for(let i=0;i<str.length;i++){h^=str.charCodeAt(i);h=Math.imul(h,16777619)}
+  return (h>>>0).toString(16).padStart(8,'0');
+}
+function renderEventHashChain(){
+  const events=[...document.querySelectorAll('#trace [data-event]')];
+  let prev='GENESIS',lines=[];
+  events.forEach((e,idx)=>{
+    const payload=e.dataset.event+'|prev='+prev;
+    const h=simpleHash(payload);
+    lines.push('evt_'+String(idx+1).padStart(3,'0')+'  prev='+prev+'\\nhash='+h+'  event='+e.dataset.event.split('|')[0]);
+    prev=h;
+  });
+  const view=document.getElementById('hashChainView');if(view)view.textContent=lines.join('\\n↓\\n');
+  const mh=document.getElementById('manifestHash');if(mh)mh.textContent=simpleHash(lines.join('|'))+'...'+simpleHash(prev+'manifest');
+}
+renderEventHashChain();
+
+
+function advancedWarning(name){toast(name+' 仅作为例外路径使用；频繁使用会触发模板优化。')}
+function renderJsonWithLines(str){
+  const box=document.getElementById('algoJson');
+  box.innerHTML='<div class="json-lines">'+str.split('\n').map(line=>'<span class="json-line">'+line.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')+'</span>').join('')+'</div>';
+}
+function focusFirstInModal(modal){
+  setTimeout(()=>{const el=modal.querySelector('input,select,button:not([disabled]),textarea');if(el)el.focus()},20)
+}
+const _openCaseWizard=openCaseWizard;
+openCaseWizard=function(){_openCaseWizard();focusFirstInModal(document.getElementById('caseModal'))}
+const _openNoGoModal=openNoGoModal;
+openNoGoModal=function(){_openNoGoModal();focusFirstInModal(document.getElementById('noGoModal'))}
+const _confirmCurePath=confirmCurePath;
+confirmCurePath=function(path){_confirmCurePath(path);focusFirstInModal(document.getElementById('cureConfirmModal'))}
+
+
+function updateCureUrgency(hours=62){
+  const d=document.getElementById('cureDeadline');if(!d)return;
+  d.classList.toggle('deadline-urgent',hours<24);
+}
+updateCureUrgency(62);
+
+</script>
+</body>
+</html>

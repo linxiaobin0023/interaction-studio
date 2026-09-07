@@ -1,0 +1,60 @@
+.account-settings form > label {
+  display: grid;
+  gap: 6px;
+  margin: 14px 0;
+  font-size: 14px;
+}
+.account-settings input:not([type="checkbox"]) {
+  width: 100%;
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid #ccc8d7;
+  border-radius: 6px;
+  font: inherit;
+}
+.account-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 8px 24px;
+  background: #eeeaf7;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+.account-error {
+  color: #a52b3b;
+  margin: 12px 24px;
+}
+.account-settings {
+  padding: 24px;
+  background: #fff;
+  border-bottom: 1px solid #e5e0ef;
+}
+.account-settings form {
+  display: inline-block;
+  vertical-align: top;
+  width: min(460px, 100%);
+  margin: 0 24px 24px 0;
+}
+.account-settings fieldset {
+  border: 1px solid #ccc8d7;
+  border-radius: 6px;
+}
+.account-role {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin: 8px;
+}
+.account-users {
+  list-style: none;
+  padding: 0;
+}
+.account-users li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}

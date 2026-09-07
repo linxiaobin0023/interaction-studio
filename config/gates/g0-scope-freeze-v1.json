@@ -1,0 +1,63 @@
+{
+  "record_version": "1.0.0",
+  "gate": "G0_SCOPE_INPUT_BOUNDARY_FREEZE",
+  "decision_id": "G0-2026-09-03-V1",
+  "decided_at": "2026-09-03T00:00:00Z",
+  "status": "PASS_INTERNAL",
+  "project_scope": {
+    "character": "ONE_PROJECT_OWNED_FICTIONAL_IDENTITY",
+    "product": "ONE_PROJECT_OWNED_FICTIONAL_PACIFIER_SKU",
+    "interactions": ["MOUTH", "NEAR_MOUTH", "HAND_HELD"],
+    "hand_in_core_scope": true,
+    "media": "STATIC_IMAGE_ONLY",
+    "material_class": "TRANSLUCENT",
+    "base_image_generation": "OUT_OF_PRODUCT_SCOPE"
+  },
+  "quality_metrics": {
+    "technical_pass": "PRODUCT_PASS && INTERACTION_PASS && IDENTITY_PASS && SCENE_PASS && OVERALL_PASS",
+    "technical_pass_rate_target": 0.5,
+    "production_pass": "TECHNICAL_PASS && TOTAL_HUMAN_TIME_SECONDS <= 180",
+    "human_time_threshold_seconds": 180,
+    "threshold_change_policy": "NEW_VERSION_AND_VALIDATION_RERUN_REQUIRED"
+  },
+  "pose_policy": {
+    "green_min_ratio": 0.8,
+    "yellow_max_ratio": 0.2,
+    "red_max_count": 0
+  },
+  "dataset_policy": {
+    "authoritative_provenance": "PROJECT_OWNED_SYNTHETIC",
+    "development_validation_independence_required": true,
+    "formal_hidden_until_frozen_build": true,
+    "mock_assets_formal_eligible": false
+  },
+  "data_boundary": {
+    "current_route": "EXTERNAL_API_SYNTHETIC_ONLY",
+    "external_allowed_provenance": ["SYNTHETIC_MOCK", "PROJECT_OWNED_SYNTHETIC"],
+    "customer_or_real_person_assets": "LOCAL_ONLY_UNLESS_APPROVED_ZDR_PROJECT",
+    "landmark_mask_composite_qc_evidence": "LOCAL_ONLY",
+    "provider_secrets": "ENVIRONMENT_OR_SECRET_MANAGER_ONLY"
+  },
+  "roles": {
+    "project_lead": "CODEX_PROJECT_LEAD",
+    "technical_lead": "CODEX_PROJECT_LEAD",
+    "dataset_custodian": "CODEX_PROJECT_LEAD",
+    "technical_gate_signer": "CODEX_PROJECT_LEAD",
+    "legal_and_billing_authority": "WORKSPACE_OWNER"
+  },
+  "p1_options": {
+    "dual_blind_review_queue": "DEFERRED",
+    "independent_kms_signature": "DEFERRED",
+    "trusted_timestamp": "DEFERRED",
+    "customer_sso_mfa_integration": "DEFERRED",
+    "additional_compliance_roles": "DEFERRED"
+  },
+  "excluded": [
+    "TCO_OR_ROI_PRODUCT_FEATURES",
+    "VIDEO",
+    "MULTI_CHARACTER",
+    "MULTI_SKU_GENERALIZATION",
+    "DEDICATED_MODEL_TRAINING",
+    "KUBERNETES"
+  ]
+}

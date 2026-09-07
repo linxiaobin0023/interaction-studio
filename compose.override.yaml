@@ -1,0 +1,7 @@
+# Add a stable private-network entry without exposing storage services.
+# This override is loaded automatically by `docker compose` in this workspace.
+services:
+  api:
+    ports:
+      - "${STUDIO_LAN_HOST:-127.0.0.1}:${APP_PORT:-8000}:8000"
+      - "[::1]:${APP_PORT:-8000}:8000"

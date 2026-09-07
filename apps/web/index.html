@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="人物与商品交互生产平台：生产概览、案例与素材、生成工作台和质量评审。"
+    />
+    <title>Interaction Studio · 生产概览</title>
+    <style>
+      #studio-startup {
+        box-sizing: border-box;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+        background: #f4f6fb;
+        color: #17243b;
+        font:
+          14px/1.7 system-ui,
+          sans-serif;
+      }
+      #studio-startup[hidden] {
+        display: none;
+      }
+      #studio-startup > div {
+        width: min(440px, 100%);
+      }
+      #studio-startup h1 {
+        font-size: 22px;
+        margin: 12px 0;
+      }
+      #studio-startup p {
+        color: #66748b;
+      }
+      #studio-startup button {
+        border: 0;
+        border-radius: 8px;
+        padding: 10px 18px;
+        background: #635bdf;
+        color: white;
+        cursor: pointer;
+        font: inherit;
+      }
+    </style>
+    <script>
+      (function () {
+        var started = false;
+        function fail(message) {
+          function show() {
+            var panel = document.getElementById("studio-startup");
+            if (!panel) return;
+            panel.hidden = false;
+            panel.setAttribute("role", "alert");
+            document.getElementById("startup-title").textContent =
+              "页面未能打开";
+            document.getElementById("startup-message").textContent = message;
+            document.getElementById("startup-retry").hidden = false;
+          }
+          if (document.readyState === "loading")
+            document.addEventListener("DOMContentLoaded", show, { once: true });
+          else show();
+        }
+        var timer = setTimeout(function () {
+          if (!started)
+            fail(
+              "页面加载时间较长，请重新加载。如果仍未打开，请检查当前预览的连接状态。",
+            );
+        }, 12000);
+        window.studioStartup = {
+          ready: function () {
+            started = true;
+            clearTimeout(timer);
+            document.getElementById("studio-startup").hidden = true;
+          },
+          fail: function (message) {
+            clearTimeout(timer);
+            fail(message);
+          },
+        };
+        window.addEventListener(
+          "error",
+          function (event) {
+            if (started) return;
+            var target = event.target;
+            if (target && target.tagName === "SCRIPT")
+              window.studioStartup.fail(
+                "页面资源加载失败，可能是预览缓存或连接中断。请重新加载以获取最新页面。",
+              );
+            else if (event.message)
+              window.studioStartup.fail(
+                "页面启动遇到错误，请重新加载。若问题持续，请提供此提示以便继续排查。",
+              );
+          },
+          true,
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <section id="studio-startup" role="status" aria-live="polite">
+      <div>
+        <strong>Interaction Studio</strong>
+        <h1 id="startup-title">正在打开工作空间…</h1>
+        <p id="startup-message">正在加载页面，请稍候。</p>
+        <button id="startup-retry" hidden onclick="location.reload()">
+          重新加载
+        </button>
+        <noscript><p>此页面需要启用 JavaScript 才能使用。</p></noscript>
+      </div>
+    </section>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+{
+  "seal_version": "1.0.0",
+  "dataset": "VALIDATION",
+  "sealed_at": "2026-09-05T06:35:27.127140+00:00",
+  "sealed_by": "CODEX_PROJECT_LEAD",
+  "manifest_sha256": "d9bb44a0f3fdd75f24798d2f2922202f142dc7dfc69e08956673cf66b4b55648",
+  "evidence": [
+    {
+      "path": "datasets/validation/v1/snapshot-manifest.json",
+      "sha256": "d9bb44a0f3fdd75f24798d2f2922202f142dc7dfc69e08956673cf66b4b55648"
+    },
+    {
+      "path": "datasets/validation/v1/case-index.json",
+      "sha256": "488f0c48a6fe09024fa703dae39671881a021821a68db12e0bbfb990fc047033"
+    },
+    {
+      "path": "datasets/validation/v1/evidence/landmarks.json",
+      "sha256": "f98d410c9a05d77befc7777fe5bcf1503f010359b1cb9ae1bf6aaf2c7cc24d88"
+    },
+    {
+      "path": "datasets/validation/v1/evidence/visual-review.json",
+      "sha256": "316517707a333a64fd15e516acb0e148125fdc933040cac2a823b39e8c584a4e"
+    },
+    {
+      "path": "datasets/registry/v1/dataset-plan.json",
+      "sha256": "eda796e304393e96fceed3196e6c54e5e78f5a38f999c07ba8acf7e7c3f91874"
+    },
+    {
+      "path": "workers/landmarks/models.json",
+      "sha256": "49896fe6c5c5edd7243988180b2109014fcf6cdd551f3a8f89d8baae3152eab4"
+    },
+    {
+      "path": "assets/production/character/v1/character_front_v1.png",
+      "sha256": "e0e55a979c54cecd9ad99dc0c9096399adb935890a6676cd9b180d21ba903aff"
+    },
+    {
+      "path": "datasets/validation/v1/PROMPTS.md",
+      "sha256": "a8818a87e60e0667fefee7e0785e57ed549384e99b9083211da3da6be1ee3934"
+    },
+    {
+      "path": "datasets/validation/v1/generation-plan.json",
+      "sha256": "dc94e94c8ac2fbabf005e2c7c8ef1f59b787520487fc0ef4420d571c5812cfd4"
+    },
+    {
+      "path": "datasets/validation/v1/generation-results.json",
+      "sha256": "0e6393db396baa58d885ff63cc8e2b73d8d5f24f18744f9f576c82a1737c5bb1"
+    },
+    {
+      "path": "datasets/validation/v1/replacement-plan.json",
+      "sha256": "63f2a3c560db9a8e6a5c2ac807b30751e2ff2fc4826690875a57cb720d5a3e74"
+    },
+    {
+      "path": "datasets/validation/v1/evidence/admission.json",
+      "sha256": "67802ea3b7fca22615072a497bb635afbe1eb2bd32b6c2aeb7bc399e49ed886f"
+    },
+    {
+      "path": "datasets/validation/v1/cases/mouth/val_mouth_001.png",
+      "sha256": "ac32372220b24c62d5827f0aa32b4946205f404bdc338989eb65fec51b837937"
+    },
+    {
+      "path": "datasets/validation/v1/cases/mouth/val_mouth_002.png",
+      "sha256": "807dccd5d4d3c6053ba52b90a852b5d72518391f5fa4fc1ab84694a23606561e"
+    },
+    {
+      "path": "datasets/validation/v1/cases/mouth/val_mouth_003.png",
+      "sha256": "dc72ccaaffe0d7bd4f54311bbf0cf50461150e90d0311b335ee3e13925d4332c"
+    },
+    {
+      "path": "datasets/validation/v1/cases/mouth/val_mouth_004.png",
+      "sha256": "0565b6b87f8b6160df96569cdb74207d937f316d7cef9d9b84a5637685536ba5"
+    },
+    {
+      "path": "datasets/validation/v1/cases/mouth/val_mouth_005.png",
+      "sha256": "e8d2f012b08281d3950c933e7dade613538f59477f042086cf5e58e69140711a"
+    },
+    {
+      "path": "datasets/validation/v1/cases/mouth/val_mouth_006.png",
+      "sha256": "1a4d504d490992aff140d6a8b1cd147df5aaf838aec8f5096bd8442abbfabe64"
+    },
+    {
+      "path": "datasets/validation/v1/cases/mouth/val_mouth_007.png",
+      "sha256": "ac006f8014a643237ddc17c5cdb13561f0ed443243ae0f4be33b61940f89db8e"
+    },
+    {
+      "path": "datasets/validation/v1/cases/mouth/val_mouth_008_v2.png",
+      "sha256": "2870dca3347a4fbf08fc8e68640efa17bac09c872d946b98a0c37d472a147dbc"
+    },
+    {
+      "path": "datasets/validation/v1/cases/near_mouth/val_near_001.png",
+      "sha256": "1819bfafe6e2b6f442a0df21066592c5cd8ad3ca1cf417d22835888ef231b777"
+    },
+    {
+      "path": "datasets/validation/v1/cases/near_mouth/val_near_002.png",
+      "sha256": "b5f22cf0a0d84bad67dead4417e5486e51e164dbb0ed852dd41bb0fb99546379"
+    },
+    {
+      "path": "datasets/validation/v1/cases/near_mouth/val_near_003.png",
+      "sha256": "0bd8cc6e5b1a279c4aaf112604937908de435bb4b63793bbebd7c7d41753d5f5"
+    },
+    {
+      "path": "datasets/validation/v1/cases/near_mouth/val_near_004_v2.png",
+      "sha256": "41ca158fb201e29de5dd079c2d1a5fad0af013269759a1db3732458a71be1878"
+    },
+    {
+      "path": "datasets/validation/v1/cases/near_mouth/val_near_005.png",
+      "sha256": "8d342387ad74019d4ef210bed1c99be3a3c73461cc48e6a180b6f35ed4440863"
+    },
+    {
+      "path": "datasets/validation/v1/cases/hand/val_hand_001.png",
+      "sha256": "71e3cf05682c85587429c4e9ccc5724778c06a7db8c7304d2c7774e2eff6167c"
+    },
+    {
+      "path": "datasets/validation/v1/cases/hand/val_hand_002.png",
+      "sha256": "9bb392220aa8ddd4511f9b96a55d7db1b17c0126d4823a472a03ae44f29ddc1f"
+    },
+    {
+      "path": "datasets/validation/v1/cases/hand/val_hand_003.png",
+      "sha256": "3616ad5d3e6f6172e3be7482c1270147d5aa137ad6dadace336db7d6d20d5671"
+    },
+    {
+      "path": "datasets/validation/v1/cases/hand/val_hand_004.png",
+      "sha256": "6adcff13a6222d23bd200fd4efd6498ebe951fbfea5fd7ad4f528efaafad7653"
+    },
+    {
+      "path": "datasets/validation/v1/cases/hand/val_hand_005.png",
+      "sha256": "388d8fd1b6d656e2ab495c959afb7e83451bc3c0085273995805179f5017709b"
+    },
+    {
+      "path": "datasets/validation/v1/cases/hand/val_hand_006.png",
+      "sha256": "238a4c0230d802c34b9200cd94c6e7951ea0a5b87aa68078754ce15a8601b6cc"
+    },
+    {
+      "path": "datasets/validation/v1/cases/hand/val_hand_007.png",
+      "sha256": "f7453eab1ff58da81077355049644db7d38567c0b4d3fadb57b935551e938493"
+    }
+  ],
+  "storage_guarantee": "LOCAL_HASH_SEAL_NOT_OBJECT_LOCK",
+  "parameter_selection_started": false,
+  "formal_eligible": false
+}

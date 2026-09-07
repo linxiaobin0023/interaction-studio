@@ -1,0 +1,102 @@
+[
+  {
+    "case_id": "VAL_MOUTH_001",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-88786a5c-b2d2-4a88-b925-da111170bf49.png",
+    "generation_job_id": "BUILTIN_exec-88786a5c-b2d2-4a88-b925-da111170bf49"
+  },
+  {
+    "case_id": "VAL_MOUTH_002",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-7fffd85c-be27-49e0-b9d3-235222060c5a.png",
+    "generation_job_id": "BUILTIN_exec-7fffd85c-be27-49e0-b9d3-235222060c5a"
+  },
+  {
+    "case_id": "VAL_MOUTH_003",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-eb565fef-8b96-433d-8c0f-91f84e5601e4.png",
+    "generation_job_id": "BUILTIN_exec-eb565fef-8b96-433d-8c0f-91f84e5601e4"
+  },
+  {
+    "case_id": "VAL_MOUTH_004",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-42ded626-c86d-45ae-bbd1-13b3c82cc4e3.png",
+    "generation_job_id": "BUILTIN_exec-42ded626-c86d-45ae-bbd1-13b3c82cc4e3"
+  },
+  {
+    "case_id": "VAL_MOUTH_005",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-11cf50d7-567e-49b8-ab8d-5c735455bbb4.png",
+    "generation_job_id": "BUILTIN_exec-11cf50d7-567e-49b8-ab8d-5c735455bbb4"
+  },
+  {
+    "case_id": "VAL_MOUTH_006",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-60506fce-1bae-450c-bea9-2cb2b0b68ae2.png",
+    "generation_job_id": "BUILTIN_exec-60506fce-1bae-450c-bea9-2cb2b0b68ae2"
+  },
+  {
+    "case_id": "VAL_MOUTH_007",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-273cffcb-6a55-45d1-8de5-b9b0f2fb9607.png",
+    "generation_job_id": "BUILTIN_exec-273cffcb-6a55-45d1-8de5-b9b0f2fb9607"
+  },
+  {
+    "case_id": "VAL_MOUTH_008",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-b5722e99-89b8-4e71-9645-966212c8c7aa.png",
+    "generation_job_id": "BUILTIN_exec-b5722e99-89b8-4e71-9645-966212c8c7aa"
+  },
+  {
+    "case_id": "VAL_NEAR_001",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-d66b8388-71d3-470e-8f4f-29f2132faf48.png",
+    "generation_job_id": "BUILTIN_exec-d66b8388-71d3-470e-8f4f-29f2132faf48"
+  },
+  {
+    "case_id": "VAL_NEAR_002",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-981dc8fb-2a83-4617-93ee-27bb1f1043f8.png",
+    "generation_job_id": "BUILTIN_exec-981dc8fb-2a83-4617-93ee-27bb1f1043f8"
+  },
+  {
+    "case_id": "VAL_NEAR_003",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-6f730472-9807-45b6-9c2a-0591929efc1f.png",
+    "generation_job_id": "BUILTIN_exec-6f730472-9807-45b6-9c2a-0591929efc1f"
+  },
+  {
+    "case_id": "VAL_NEAR_004",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-ddabbcf0-71f2-452d-9ff0-094b2131e408.png",
+    "generation_job_id": "BUILTIN_exec-ddabbcf0-71f2-452d-9ff0-094b2131e408"
+  },
+  {
+    "case_id": "VAL_NEAR_005",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-578eb43d-7535-412e-8f28-be151af87a99.png",
+    "generation_job_id": "BUILTIN_exec-578eb43d-7535-412e-8f28-be151af87a99"
+  },
+  {
+    "case_id": "VAL_HAND_001",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-48379a15-a6c8-46e5-9624-0c7e366384df.png",
+    "generation_job_id": "BUILTIN_exec-48379a15-a6c8-46e5-9624-0c7e366384df"
+  },
+  {
+    "case_id": "VAL_HAND_002",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-2fbc808c-faf9-4fe5-805c-372d5d460731.png",
+    "generation_job_id": "BUILTIN_exec-2fbc808c-faf9-4fe5-805c-372d5d460731"
+  },
+  {
+    "case_id": "VAL_HAND_003",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-07e089a9-bed7-4b39-bc32-451bc5106511.png",
+    "generation_job_id": "BUILTIN_exec-07e089a9-bed7-4b39-bc32-451bc5106511"
+  },
+  {
+    "case_id": "VAL_HAND_004",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-9c2d6842-4d9e-4cff-8da6-17af02f90243.png",
+    "generation_job_id": "BUILTIN_exec-9c2d6842-4d9e-4cff-8da6-17af02f90243"
+  },
+  {
+    "case_id": "VAL_HAND_005",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-314eae15-2908-419b-9e0e-85dc7835c539.png",
+    "generation_job_id": "BUILTIN_exec-314eae15-2908-419b-9e0e-85dc7835c539"
+  },
+  {
+    "case_id": "VAL_HAND_006",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-6a757129-f560-4728-88ad-68f305008262.png",
+    "generation_job_id": "BUILTIN_exec-6a757129-f560-4728-88ad-68f305008262"
+  },
+  {
+    "case_id": "VAL_HAND_007",
+    "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-b7932038-5966-491d-80f7-7616485e8623.png",
+    "generation_job_id": "BUILTIN_exec-b7932038-5966-491d-80f7-7616485e8623"
+  }
+]

@@ -1,0 +1,113 @@
+name: interaction-studio
+
+services:
+  postgres:
+    restart: unless-stopped
+    image: postgres:17-alpine@sha256:18cfe3ef5e6815560c98237d6216d1e5119702fb0f3894c8785dd58b8bbe5d73
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-interaction_studio}
+      POSTGRES_USER: ${POSTGRES_USER:-interaction_studio}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me-for-nonlocal-use}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    restart: unless-stopped
+    image: redis:7-alpine@sha256:e7723ff73d963f5cc6d9c4643ea3d989527a402a319239054e9472a7fb9219a2
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    volumes:
+      - redis_data:/data
+
+  minio:
+    restart: unless-stopped
+    image: quay.io/minio/minio@sha256:14cea493d9a34af32f524e538b8346cf79f3321eff8e708c1e2960462bd8936e
+    command: ["server", "/data", "--console-address", ":9001"]
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-interaction-studio}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-change-me-for-nonlocal-use}
+    ports:
+      - "${APP_BIND_HOST:-127.0.0.1}:${MINIO_API_PORT:-19000}:9000"
+      - "${APP_BIND_HOST:-127.0.0.1}:${MINIO_CONSOLE_PORT:-19001}:9001"
+    volumes:
+      - minio_data:/data
+
+  api:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    image: interaction-studio-api:local
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      AUTH_MODE: ${AUTH_MODE:-authenticated}
+      SESSION_COOKIE_SECURE: ${SESSION_COOKIE_SECURE:-false}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://interaction_studio:change-me-for-nonlocal-use@postgres:5432/interaction_studio}
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+      S3_ENDPOINT_URL: ${S3_ENDPOINT_URL:-http://minio:9000}
+      S3_BUCKET: ${S3_BUCKET:-interaction-studio-development}
+      EXTERNAL_INFERENCE_ENABLED: ${EXTERNAL_INFERENCE_ENABLED:-false}
+      ARTIFACT_ROOT: /app/artifacts
+      WEB_DIST_ROOT: /app/web
+    volumes:
+      - ./datasets/development:/app/artifacts/datasets/development:ro
+      - ./datasets/validation:/app/artifacts/datasets/validation:ro
+      - ./datasets/registry:/app/artifacts/datasets/registry:ro
+      - ./assets/production/character:/app/artifacts/assets/production/character:ro
+      - ./assets/production/product_master:/app/artifacts/assets/production/product_master:ro
+      - ./workers/landmarks/models.json:/app/artifacts/workers/landmarks/models.json:ro
+    ports:
+      - "${APP_BIND_HOST:-127.0.0.1}:${APP_PORT:-8000}:8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      minio:
+        condition: service_started
+
+  studio-worker:
+    image: interaction-studio-api:local
+    command: ["python", "-m", "interaction_studio_api.studio_worker"]
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://interaction_studio:change-me-for-nonlocal-use@postgres:5432/interaction_studio}
+      ARTIFACT_ROOT: /app/artifacts
+      EXTERNAL_INFERENCE_ENABLED: "false"
+    volumes:
+      - ./datasets/development:/app/artifacts/datasets/development:ro
+      - ./datasets/registry:/app/artifacts/datasets/registry:ro
+      - ./assets/production/product_master:/app/artifacts/assets/production/product_master:ro
+      - ./assets/production/character:/app/artifacts/assets/production/character:ro
+      - ./workers/landmarks/models.json:/app/artifacts/workers/landmarks/models.json:ro
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+
+  migrate:
+    image: interaction-studio-api:local
+    command: ["alembic", "upgrade", "head"]
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://interaction_studio:change-me-for-nonlocal-use@postgres:5432/interaction_studio}
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:

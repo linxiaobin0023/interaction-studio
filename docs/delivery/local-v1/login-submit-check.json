@@ -1,0 +1,8 @@
+{
+  "validation_error_message": "PASS",
+  "autofill_dom_submission": "PASS",
+  "username_surrounding_spaces": "PASS",
+  "browser_login": "PASS",
+  "authenticated_catalog": "PASS",
+  "logout_revocation": "PASS"
+}

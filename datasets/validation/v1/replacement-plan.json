@@ -1,0 +1,35 @@
+{
+  "reason": "INITIAL_TARGET_YELLOW_MEASURED_GREEN",
+  "jobs": [
+    {
+      "case_id": "VAL_MOUTH_008",
+      "prompt_id": "VAL_MOUTH_008_V2",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "prompt_family": "VAL_SCENE_FAMILY_V1",
+      "path": "cases/mouth/val_mouth_008_v2.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC VALIDATION Case Base VAL_MOUTH_008_V2. One independent new photograph, no reuse or transformation of any Development scene. Image 1 is identity reference only: preserve fictional toddler face shape, hazel eyes, brown curls, age, skin tone, muted-blue shirt. Scene: a library corner with deep navy shelving and a small brass reading lamp in background. Landscape 1536x1024, soft overcast window light or bounced daylight, realistic skin and fabric, no beauty retouching. Head rotated 78 degrees toward image right. Strong near-side profile, far eye is completely hidden behind the nose bridge, only the near eye is visible, near eye fully visible, near ear exposed, far ear hidden, nose projects strongly sideways. Look toward the side wall, never camera. Do NOT show both eyes fully. Preserve the near-profile silhouette. Head level, no chin tilt. Calm closed lips, sharp unobstructed mouth. Chest-up, hands below crop. No pacifier, product, food, bottle, other person, open mouth, teeth, text, logo, watermark, collage, malformed limbs or extra fingers. Produce one full-frame image."
+    },
+    {
+      "case_id": "VAL_NEAR_004",
+      "prompt_id": "VAL_NEAR_004_V2",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "YELLOW",
+      "prompt_family": "VAL_SCENE_FAMILY_V1",
+      "path": "cases/near_mouth/val_near_004_v2.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC VALIDATION Case Base VAL_NEAR_004_V2. One independent new photograph, no reuse or transformation of any Development scene. Image 1 is identity reference only: preserve fictional toddler face shape, hazel eyes, brown curls, age, skin tone, muted-blue shirt. Scene: a library corner with honey-colored ladder shelf and a dusty olive wall. Landscape 1536x1024, soft overcast window light or bounced daylight, realistic skin and fabric, no beauty retouching. Head rotated 78 degrees toward image left. Strong near-side profile, far eye is completely hidden behind the nose bridge, only the near eye is visible, near eye fully visible, near ear exposed, far ear hidden, nose projects strongly sideways. Look toward the side wall, never camera. Do NOT show both eyes fully. Preserve the near-profile silhouette. Head level, no chin tilt. Calm closed lips, sharp unobstructed mouth. Chest-up, slightly off-center with ample empty space on both sides of mouth for later near-mouth placement. Hands below crop. No pacifier, product, food, bottle, other person, open mouth, teeth, text, logo, watermark, collage, malformed limbs or extra fingers. Produce one full-frame image."
+    }
+  ],
+  "results": [
+    {
+      "case_id": "VAL_MOUTH_008",
+      "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-23ecf305-d110-44e7-8664-df2f02b0ab1e.png",
+      "generation_job_id": "BUILTIN_exec-23ecf305-d110-44e7-8664-df2f02b0ab1e"
+    },
+    {
+      "case_id": "VAL_NEAR_004",
+      "source": "/home/leshines/.codex/generated_images/01a07020-a0ef-7111-8e6d-816ae7ea2f87/exec-e29be696-36d1-4b7c-bc19-8ac0ee2b52a3.png",
+      "generation_job_id": "BUILTIN_exec-e29be696-36d1-4b7c-bc19-8ac0ee2b52a3"
+    }
+  ]
+}

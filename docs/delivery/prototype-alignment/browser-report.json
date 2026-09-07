@@ -1,0 +1,79 @@
+{
+  "reports": [
+    {
+      "page": "dashboard",
+      "width": 2552,
+      "scrollWidth": 2552,
+      "sidebar": 244,
+      "content": 1640
+    },
+    {
+      "page": "dashboard",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "sidebar": 244,
+      "content": 1196
+    },
+    {
+      "page": "dashboard",
+      "width": 768,
+      "scrollWidth": 753,
+      "sidebar": 194,
+      "content": 559
+    },
+    {
+      "page": "dashboard",
+      "width": 390,
+      "scrollWidth": 375,
+      "sidebar": 375,
+      "content": 375
+    },
+    {
+      "page": "dashboard",
+      "width": 320,
+      "scrollWidth": 305,
+      "sidebar": 305,
+      "content": 305
+    },
+    {
+      "editor_navigation_preserves_draft": true,
+      "save_draft": true,
+      "preview": true
+    },
+    {
+      "page": "studio",
+      "width": 1440,
+      "scrollWidth": 1425
+    },
+    {
+      "page": "studio",
+      "width": 768,
+      "scrollWidth": 753
+    },
+    {
+      "page": "studio",
+      "width": 390,
+      "scrollWidth": 375
+    },
+    {
+      "page": "studio",
+      "width": 320,
+      "scrollWidth": 305
+    },
+    {
+      "submit_background_job": true,
+      "open_result": true,
+      "save_five_dimension_review": true,
+      "dashboard_latest_review": true,
+      "dirty_case_cancel_restores_route": true
+    },
+    {
+      "case_search": true,
+      "assets": true,
+      "product_views": true,
+      "account_settings": true,
+      "unknown_route": true
+    }
+  ],
+  "errors": []
+}

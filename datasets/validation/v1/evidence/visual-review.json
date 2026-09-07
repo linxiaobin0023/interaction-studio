@@ -1,0 +1,210 @@
+{
+  "review_version": "1.0.0",
+  "reviewer": "CODEX_PROJECT_LEAD",
+  "review_method": "VISUAL_ENGINEERING_REVIEW_OF_EACH_IMAGE_AGAINST_CANONICAL",
+  "reviewed_at": "2026-09-05T06:35:26.655932+00:00",
+  "manifest_sha256": "d9bb44a0f3fdd75f24798d2f2922202f142dc7dfc69e08956673cf66b4b55648",
+  "canonical_sha256": "e0e55a979c54cecd9ad99dc0c9096399adb935890a6676cd9b180d21ba903aff",
+  "lineage_paths": [
+    "PROMPTS.md",
+    "generation-plan.json",
+    "generation-results.json",
+    "replacement-plan.json"
+  ],
+  "cases": [
+    {
+      "case_id": "VAL_MOUTH_001",
+      "asset_sha256": "ac32372220b24c62d5827f0aa32b4946205f404bdc338989eb65fec51b837937",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_MOUTH_002",
+      "asset_sha256": "807dccd5d4d3c6053ba52b90a852b5d72518391f5fa4fc1ab84694a23606561e",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_MOUTH_003",
+      "asset_sha256": "dc72ccaaffe0d7bd4f54311bbf0cf50461150e90d0311b335ee3e13925d4332c",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_MOUTH_004",
+      "asset_sha256": "0565b6b87f8b6160df96569cdb74207d937f316d7cef9d9b84a5637685536ba5",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_MOUTH_005",
+      "asset_sha256": "e8d2f012b08281d3950c933e7dade613538f59477f042086cf5e58e69140711a",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_MOUTH_006",
+      "asset_sha256": "1a4d504d490992aff140d6a8b1cd147df5aaf838aec8f5096bd8442abbfabe64",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_MOUTH_007",
+      "asset_sha256": "ac006f8014a643237ddc17c5cdb13561f0ed443243ae0f4be33b61940f89db8e",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_MOUTH_008",
+      "asset_sha256": "2870dca3347a4fbf08fc8e68640efa17bac09c872d946b98a0c37d472a147dbc",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_NEAR_001",
+      "asset_sha256": "1819bfafe6e2b6f442a0df21066592c5cd8ad3ca1cf417d22835888ef231b777",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_NEAR_002",
+      "asset_sha256": "b5f22cf0a0d84bad67dead4417e5486e51e164dbb0ed852dd41bb0fb99546379",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_NEAR_003",
+      "asset_sha256": "0bd8cc6e5b1a279c4aaf112604937908de435bb4b63793bbebd7c7d41753d5f5",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_NEAR_004",
+      "asset_sha256": "41ca158fb201e29de5dd079c2d1a5fad0af013269759a1db3732458a71be1878",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_NEAR_005",
+      "asset_sha256": "8d342387ad74019d4ef210bed1c99be3a3c73461cc48e6a180b6f35ed4440863",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Independent scene; fictional canonical identity visually consistent. Closed lips, no product, natural anatomy. Yellow classification is measured, not prompt-declared."
+    },
+    {
+      "case_id": "VAL_HAND_001",
+      "asset_sha256": "71e3cf05682c85587429c4e9ccc5724778c06a7db8c7304d2c7774e2eff6167c",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Five natural fingers, including curled fingers, with empty thumb/index grip space and visible wrist; unobstructed face. Contact editing quality has not been evaluated.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "VAL_HAND_002",
+      "asset_sha256": "9bb392220aa8ddd4511f9b96a55d7db1b17c0126d4823a472a03ae44f29ddc1f",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Five natural fingers, including curled fingers, with empty thumb/index grip space and visible wrist; unobstructed face. Contact editing quality has not been evaluated.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "VAL_HAND_003",
+      "asset_sha256": "3616ad5d3e6f6172e3be7482c1270147d5aa137ad6dadace336db7d6d20d5671",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Five natural fingers, including curled fingers, with empty thumb/index grip space and visible wrist; unobstructed face. Contact editing quality has not been evaluated.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "VAL_HAND_004",
+      "asset_sha256": "6adcff13a6222d23bd200fd4efd6498ebe951fbfea5fd7ad4f528efaafad7653",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Five natural fingers, including curled fingers, with empty thumb/index grip space and visible wrist; unobstructed face. Contact editing quality has not been evaluated.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "VAL_HAND_005",
+      "asset_sha256": "388d8fd1b6d656e2ab495c959afb7e83451bc3c0085273995805179f5017709b",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Five natural fingers, including curled fingers, with empty thumb/index grip space and visible wrist; unobstructed face. Contact editing quality has not been evaluated.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "VAL_HAND_006",
+      "asset_sha256": "238a4c0230d802c34b9200cd94c6e7951ea0a5b87aa68078754ce15a8601b6cc",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Five natural fingers, including curled fingers, with empty thumb/index grip space and visible wrist; unobstructed face. Contact editing quality has not been evaluated.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    },
+    {
+      "case_id": "VAL_HAND_007",
+      "asset_sha256": "f7453eab1ff58da81077355049644db7d38567c0b4d3fadb57b935551e938493",
+      "identity_consistent": true,
+      "product_absent": true,
+      "mouth_visible": true,
+      "anatomy_natural": true,
+      "notes": "Five natural fingers, including curled fingers, with empty thumb/index grip space and visible wrist; unobstructed face. Contact editing quality has not been evaluated.",
+      "five_fingers": true,
+      "grip_space_usable": true
+    }
+  ]
+}

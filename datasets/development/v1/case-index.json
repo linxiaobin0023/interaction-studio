@@ -1,0 +1,269 @@
+{
+  "index_version": "1.0.0",
+  "dataset": "DEVELOPMENT",
+  "dataset_version": "v1",
+  "target_case_count": 30,
+  "character_id": "CHAR_PROD_001",
+  "character_canonical_sha256": "e0e55a979c54cecd9ad99dc0c9096399adb935890a6676cd9b180d21ba903aff",
+  "product_sku": "SKU_PROD_PACIFIER_001",
+  "product_master_manifest": "assets/production/product_master/v1/render-manifest.json",
+  "cases": [
+    {
+      "case_id": "DEV_MOUTH_001",
+      "path": "cases/mouth/dev_mouth_001.png",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_MOUTH_001_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_MOUTH_001"
+    },
+    {
+      "case_id": "DEV_MOUTH_002",
+      "path": "cases/mouth/dev_mouth_002.png",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "prompt_id": "DEV_MOUTH_002_V1",
+      "generation_job_id": "BUILTIN_EXEC_8C92D9C5"
+    },
+    {
+      "case_id": "DEV_MOUTH_003",
+      "path": "cases/mouth/dev_mouth_003.png",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "prompt_id": "DEV_MOUTH_003_V1",
+      "generation_job_id": "BUILTIN_EXEC_B015BA14"
+    },
+    {
+      "case_id": "DEV_NEAR_001",
+      "path": "cases/near_mouth/dev_near_001.png",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_NEAR_001_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_NEAR_001"
+    },
+    {
+      "case_id": "DEV_NEAR_002",
+      "path": "cases/near_mouth/dev_near_002.png",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "prompt_id": "DEV_NEAR_002_V1",
+      "generation_job_id": "BUILTIN_EXEC_912311C2"
+    },
+    {
+      "case_id": "DEV_HAND_001",
+      "path": "cases/hand/dev_hand_001.png",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_HAND_001_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_HAND_001"
+    },
+    {
+      "case_id": "DEV_HAND_002",
+      "path": "cases/hand/dev_hand_002.png",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_HAND_002_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_HAND_002"
+    },
+    {
+      "case_id": "DEV_HAND_003",
+      "path": "cases/hand/dev_hand_003.png",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_HAND_003_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_HAND_003"
+    },
+    {
+      "case_id": "DEV_HAND_004",
+      "path": "cases/hand/dev_hand_004.png",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_HAND_004_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_HAND_004"
+    },
+    {
+      "case_id": "DEV_HAND_005",
+      "path": "cases/hand/dev_hand_005.png",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_HAND_005_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_HAND_005"
+    },
+    {
+      "case_id": "DEV_HAND_006",
+      "path": "cases/hand/dev_hand_006.png",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_HAND_006_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_HAND_006"
+    },
+    {
+      "case_id": "DEV_HAND_007",
+      "path": "cases/hand/dev_hand_007.png",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_HAND_007_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_HAND_007"
+    },
+    {
+      "case_id": "DEV_HAND_008",
+      "path": "cases/hand/dev_hand_008.png",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "prompt_id": "MOCK_HAND_008_PROMOTED",
+      "generation_job_id": "LEGACY_BUILTIN_MOCK_HAND_008"
+    },
+    {
+      "case_id": "DEV_MOUTH_004",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_004.png",
+      "prompt_id": "DEV_MOUTH_004_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_EXEC_603d5a9f-39bc-42e0-94a9-f4126f1ea86c"
+    },
+    {
+      "case_id": "DEV_MOUTH_005",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_005.png",
+      "prompt_id": "DEV_MOUTH_005_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-caff0e6f-65a9-4f96-8beb-7a361bfc42aa"
+    },
+    {
+      "case_id": "DEV_MOUTH_006",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_006.png",
+      "prompt_id": "DEV_MOUTH_006_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-841a6c24-2b4e-4b41-b5ae-bf5de7c89a45"
+    },
+    {
+      "case_id": "DEV_MOUTH_007",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_007.png",
+      "prompt_id": "DEV_MOUTH_007_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-25630ee1-4b44-4bd5-96b5-4bba8ed06c1b"
+    },
+    {
+      "case_id": "DEV_MOUTH_008",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_008.png",
+      "prompt_id": "DEV_MOUTH_008_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-1e9bd303-af8b-41d4-b46e-3be37c9c52de"
+    },
+    {
+      "case_id": "DEV_MOUTH_009",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/mouth/dev_mouth_009_v2.png",
+      "prompt_id": "DEV_MOUTH_009_V2",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-6da61b0e-742e-44d8-9d70-5f99db121699"
+    },
+    {
+      "case_id": "DEV_MOUTH_010",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/mouth/dev_mouth_010_v2.png",
+      "prompt_id": "DEV_MOUTH_010_V2",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-4f76cd44-94f0-45b6-98db-7ef22249276b"
+    },
+    {
+      "case_id": "DEV_MOUTH_011",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/mouth/dev_mouth_011_v2.png",
+      "prompt_id": "DEV_MOUTH_011_V2",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-379f8f41-4bbd-40bc-abb4-9c0d7aa17b4f"
+    },
+    {
+      "case_id": "DEV_MOUTH_012",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/mouth/dev_mouth_012_v2.png",
+      "prompt_id": "DEV_MOUTH_012_V2",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-8d6c4aa5-8266-4619-a902-012d0c327ef0"
+    },
+    {
+      "case_id": "DEV_NEAR_003",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/near_mouth/dev_near_003.png",
+      "prompt_id": "DEV_NEAR_003_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-498ca176-0e04-4a97-914b-0d6d8890e466"
+    },
+    {
+      "case_id": "DEV_NEAR_004",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/near_mouth/dev_near_004.png",
+      "prompt_id": "DEV_NEAR_004_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-369abffe-8e4a-48e2-9ffb-bcc45316df02"
+    },
+    {
+      "case_id": "DEV_NEAR_005",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/near_mouth/dev_near_005.png",
+      "prompt_id": "DEV_NEAR_005_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-4f43c0ce-0d09-4061-bca8-43ee4764ab11"
+    },
+    {
+      "case_id": "DEV_NEAR_006",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/near_mouth/dev_near_006.png",
+      "prompt_id": "DEV_NEAR_006_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-3704d7af-78ec-44cb-be0e-3768685c2607"
+    },
+    {
+      "case_id": "DEV_NEAR_007",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/near_mouth/dev_near_007.png",
+      "prompt_id": "DEV_NEAR_007_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-c9bfe5f7-bea2-478c-a4c9-97a00a3512f9"
+    },
+    {
+      "case_id": "DEV_NEAR_008",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/near_mouth/dev_near_008.png",
+      "prompt_id": "DEV_NEAR_008_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-def74f75-1cd1-4fc6-b157-98d25582d515"
+    },
+    {
+      "case_id": "DEV_HAND_009",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "path": "cases/hand/dev_hand_009.png",
+      "prompt_id": "DEV_HAND_009_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-7a90eec6-df6e-4f52-afba-379e381b1755"
+    },
+    {
+      "case_id": "DEV_HAND_010",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "path": "cases/hand/dev_hand_010.png",
+      "prompt_id": "DEV_HAND_010_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "generation_job_id": "BUILTIN_exec-5a18d392-e032-4bd7-a311-bdea01af4844"
+    }
+  ]
+}

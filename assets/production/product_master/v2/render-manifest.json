@@ -1,0 +1,539 @@
+{
+  "manifest_version": "1.0.0",
+  "product_sku": "SKU_PROD_PACIFIER_001",
+  "master_version": "2.0.0",
+  "spec_path": "workers/product_master/product-master-v2.json",
+  "spec_sha256": "f7f04f0ce231d07b68574be56ae38c47b427e8633729aff270f63593a8561e4c",
+  "renderer_sha256": "7f252fb879464be6741f5460265a5f1859f720949c6e5df766d0366e5e59bc5d",
+  "deterministic": true,
+  "views": [
+    {
+      "view_id": "FRONT_00",
+      "yaw": 0,
+      "pitch": 0,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/front_00__rgba.png",
+          "sha256": "3b8102b27f8b78bf7ea31324905d10dc4340f67feade5909e83dec9560990757",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/front_00__depth.png",
+          "sha256": "df59636518205bc2979a9bd0821410a851693a82cf8221a4a65a4466d2aff0a2",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/front_00__normal.png",
+          "sha256": "ea003656d36b00585af7c121f35da8f7d16201d47e32318db5fe56b0e2d06f3b",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/front_00__transmission.png",
+          "sha256": "cc276a62fc57f1eca21a06f243d60e34c2fdaa9daf35e68aa42d26fefb7c0dcf",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/front_00__specular.png",
+          "sha256": "0c307cced2d23ee207ea4319eea147fa2b5be827a9040743a2715690c26558bb",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "RIGHT15_00",
+      "yaw": 15,
+      "pitch": 0,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/right15_00__rgba.png",
+          "sha256": "0e8d98a8c9b3d235504cba8228144aa4a36ad0a930aebb2cdabde1f1dfe9c054",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/right15_00__depth.png",
+          "sha256": "9b9a4d8a34f0498851bce8adcf94512c96c650de48c2e59bf4e9074e08c8e902",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/right15_00__normal.png",
+          "sha256": "0ac930ad9a696b96a3cff7f685b9782bba6011a94f51bf51e13daec6b4673edd",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/right15_00__transmission.png",
+          "sha256": "3182f2d00a2d1403175dc5d74d76321dfe05c6e043e575c8027c3314e617fd6d",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/right15_00__specular.png",
+          "sha256": "edcb5afd737374b3d5167619c496dd744cfa5076e4782d132379bc5ed41f12d2",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "LEFT30_UP15",
+      "yaw": -30,
+      "pitch": 15,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/left30_up15__rgba.png",
+          "sha256": "565b1ee660737bd1d51764ff570a8dece952073cce9d847f7d230d25017860c0",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/left30_up15__depth.png",
+          "sha256": "8ac27f083a7e8bbc3bda1a630f3ca0460ee70a758dd1dc8c2fd0f1096c6ab26f",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/left30_up15__normal.png",
+          "sha256": "c45cc8e60fc568b70e353aa2d5734ead10077b34b8b9cab1fdb1f7edc3c2c38f",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/left30_up15__transmission.png",
+          "sha256": "492a7f35da55a78830cfc5aac4ac0fca8fb3a8c33ba969f97b8184ed479be777",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/left30_up15__specular.png",
+          "sha256": "4addb2891b99fc9c5d2f67872c7077f5064d0b1511afd1b210f7d8a80379cf93",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "RIGHT30_UP15",
+      "yaw": 30,
+      "pitch": 15,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/right30_up15__rgba.png",
+          "sha256": "cb2ede81e2c9afc592c601e2d50dd29c52ec0b89419b81228b7401c5b0c94931",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/right30_up15__depth.png",
+          "sha256": "7a6a4d25f532a9329f1b675361d458e8d05b97d1f3037d8a5ef8a8bb907fd2fc",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/right30_up15__normal.png",
+          "sha256": "cbe67548f2dc83ba27dd61ad0990a9256b02ddc3137f88dc64bed29aeb6bb40a",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/right30_up15__transmission.png",
+          "sha256": "8bfc9168110f6382bad7cb1d9d923f7e97fea8295afb2d0992ce59694c1c72aa",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/right30_up15__specular.png",
+          "sha256": "a5da04f518574ee110ea7e61a73b6b80c1de5bdd506265c2f84fb2d3798cb77b",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "LEFT45_00",
+      "yaw": -45,
+      "pitch": 0,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/left45_00__rgba.png",
+          "sha256": "54e14cc994f639454e4bb9dc857828522413aa545f24519281076e3239919abd",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/left45_00__depth.png",
+          "sha256": "161b2e38a8be1833013132549cbb5155f408f28598a49b7cbe9d51d0f9e98c43",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/left45_00__normal.png",
+          "sha256": "55e4cb9b2199d1ed439edc01d5ba9438b86d8b55d76b274c4f431535aa365d1c",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/left45_00__transmission.png",
+          "sha256": "d0f179013f9310c61e882d229d80fded906db368d51c53efa09d92964cb76ced",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/left45_00__specular.png",
+          "sha256": "7460240f8feabf94a94edb3f31a7eacfe9951e862e008852ed9d7d5821f13cc9",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "RIGHT45_00",
+      "yaw": 45,
+      "pitch": 0,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/right45_00__rgba.png",
+          "sha256": "94ae0ace95f5d971212ba432d0129be2267325ff1ec74877389ff08dbbf36797",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/right45_00__depth.png",
+          "sha256": "93410ef01515f5a3867be510e2e874e977130f9d1218ab708b5715667fcfdeb7",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/right45_00__normal.png",
+          "sha256": "28bb5a70d3962a2eb68e439775cbfc038aec7226ab82e8cd4f54f82d8f566bdf",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/right45_00__transmission.png",
+          "sha256": "c6069df2c9a0f55ae4f5102dbda2da3f4c73ef2ff905054d1e4bba2a3f8f459a",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/right45_00__specular.png",
+          "sha256": "0bee75b7e2164dd1da0f1e371a599a05da7981b2b13b1b4a90de54836d5c8fea",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "RIGHT45_UP15",
+      "yaw": 45,
+      "pitch": 15,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/right45_up15__rgba.png",
+          "sha256": "555911bc3dc6a1176c297552e15ddf03c3d690c03eac1d41c8a5c002c939940d",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/right45_up15__depth.png",
+          "sha256": "111886a491bee7ce6089935df426b13364d2fe0103e3857e7439e07b197c0893",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/right45_up15__normal.png",
+          "sha256": "65db865e7df74ecd0526c4a754b2959cf42b8b701ed43d91c0adbed55bdaa344",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/right45_up15__transmission.png",
+          "sha256": "f570e745663a3aaba666548d8b0635449b3f1eb27390c6c50ba3c28148e4f5c4",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/right45_up15__specular.png",
+          "sha256": "6b3376a5cd5201aa857810a64dde677d749706f8b14be9e12ccfbbc54e282cb8",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "LEFT60_UP15",
+      "yaw": -60,
+      "pitch": 15,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/left60_up15__rgba.png",
+          "sha256": "f62db96455d9a58845fa8e48d0c2846c17dd4641ce3a1a51fe5e1171ac154548",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/left60_up15__depth.png",
+          "sha256": "88ac838d8d6e527fa0b9f2750c5b91b74b91561bf5869b574ad68747b2119ed7",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/left60_up15__normal.png",
+          "sha256": "de608332d28bed6d5c02367c25f6b86f1da1bb700981f76ace5eb0e4940e6d45",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/left60_up15__transmission.png",
+          "sha256": "f148a0931aab88ddef2221400887934b7c75b672cef53fc1952e2938b75eab6f",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/left60_up15__specular.png",
+          "sha256": "92447c2e2838ce041cb6509238ddc61da70bfb319e1791806d76067776b20a8c",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "LEFT90_00",
+      "yaw": -90,
+      "pitch": 0,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/left90_00__rgba.png",
+          "sha256": "f4610bbc5c35a9639b854038dbf72fd4697891c1c086177a2ba84c25ba463e45",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/left90_00__depth.png",
+          "sha256": "7300a968d365c565e77c9e11651c23743dcae05131706d6b98c4b8934fa81236",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/left90_00__normal.png",
+          "sha256": "85dca6c81f24218adf4938232bc121f8387b8201288f53795d33917ff5e21ce8",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/left90_00__transmission.png",
+          "sha256": "f1be20c16cc35c7289020c01c6b25134c41523359d7eedf0bbdc44dbd692581c",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/left90_00__specular.png",
+          "sha256": "05c3b315056c30e46a5d9372b229daa6754eb36c48fcb110e0fd30bc7a5ea3cd",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "RIGHT90_00",
+      "yaw": 90,
+      "pitch": 0,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/right90_00__rgba.png",
+          "sha256": "37d14f68e9fd9dcb427f8f36a3c98fe2144fc03a156b758dfccc150150c9d6ff",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/right90_00__depth.png",
+          "sha256": "8aa593a094049444192abdb6c9705d20e7029baa080405e6486a003fbf162527",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/right90_00__normal.png",
+          "sha256": "9c14170cdf0347a03fc226e572a0b2f5bcdef39625fcaf8934d1611fb823eb6d",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/right90_00__transmission.png",
+          "sha256": "91ac2a5606d063fdc6ff488b957c779d8c9cd156d490cd77a717df2e4d5aec61",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/right90_00__specular.png",
+          "sha256": "dde7c7958dc5ee896fd1268e0b07538f2e4d5ffe60928d3c3d8d2082cb231e3c",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    },
+    {
+      "view_id": "BACK_00",
+      "yaw": 180,
+      "pitch": 0,
+      "pose_source": "PARAMETRIC_CAMERA_GROUND_TRUTH",
+      "outputs": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v2/renders/back_00__rgba.png",
+          "sha256": "3caf95b83d702456717010851fa903961b557c7e566a888bd00ede61784cd73f",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v2/renders/back_00__depth.png",
+          "sha256": "25992d9a1722e05fbba31c3b49c04cea6d4640d186f81b73381f8049f9cd5d75",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v2/renders/back_00__normal.png",
+          "sha256": "87130143c595cc20bceddff3d73182f40dc642d102a2c67f9490057eafee340a",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v2/renders/back_00__transmission.png",
+          "sha256": "47d2b82ddf23f7134373f61c4d4f8fc4c1f73b141293fd9551af7581b1c577e8",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v2/renders/back_00__specular.png",
+          "sha256": "572a78201b09d57f191fb1a0b08ea96025c3130e3547184e9964434727d1d207",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ]
+    }
+  ]
+}

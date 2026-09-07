@@ -1,0 +1,38 @@
+{
+  "result_version": "1.0.0",
+  "gate": "G0_SCOPE_INPUT_BOUNDARY_FREEZE",
+  "decision_id": "G0-2026-09-03-V1",
+  "status": "PASS_INTERNAL",
+  "gate_effect": "AUTHORIZE_G1_AND_REVERSIBLE_G2_PREPARATION",
+  "signed_by": "CODEX_PROJECT_LEAD",
+  "signed_at": "2026-09-03T00:00:00Z",
+  "evidence": [
+    {
+      "path": "config/gates/g0-scope-freeze-v1.json",
+      "sha256": "45c9e31d4e83c4ecf98debd3a3803dd5ed4c55ca7e15e77b555cd20ce4c32ca9"
+    },
+    {
+      "path": "datasets/registry/v1/dataset-plan.json",
+      "sha256": "eda796e304393e96fceed3196e6c54e5e78f5a38f999c07ba8acf7e7c3f91874"
+    },
+    {
+      "path": "datasets/registry/v1/prompt-registry.json",
+      "sha256": "2e8482881199c4fffeb5a2b2e987be2f3b4cafdc4bb6003d980f1e9801a74e5d"
+    },
+    {
+      "path": "workers/product_master/product-master-v1.json",
+      "sha256": "08b747a974ea3f2ae2628bf9e87819cd8a21a2e96cb05255be3699572a7ce644"
+    },
+    {
+      "path": "assets/production/product_master/v1/render-manifest.json",
+      "sha256": "9012272388fa9bf17f462158fd610098a92270760d1036f631e3c69e109b5ea4"
+    }
+  ],
+  "blocking_conditions": [],
+  "open_conditions_for_full_implementation": [
+    "DEVELOPMENT_DATASET_30_OF_30",
+    "VALIDATION_DATASET_20_OF_20_AND_SEALED",
+    "PINNED_G2_PROVIDER_BENCHMARK_AVAILABLE"
+  ],
+  "scope_note": "This is a technical/internal gate signature, not a legal or billing commitment."
+}

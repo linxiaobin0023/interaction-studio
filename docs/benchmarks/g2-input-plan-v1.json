@@ -1,0 +1,811 @@
+{
+  "plan_version": "1.0.0",
+  "status": "INPUT_SELECTION_PREPARED",
+  "gate_decision": null,
+  "source_dataset": "DEVELOPMENT",
+  "formal_data_allowed": false,
+  "selection_policy": "Explicit fixed IDs; no output-quality selection",
+  "interaction_counts": {
+    "MOUTH": 5,
+    "NEAR_MOUTH": 3,
+    "HAND_HELD": 4
+  },
+  "cases": [
+    {
+      "case_id": "DEV_MOUTH_001",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "case_base": {
+        "path": "datasets/development/v1/cases/mouth/dev_mouth_001.png",
+        "sha256": "bc27facdf6c7564eb08c6c27221a97387a510f5a9bd8914145c1e17fadb18bc0"
+      },
+      "target_pose": {
+        "yaw": -0.77,
+        "pitch": -2.532,
+        "roll": 3.049,
+        "method": "FACE_TRANSFORMATION_MATRIX_EULER_XYZ"
+      },
+      "product_view_id": "FRONT_00",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/front_00__rgba.png",
+          "sha256": "ed1e06dab78f6889bf3fa0b9b097f10fed8553b6cd04b4a732bd1b494026e0a9",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/front_00__depth.png",
+          "sha256": "41f70945f9036371bef141e089ae2f12ee3d3349f7a8cb7cda1cce293cfd0c0c",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/front_00__normal.png",
+          "sha256": "70da3cf089586123e19cdd49daa992e3936dd4bd2df296aa80c06cf5333cb6e9",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/front_00__transmission.png",
+          "sha256": "eb9919d99375c049c61b9aca4660ea1f4538c5b2907a4ccec9e4f3f43f62aab3",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/front_00__specular.png",
+          "sha256": "e63e0be022ed0a6c084718792d49077318c4995e1ba01983beae8c1d930f7693",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 0.77,
+        "pitch": 2.532,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_002",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "case_base": {
+        "path": "datasets/development/v1/cases/mouth/dev_mouth_002.png",
+        "sha256": "54f1a2e4c04b06ee3f358077541ef50e4a3d804c67c87e18d3195f0e111b31e5"
+      },
+      "target_pose": {
+        "yaw": -1.143,
+        "pitch": 0.413,
+        "roll": 2.101,
+        "method": "FACE_TRANSFORMATION_MATRIX_EULER_XYZ"
+      },
+      "product_view_id": "FRONT_00",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/front_00__rgba.png",
+          "sha256": "ed1e06dab78f6889bf3fa0b9b097f10fed8553b6cd04b4a732bd1b494026e0a9",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/front_00__depth.png",
+          "sha256": "41f70945f9036371bef141e089ae2f12ee3d3349f7a8cb7cda1cce293cfd0c0c",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/front_00__normal.png",
+          "sha256": "70da3cf089586123e19cdd49daa992e3936dd4bd2df296aa80c06cf5333cb6e9",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/front_00__transmission.png",
+          "sha256": "eb9919d99375c049c61b9aca4660ea1f4538c5b2907a4ccec9e4f3f43f62aab3",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/front_00__specular.png",
+          "sha256": "e63e0be022ed0a6c084718792d49077318c4995e1ba01983beae8c1d930f7693",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 1.143,
+        "pitch": 0.413,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_003",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "case_base": {
+        "path": "datasets/development/v1/cases/mouth/dev_mouth_003.png",
+        "sha256": "0aa5690d4115aed66922045f365b13bc9072a03c41ea2f3a9fc9be4058104540"
+      },
+      "target_pose": {
+        "yaw": -3.933,
+        "pitch": 1.633,
+        "roll": 1.579,
+        "method": "FACE_TRANSFORMATION_MATRIX_EULER_XYZ"
+      },
+      "product_view_id": "FRONT_00",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/front_00__rgba.png",
+          "sha256": "ed1e06dab78f6889bf3fa0b9b097f10fed8553b6cd04b4a732bd1b494026e0a9",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/front_00__depth.png",
+          "sha256": "41f70945f9036371bef141e089ae2f12ee3d3349f7a8cb7cda1cce293cfd0c0c",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/front_00__normal.png",
+          "sha256": "70da3cf089586123e19cdd49daa992e3936dd4bd2df296aa80c06cf5333cb6e9",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/front_00__transmission.png",
+          "sha256": "eb9919d99375c049c61b9aca4660ea1f4538c5b2907a4ccec9e4f3f43f62aab3",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/front_00__specular.png",
+          "sha256": "e63e0be022ed0a6c084718792d49077318c4995e1ba01983beae8c1d930f7693",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 3.933,
+        "pitch": 1.633,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_009",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "case_base": {
+        "path": "datasets/development/v1/cases/mouth/dev_mouth_009_v2.png",
+        "sha256": "d3d42507fdfc4c4dedf62427bb46aad404e1626a975ac5eb9a65eb9d15681e38"
+      },
+      "target_pose": {
+        "yaw": -54.427,
+        "pitch": 17.228,
+        "roll": -15.043,
+        "method": "FACE_TRANSFORMATION_MATRIX_EULER_XYZ"
+      },
+      "product_view_id": "LEFT60_UP15",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/left60_up15__rgba.png",
+          "sha256": "2540bba51ed4f619ef78eaef93d67701ac3d99c79a5c3200afc238c3587529eb",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/left60_up15__depth.png",
+          "sha256": "e775994f717611425b3b83361e0effb6075fc97acb1cce155b57c669ed68f013",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/left60_up15__normal.png",
+          "sha256": "6c6d720c3e22fce426036f75aeda07ab2d7f13b8b8a78dc30d32eaa21163d33b",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/left60_up15__transmission.png",
+          "sha256": "49fd4aad6f9f588fc07186d9e553a37b0cb93994ace062a9b25519651af4f2b3",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/left60_up15__specular.png",
+          "sha256": "6488029431e306d9378fff846802438dc7bb9ed6581bd3aa4d7649b91105e32a",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 5.573,
+        "pitch": 2.228,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_010",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "case_base": {
+        "path": "datasets/development/v1/cases/mouth/dev_mouth_010_v2.png",
+        "sha256": "d0934e52a52b5efabe7e6375aa993f39ba6223cb824c1da50befbadf6f9df0e0"
+      },
+      "target_pose": {
+        "yaw": 48.321,
+        "pitch": 14.103,
+        "roll": 13.23,
+        "method": "FACE_TRANSFORMATION_MATRIX_EULER_XYZ"
+      },
+      "product_view_id": "RIGHT45_UP15",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/right45_up15__rgba.png",
+          "sha256": "3916191f86c5ebfba88a8b9dabd09a62896f8aa80e3b88b1891b39c00e2c4155",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/right45_up15__depth.png",
+          "sha256": "39bfac66ec4192932969834c155b3073754f44935b051da7ed12f8d0ba3ea698",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/right45_up15__normal.png",
+          "sha256": "360798ed80550eb92abd2e331e84fa6602fb50631554c7aea1379fe9731fdf59",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/right45_up15__transmission.png",
+          "sha256": "185f6ea27480c37d2a0ff1d52ebd8fe7154638ad33d84333b67c07cd9a00e792",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/right45_up15__specular.png",
+          "sha256": "1c08e464d5bd3afc69050a6a3d501cb45f568dbe46fc01496144a5f9c989da01",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 3.321,
+        "pitch": 0.897,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_001",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "case_base": {
+        "path": "datasets/development/v1/cases/near_mouth/dev_near_001.png",
+        "sha256": "762c799351c56901bf449be691133eb1a635efb8fc7269d9f7139176891b4378"
+      },
+      "target_pose": {
+        "yaw": 13.656,
+        "pitch": 3.117,
+        "roll": 3.94,
+        "method": "FACE_TRANSFORMATION_MATRIX_EULER_XYZ"
+      },
+      "product_view_id": "RIGHT15_00",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/right15_00__rgba.png",
+          "sha256": "56ee48aefc2832a6f4cdee5853f4dac8220f4490466e488a183f03acf949c0d5",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/right15_00__depth.png",
+          "sha256": "1513453fb50b9d12607c6769ef2cccf4c84bd4a1d796b1e3ce15bf71718bd6e1",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/right15_00__normal.png",
+          "sha256": "83a48445eb2524913d4f15455118377d73dcce35dc735abb3e69e382e0a718ec",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/right15_00__transmission.png",
+          "sha256": "2f3b0d70f33bff51447fb34c19011a1a60bad7380656ce60d8a76308a0e9fa91",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/right15_00__specular.png",
+          "sha256": "ae61d4111709766e6aa66237b09cbbb65d44b261bf21ecfcafb995fb7cfdad31",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 1.344,
+        "pitch": 3.117,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_002",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "case_base": {
+        "path": "datasets/development/v1/cases/near_mouth/dev_near_002.png",
+        "sha256": "c943c98732e742bb509a1ac902fe7a794fce790d09d7384840b331dd7fb461f8"
+      },
+      "target_pose": {
+        "yaw": -11.351,
+        "pitch": 0.548,
+        "roll": 4.002,
+        "method": "FACE_TRANSFORMATION_MATRIX_EULER_XYZ"
+      },
+      "product_view_id": "FRONT_00",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/front_00__rgba.png",
+          "sha256": "ed1e06dab78f6889bf3fa0b9b097f10fed8553b6cd04b4a732bd1b494026e0a9",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/front_00__depth.png",
+          "sha256": "41f70945f9036371bef141e089ae2f12ee3d3349f7a8cb7cda1cce293cfd0c0c",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/front_00__normal.png",
+          "sha256": "70da3cf089586123e19cdd49daa992e3936dd4bd2df296aa80c06cf5333cb6e9",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/front_00__transmission.png",
+          "sha256": "eb9919d99375c049c61b9aca4660ea1f4538c5b2907a4ccec9e4f3f43f62aab3",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/front_00__specular.png",
+          "sha256": "e63e0be022ed0a6c084718792d49077318c4995e1ba01983beae8c1d930f7693",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 11.351,
+        "pitch": 0.548,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_007",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "YELLOW",
+      "case_base": {
+        "path": "datasets/development/v1/cases/near_mouth/dev_near_007.png",
+        "sha256": "acadc2c8819fc1a92ae871226875351dfaaaf6afc8c2d7b821d68c73f8f2c1ff"
+      },
+      "target_pose": {
+        "yaw": -49.181,
+        "pitch": 7.931,
+        "roll": -3.969,
+        "method": "FACE_TRANSFORMATION_MATRIX_EULER_XYZ"
+      },
+      "product_view_id": "LEFT45_00",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/left45_00__rgba.png",
+          "sha256": "23305a4270f988fb98923459a391666495ed5897f0f0d825e3a5f054ada13cee",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/left45_00__depth.png",
+          "sha256": "cda765174226cc91527f0d14819df2c9f5efd39f27c4a1fea1a4ec6826743657",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/left45_00__normal.png",
+          "sha256": "c558355c57c84d8c21e0ac24c796ed90186b191fb9fc728e0c646a042d29055a",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/left45_00__transmission.png",
+          "sha256": "2bb87e1dd080b2b6ca24d786e0b843a5692767ff773296b33b62834fa3651ed8",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/left45_00__specular.png",
+          "sha256": "1c5053bd5d2615867fea095e9026112a64251d185bf18176e23714b84c140322",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 4.181,
+        "pitch": 7.931,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_001",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "case_base": {
+        "path": "datasets/development/v1/cases/hand/dev_hand_001.png",
+        "sha256": "2a418ca71f4003573b70e6c7532da21dd7861508b20def75fdd5980dd31692d3"
+      },
+      "target_pose": {
+        "yaw": 44.249,
+        "pitch": 19.539,
+        "method": "PALM_NORMAL_WRIST_INDEX_MCP_PINKY_MCP"
+      },
+      "product_view_id": "RIGHT45_UP15",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/right45_up15__rgba.png",
+          "sha256": "3916191f86c5ebfba88a8b9dabd09a62896f8aa80e3b88b1891b39c00e2c4155",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/right45_up15__depth.png",
+          "sha256": "39bfac66ec4192932969834c155b3073754f44935b051da7ed12f8d0ba3ea698",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/right45_up15__normal.png",
+          "sha256": "360798ed80550eb92abd2e331e84fa6602fb50631554c7aea1379fe9731fdf59",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/right45_up15__transmission.png",
+          "sha256": "185f6ea27480c37d2a0ff1d52ebd8fe7154638ad33d84333b67c07cd9a00e792",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/right45_up15__specular.png",
+          "sha256": "1c08e464d5bd3afc69050a6a3d501cb45f568dbe46fc01496144a5f9c989da01",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 0.751,
+        "pitch": 4.539,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_002",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "case_base": {
+        "path": "datasets/development/v1/cases/hand/dev_hand_002.png",
+        "sha256": "ae84b72574c12c56533a718f198a2ebfb88bdaf5b991b8b58ce313f1c2b42787"
+      },
+      "target_pose": {
+        "yaw": 35.295,
+        "pitch": 11.645,
+        "method": "PALM_NORMAL_WRIST_INDEX_MCP_PINKY_MCP"
+      },
+      "product_view_id": "RIGHT30_UP15",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/right30_up15__rgba.png",
+          "sha256": "dce3bae191649916831fff11e35e392fe979ecea6cfcdcf023cda87c63ba21b5",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/right30_up15__depth.png",
+          "sha256": "ccd4957b4be2aeb7025b94dbb909e1181748122cd4446a6d77f705144aa24bd4",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/right30_up15__normal.png",
+          "sha256": "3d0830945f6aafdcf45acb7d00f20656c1102b4373d4665e9d2d7cb5adef6f56",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/right30_up15__transmission.png",
+          "sha256": "65466c776c71330a3f219ade6071faf4b8e2836b99e90a9093868dc65b7f18b9",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/right30_up15__specular.png",
+          "sha256": "715ed6bd0e0d250279971950265189fcd8fe3e9c567a29172bab3a6fd132b70e",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 5.295,
+        "pitch": 3.355,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_003",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "case_base": {
+        "path": "datasets/development/v1/cases/hand/dev_hand_003.png",
+        "sha256": "c44037af6ed971aaf2b83aa80640692b0244d69be986019adb2cc746f3618006"
+      },
+      "target_pose": {
+        "yaw": -26.502,
+        "pitch": 9.562,
+        "method": "PALM_NORMAL_WRIST_INDEX_MCP_PINKY_MCP"
+      },
+      "product_view_id": "LEFT30_UP15",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/left30_up15__rgba.png",
+          "sha256": "b2f983c7a17021390d8c53b2b1476cd6f6f90da0a84fa3bf21f170e556e5a4c9",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/left30_up15__depth.png",
+          "sha256": "a223fad12100ce139768b89a684c91ff2ebd4f252cd52a62c82260fc2ef15112",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/left30_up15__normal.png",
+          "sha256": "1db03de2098eb2402e3cdf38fe99f705a0f2b803abd4cd596d4cfc1426b790b5",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/left30_up15__transmission.png",
+          "sha256": "548f92bbe19236302f9ff09709169a7fb7e216c18bf973bf49a71513d2862f02",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/left30_up15__specular.png",
+          "sha256": "a94b2c44328cbbd5ae96ee61fff823455076d46860cb7d3fa226a3659c1adf74",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 3.498,
+        "pitch": 5.438,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_004",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "case_base": {
+        "path": "datasets/development/v1/cases/hand/dev_hand_004.png",
+        "sha256": "25c8f4117ec6791eade532e7d51ed44c99d64b4aa2939ff97796eca761c23042"
+      },
+      "target_pose": {
+        "yaw": 22.66,
+        "pitch": 15.226,
+        "method": "PALM_NORMAL_WRIST_INDEX_MCP_PINKY_MCP"
+      },
+      "product_view_id": "RIGHT30_UP15",
+      "product_layers": [
+        {
+          "layer": "RGBA",
+          "path": "assets/production/product_master/v1/renders/right30_up15__rgba.png",
+          "sha256": "dce3bae191649916831fff11e35e392fe979ecea6cfcdcf023cda87c63ba21b5",
+          "width": 512,
+          "height": 512,
+          "mode": "RGBA"
+        },
+        {
+          "layer": "DEPTH",
+          "path": "assets/production/product_master/v1/renders/right30_up15__depth.png",
+          "sha256": "ccd4957b4be2aeb7025b94dbb909e1181748122cd4446a6d77f705144aa24bd4",
+          "width": 512,
+          "height": 512,
+          "mode": "I;16"
+        },
+        {
+          "layer": "NORMAL",
+          "path": "assets/production/product_master/v1/renders/right30_up15__normal.png",
+          "sha256": "3d0830945f6aafdcf45acb7d00f20656c1102b4373d4665e9d2d7cb5adef6f56",
+          "width": 512,
+          "height": 512,
+          "mode": "RGB"
+        },
+        {
+          "layer": "TRANSMISSION",
+          "path": "assets/production/product_master/v1/renders/right30_up15__transmission.png",
+          "sha256": "65466c776c71330a3f219ade6071faf4b8e2836b99e90a9093868dc65b7f18b9",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        },
+        {
+          "layer": "SPECULAR",
+          "path": "assets/production/product_master/v1/renders/right30_up15__specular.png",
+          "sha256": "715ed6bd0e0d250279971950265189fcd8fe3e9c567a29172bab3a6fd132b70e",
+          "width": 512,
+          "height": 512,
+          "mode": "L"
+        }
+      ],
+      "residual": {
+        "yaw": 7.34,
+        "pitch": 0.226,
+        "within_gate": true
+      }
+    }
+  ],
+  "repeatability": {
+    "distinct_cases": [
+      "DEV_MOUTH_001",
+      "DEV_MOUTH_002",
+      "DEV_NEAR_001",
+      "DEV_HAND_003",
+      "DEV_HAND_004"
+    ],
+    "repeats_per_case": 5,
+    "parameter_change_allowed": false
+  },
+  "qc_dimensions": [
+    "Product",
+    "Interaction",
+    "Identity",
+    "Scene",
+    "Overall"
+  ],
+  "run_requirements": [
+    "PINNED_PROVIDER_MODEL_REGION_AND_CREDENTIALS",
+    "FROZEN_EDIT_WORKFLOW_AND_IDENTICAL_MASKS_PER_PROVIDER",
+    "PRE_REGISTERED_REPEATABILITY_DECISION_RULE",
+    "RESIDUAL_FAILURES_RESOLVED_OR_DOCUMENTED_ROUTE"
+  ],
+  "unresolved_residual_cases": [],
+  "provider_execution_performed": false,
+  "evidence": [
+    {
+      "path": "datasets/development/v1/snapshot-manifest.json",
+      "sha256": "878e29472b49c9b665f1b6ba3ebf0b67f9400165436c4844f853b7e29dd9abf0"
+    },
+    {
+      "path": "datasets/development/v1/evidence/landmarks.json",
+      "sha256": "bb1e4bea7d51a3a9020c8a3bb8d685dd99bc82dffe645d81651916567f5b526a"
+    },
+    {
+      "path": "assets/production/product_master/v1/render-manifest.json",
+      "sha256": "9012272388fa9bf17f462158fd610098a92270760d1036f631e3c69e109b5ea4"
+    },
+    {
+      "path": "datasets/development/v1/seal.json",
+      "sha256": "2e4f46b5e11d4021f98623a05985882b6fcb1eaf7dc41b679d06724ef83ba0fd"
+    }
+  ]
+}

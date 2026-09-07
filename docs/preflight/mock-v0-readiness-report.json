@@ -1,0 +1,79 @@
+{
+  "pack_id": "synthetic-mock-v0.2",
+  "technical_status": "WARN",
+  "readiness_status": "PILOT_ONLY",
+  "formal_gate_eligible": false,
+  "checks": [
+    {
+      "check_id": "CANONICAL_VIEW_COVERAGE",
+      "status": "PASS",
+      "required": "front, left 45°, right 45°",
+      "observed": "declared yaw=[-45.0, 0.0, 45.0]",
+      "blocking_conditions": []
+    },
+    {
+      "check_id": "PRODUCT_VIEW_COVERAGE",
+      "status": "PASS",
+      "required": "declared yaw=[-90, -45, 0, 45, 90, 180]",
+      "observed": "declared yaw=[-90.0, -60.0, -45.0, -30.0, 0.0, 0.0, 15.0, 30.0, 45.0, 45.0, 90.0, 180.0]",
+      "blocking_conditions": []
+    },
+    {
+      "check_id": "PRODUCT_ALPHA_REQUIRED",
+      "status": "PASS",
+      "required": "at least one transparent product PNG",
+      "observed": "has_alpha assets=6",
+      "blocking_conditions": []
+    },
+    {
+      "check_id": "MATERIAL_BACKGROUND_COVERAGE",
+      "status": "PASS",
+      "required": "front translucent reference on WHITE, GRAY and BLACK",
+      "observed": "backgrounds=['BLACK', 'GRAY', 'TRANSPARENT', 'WHITE']",
+      "blocking_conditions": []
+    },
+    {
+      "check_id": "MOUTH_BASE_COVERAGE",
+      "status": "PASS",
+      "required": "at least 1 Development mouth Base Case for structural spike",
+      "observed": "cases=1",
+      "blocking_conditions": []
+    },
+    {
+      "check_id": "NEAR_MOUTH_BASE_COVERAGE",
+      "status": "PASS",
+      "required": "at least 1 Development near-mouth Base Case for structural spike",
+      "observed": "cases=1",
+      "blocking_conditions": []
+    },
+    {
+      "check_id": "HAND_BASE_COVERAGE",
+      "status": "PASS",
+      "required": "at least 8 Hand Development Base Cases when Hand is core scope",
+      "observed": "cases=8",
+      "blocking_conditions": []
+    },
+    {
+      "check_id": "POSE_DISTRIBUTION",
+      "status": "PASS",
+      "required": "Red=0 and Yellow+Red <=20%",
+      "observed": "Red=0, Yellow+Red=0/10 (0.0%)",
+      "blocking_conditions": []
+    },
+    {
+      "check_id": "MATERIAL_LAYERING_DECISION",
+      "status": "WARN",
+      "required": "Preflight records whether Transmission/Specular layers are required",
+      "observed": "not yet measured",
+      "blocking_conditions": []
+    },
+    {
+      "check_id": "FORMAL_PROVENANCE",
+      "status": "WARN",
+      "required": "non-synthetic provenance explicitly eligible for Formal",
+      "observed": "provenance=SYNTHETIC_MOCK, formal_eligible=False",
+      "blocking_conditions": []
+    }
+  ],
+  "blocking_conditions": []
+}

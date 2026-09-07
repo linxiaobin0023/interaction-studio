@@ -1,0 +1,310 @@
+{
+  "report_version": "1.0.0",
+  "scope": "DEVELOPMENT_LOCAL_PREVIEW_ONLY",
+  "provider_execution_performed": false,
+  "quality_pass_rate_measured": false,
+  "rendered": 29,
+  "blocked": 1,
+  "cases": [
+    {
+      "case_id": "DEV_MOUTH_001",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "f32f9beb61124826d4ecf3e9ee65999dd8b7ef82343acf871f2173863f04ee8e",
+      "residual": {
+        "yaw": 0.77,
+        "pitch": 2.532,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_002",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "6345bdbe76437400d18018d4406b5b46ea181c58918f22bc4543f85bc81a3864",
+      "residual": {
+        "yaw": 1.143,
+        "pitch": 0.413,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_003",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "718eba482f74446cfa71d10b1f8e6b4fef27b1159b89cd91f031197e58a840fc",
+      "residual": {
+        "yaw": 3.933,
+        "pitch": 1.633,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_001",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "afff39c3493f93a6a687461ed8b01fae41be483a3ffb9af7bfde6c76cdb83b13",
+      "residual": {
+        "yaw": 1.344,
+        "pitch": 3.117,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_002",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "22adcebe7bec8fa71aebe04190741e7e38939626f460fa17c13593134b4a4aa8",
+      "residual": {
+        "yaw": 11.351,
+        "pitch": 0.548,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_001",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "cd0dace9b695fef934bc8c9677f71748d90ff6da82d798414ade5dd24ad3d679",
+      "residual": {
+        "yaw": 0.751,
+        "pitch": 4.539,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_002",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "1ed98381f5ecaa4110319011b97db5db5e70dc9d1490917807ce235b235c2124",
+      "residual": {
+        "yaw": 5.295,
+        "pitch": 3.355,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_003",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "2d0f11f2926c98e2c74d3dd2017c799c023147a06612b30c02c37757bb391099",
+      "residual": {
+        "yaw": 3.498,
+        "pitch": 5.438,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_004",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "6893012352b9cce5d53a7fbf390a32b8a97457b98777efe6d0c346f69752c106",
+      "residual": {
+        "yaw": 7.34,
+        "pitch": 0.226,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_005",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "0716f15ff13997231b028aeddcc49dd0b0002b84a5b2df9d91fb5b0c12393eab",
+      "residual": {
+        "yaw": 0.59,
+        "pitch": 2.263,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_006",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "628fff2ffbf27737f41398ede8c89e78cc141b150769f310c6510edbbb533781",
+      "residual": {
+        "yaw": 5.242,
+        "pitch": 6.517,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_007",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "5a30653bc2cdcd1c0b61e7505ac9fc3b2ea92bda6a132fb6033c243a7efb799d",
+      "residual": {
+        "yaw": 4.626,
+        "pitch": 6.175,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_008",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "052178b2fd79f7659e32ec2ed0538c4ac19bfdaccf63c60832cf4ae031f23e03",
+      "residual": {
+        "yaw": 5.742,
+        "pitch": 0.283,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_004",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "4f455620289dd50047b6c7626ea490b77346340895ab1d27046984f3e26f375a",
+      "residual": {
+        "yaw": 7.273,
+        "pitch": 1.685,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_005",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "6b1e6a7ffd00ceecc6f16594f3e44bb6c19f089c325543d5558d6420f342d2fc",
+      "residual": {
+        "yaw": 6.966,
+        "pitch": 0.866,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_006",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "25a7ebad76bc60a5e85f48c82ca1b1361fa37cd3ade2e44711394ff8109bec9d",
+      "residual": {
+        "yaw": 6.844,
+        "pitch": 0.731,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_007",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "5f26087cb2f9f7ea10715ed8d3989f27c36372559885a6fb5cc3d7c7809aa340",
+      "residual": {
+        "yaw": 4.467,
+        "pitch": 0.291,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_008",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "5297bf7c221142b6d2eca67d21bd4b3c9c5b6db11eff720181d32a7c6181befa",
+      "residual": {
+        "yaw": 1.661,
+        "pitch": 0.573,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_009",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "127874c283a549d0cd55c072e90bfee79c8696bf7b244160fdb41daa4ca91f91",
+      "residual": {
+        "yaw": 5.573,
+        "pitch": 2.228,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_010",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "8298c9619fd93b302144ddee0fcbb742079efefc2afb40322ee2ef61d1894010",
+      "residual": {
+        "yaw": 3.321,
+        "pitch": 0.897,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_011",
+      "status": "BLOCKED",
+      "code": "PRODUCT_RESIDUAL_EXCEEDED",
+      "residual": {
+        "yaw": 0.712,
+        "pitch": 11.727,
+        "within_gate": false
+      }
+    },
+    {
+      "case_id": "DEV_MOUTH_012",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "c7bb6a8d9138d422d8143a3cbb181f03efdf28130453deb5ecd64d420a351e0c",
+      "residual": {
+        "yaw": 5.141,
+        "pitch": 0.834,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_003",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "7d66cda06a49479335de971c6708cab50ee5f8b1328795150847261e42fa9b1c",
+      "residual": {
+        "yaw": 0.684,
+        "pitch": 0.531,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_004",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "3eb106ea4f22d5b1f02653d4d9df922b89ab0526b6c1457eff7492d071f85b23",
+      "residual": {
+        "yaw": 5.447,
+        "pitch": 0.802,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_005",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "7e2507545fe92b689ff459d2980cb241b7441ce0962911f08a106ccfad4312fb",
+      "residual": {
+        "yaw": 5.636,
+        "pitch": 0.233,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_006",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "8ccf2ddd2d3d575a107dc56d0ce4caea60e5881fa17c07c9ea53642cd0eb2a98",
+      "residual": {
+        "yaw": 1.234,
+        "pitch": 0.631,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_007",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "af01359eadd2466356093ee943a6b0a0f12fa6759c60215a6b859760ace56f93",
+      "residual": {
+        "yaw": 4.181,
+        "pitch": 7.931,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_NEAR_008",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "ec83cd0adda514ddf655d867a9b75ee2c426f4831b3f831cee3755970f79253b",
+      "residual": {
+        "yaw": 0.079,
+        "pitch": 1.778,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_009",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "62fc6460eef655f84eac51b67e132fff76a3149fffa5cb69e315002ca77e88fa",
+      "residual": {
+        "yaw": 7.584,
+        "pitch": 3.967,
+        "within_gate": true
+      }
+    },
+    {
+      "case_id": "DEV_HAND_010",
+      "status": "PREVIEW_RENDERED",
+      "preview_id": "d82fac7a155afccb461fd31d34f820ff1134db689a400a0d64c107b72c0981f6",
+      "residual": {
+        "yaw": 6.058,
+        "pitch": 0.571,
+        "within_gate": true
+      }
+    }
+  ]
+}

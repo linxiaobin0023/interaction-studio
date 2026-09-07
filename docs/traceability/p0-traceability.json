@@ -1,0 +1,259 @@
+{
+  "matrix_version": "0.1.0",
+  "scope": "P0 G0/G1",
+  "requirements": [
+    {
+      "requirement_id": "P0-G0-REPO-BASELINE",
+      "source": "development-plan:19.3.1",
+      "implementation": [
+        "Makefile",
+        "compose.yaml",
+        "apps/api/pyproject.toml",
+        ".github/workflows/ci.yml"
+      ],
+      "tests": [
+        "make lint",
+        "make test",
+        "docker compose config -q"
+      ],
+      "gate_result_id": null,
+      "evidence": [],
+      "status": "IMPLEMENTED"
+    },
+    {
+      "requirement_id": "P0-G0-PROVIDER-ADR",
+      "source": "development-plan:19.3.2",
+      "implementation": [
+        "docs/adr/ADR-001-inference-provider.md"
+      ],
+      "tests": [],
+      "gate_result_id": null,
+      "evidence": [],
+      "status": "PROVISIONAL"
+    },
+    {
+      "requirement_id": "P0-G0-CORE-CONTRACT",
+      "source": "development-plan:19.3.3",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/domain",
+        "apps/api/src/interaction_studio_api/models.py",
+        "apps/api/migrations/versions/0001_core_contract.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_contract_api.py",
+        "apps/api/tests/test_database_contract.py",
+        "apps/api/tests/test_state_machines.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [],
+      "status": "IMPLEMENTED"
+    },
+    {
+      "requirement_id": "P0-G0-ASSET-READINESS",
+      "source": "development-plan:19.3.4",
+      "implementation": [
+        "tools/validate_asset_manifest.py",
+        "tools/run_readiness.py",
+        "apps/api/src/interaction_studio_api/domain/readiness.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_manifest_tool.py",
+        "apps/api/tests/test_readiness.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [
+        "docs/preflight/mock-v0-readiness-report.json"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirement_id": "P0-G1-FACE-MOUTH-PREFLIGHT",
+      "source": "frozen-plan:6.1",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/preflight/spike.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_preflight_spike.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [
+        "docs/preflight/mock-v0-structural-preflight.md"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "requirement_id": "P0-G1-PRODUCT-PREFLIGHT",
+      "source": "frozen-plan:6.2",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/preflight/spike.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_preflight_spike.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [
+        "docs/preflight/mock-v0-structural-preflight.md"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirement_id": "P0-G1-HAND-PREFLIGHT",
+      "source": "frozen-plan:6.3",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/preflight/spike.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_preflight_spike.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [
+        "docs/preflight/mock-v0-structural-preflight.md"
+      ],
+      "status": "BLOCKED"
+    },
+    {
+      "requirement_id": "P0-G1-MATERIAL-PREFLIGHT",
+      "source": "frozen-plan:6.4",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/preflight/spike.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_preflight_spike.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [
+        "docs/preflight/mock-v0-structural-preflight.md"
+      ],
+      "status": "PARTIAL"
+    },
+    {
+      "requirement_id": "P0-ATTEMPT-SEMANTICS",
+      "source": "development-plan:5",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/domain/state_machines.py",
+        "apps/api/src/interaction_studio_api/models.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_state_machines.py",
+        "apps/api/tests/test_database_contract.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [],
+      "status": "CONTRACT_ONLY"
+    },
+    {
+      "requirement_id": "P0-FORMAL-RUN-SEMANTICS",
+      "source": "development-plan:5.5",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/domain/state_machines.py",
+        "apps/api/src/interaction_studio_api/models.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_state_machines.py",
+        "apps/api/tests/test_contract_api.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [],
+      "status": "CONTRACT_ONLY"
+    },
+    {
+      "requirement_id": "P0-EVIDENCE-LOCK",
+      "source": "development-plan:6",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/models.py",
+        "apps/api/migrations/versions/0001_core_contract.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_database_contract.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [],
+      "status": "CONTRACT_ONLY"
+    },
+    {
+      "requirement_id": "P0-LOCAL-PLACEMENT-PREVIEW",
+      "source": "development-plan:12.1/12.2/12.3",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/domain/local_preview.py",
+        "apps/api/src/interaction_studio_api/api/local_preview.py",
+        "tools/run_local_preview.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_local_preview.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [
+        "docs/development/local-preview-v1/coverage.json"
+      ],
+      "status": "PARTIAL_DEVELOPMENT_ONLY"
+    },
+    {
+      "requirement_id": "P0-STUDIO-DRAFT-TEMPLATE",
+      "source": "development-plan:E3/E4/12",
+      "implementation": [
+        "apps/web/src",
+        "apps/api/src/interaction_studio_api/domain/studio.py",
+        "apps/api/src/interaction_studio_api/api/studio.py",
+        "apps/api/migrations/versions/0002_studio_editing.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_studio.py",
+        "apps/api/tests/test_studio_web.py",
+        "apps/web/src/editor.test.ts"
+      ],
+      "gate_result_id": null,
+      "evidence": [
+        "docs/status/2026-09-05-studio-workbench.md"
+      ],
+      "status": "PARTIAL_DEVELOPMENT_ONLY"
+    },
+    {
+      "requirement_id": "P0-DEVELOPMENT-JOBS-QC",
+      "source": "development-plan:12/14; frozen-plan:five-dimension-QC",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/domain/studio_jobs.py",
+        "apps/api/src/interaction_studio_api/api/studio_jobs.py",
+        "apps/api/src/interaction_studio_api/studio_worker.py",
+        "apps/api/migrations/versions/0003_studio_jobs.py",
+        "apps/web/src/JobsPanel.tsx"
+      ],
+      "tests": [
+        "apps/api/tests/test_studio_jobs.py",
+        "tools/smoke_studio_container.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [
+        "docs/status/2026-09-05-studio-jobs-qc.md"
+      ],
+      "status": "PARTIAL_DEVELOPMENT_ONLY"
+    },
+    {
+      "requirement_id": "P0-LOCAL-DELIVERY-ACCOUNTS-EVIDENCE-DR",
+      "source": "user-confirmed local usable delivery; development-plan:7/14/17",
+      "implementation": [
+        "apps/api/src/interaction_studio_api/auth.py",
+        "apps/api/src/interaction_studio_api/api/auth.py",
+        "apps/api/src/interaction_studio_api/domain/studio_evidence.py",
+        "apps/api/migrations/versions/0004_studio_accounts.py",
+        "apps/web/src/AccountGate.tsx",
+        "tools/studio_backup.py",
+        "tools/install_local_studio.py",
+        "tools/package_local_studio.py"
+      ],
+      "tests": [
+        "apps/api/tests/test_auth.py",
+        "apps/api/tests/test_backup_crypto.py",
+        "apps/api/tests/test_studio_jobs.py",
+        "tools/smoke_studio_container.py",
+        "tools/cleanroom_local_studio.py"
+      ],
+      "gate_result_id": null,
+      "evidence": [
+        "docs/delivery/local-v1/README.md",
+        "docs/delivery/local-v1/populated-restore-drill.json",
+        "docs/delivery/local-v1/cleanroom.json"
+      ],
+      "status": "LOCAL_DELIVERED_FORMAL_DEFERRED"
+    }
+  ]
+}

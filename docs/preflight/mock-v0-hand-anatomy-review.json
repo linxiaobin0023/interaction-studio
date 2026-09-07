@@ -1,0 +1,24 @@
+{
+  "report_version": "1.0.0",
+  "manifest_sha256": "bdca61ee10f15c702d6b21a29a442a809025a993a9b8b353dd1b927f5983a65a",
+  "scope": "SYNTHETIC_MOCK_PILOT_ONLY",
+  "reviewer_type": "MODEL_ASSISTED_VISUAL_INSPECTION",
+  "criteria": [
+    "raised target hand is fully inside frame",
+    "exactly five visible/anatomically plausible digits",
+    "no duplicated or fused target-hand digits",
+    "wrist and target grip region are not occluded"
+  ],
+  "assets": [
+    {"asset_id": "HAND_DEV_001", "decision": "PASS"},
+    {"asset_id": "HAND_DEV_002", "decision": "PASS"},
+    {"asset_id": "HAND_DEV_003", "decision": "PASS"},
+    {"asset_id": "HAND_DEV_004", "decision": "PASS"},
+    {"asset_id": "HAND_DEV_005", "decision": "PASS"},
+    {"asset_id": "HAND_DEV_006", "decision": "PASS"},
+    {"asset_id": "HAND_DEV_007", "decision": "PASS"},
+    {"asset_id": "HAND_DEV_008", "decision": "PASS"}
+  ],
+  "formal_eligible": false,
+  "limitation": "Pilot visual review only; customer assets require the frozen human QC protocol."
+}

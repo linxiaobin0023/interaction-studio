@@ -1,0 +1,565 @@
+{
+  "report_version": "0.2.0",
+  "pack_id": "synthetic-mock-v0.2",
+  "scope_assumptions": {
+    "hand_in_core_scope": true,
+    "include_side_views": true
+  },
+  "technical_status": "CONDITIONAL",
+  "readiness_status": "PILOT_ONLY",
+  "formal_gate_eligible": false,
+  "checks": [
+    {
+      "check_id": "ASSET_INTEGRITY",
+      "status": "PASS",
+      "observed": {
+        "errors": [],
+        "asset_count": 27
+      }
+    },
+    {
+      "check_id": "FACE_DETECTION",
+      "status": "PASS",
+      "observed": {
+        "analyzer": "MediaPipe Tasks Vision 0.10.35",
+        "detected": 13,
+        "total": 13,
+        "failed_assets": [],
+        "ambiguous_assets": []
+      }
+    },
+    {
+      "check_id": "MOUTH_GEOMETRY",
+      "status": "PASS",
+      "observed": {
+        "analyzer": "MediaPipe Tasks Vision 0.10.35",
+        "mouth_mode": "FACE_LANDMARK",
+        "failed_assets": []
+      }
+    },
+    {
+      "check_id": "PRODUCT_ALPHA",
+      "status": "PASS",
+      "observed": {
+        "transparent_product_count": 6,
+        "required": 1
+      }
+    },
+    {
+      "check_id": "PRODUCT_RESIDUAL_METADATA",
+      "status": "WARN",
+      "observed": {
+        "complete": true,
+        "target_pose_measured": true,
+        "product_pose_measured": false,
+        "pairwise_residual_evaluated": true,
+        "pair_count": 10,
+        "failed_assets": [],
+        "unverified_product_pose_assets": [
+          "SKU_MOCK_FRONT_ALPHA_00",
+          "SKU_MOCK_LEFT30_UP15_ALPHA_00",
+          "SKU_MOCK_LEFT60_UP15_ALPHA_00",
+          "SKU_MOCK_RIGHT15_ALPHA_00",
+          "SKU_MOCK_RIGHT30_UP15_ALPHA_00",
+          "SKU_MOCK_RIGHT45_UP15_ALPHA_00"
+        ]
+      }
+    },
+    {
+      "check_id": "MATERIAL_BACKGROUND_MEASUREMENT",
+      "status": "PASS",
+      "observed": {
+        "corner_luma": {
+          "WHITE": 254.0,
+          "TRANSPARENT": 0.0,
+          "GRAY": 146.886,
+          "BLACK": 17.114
+        },
+        "expected_order": "WHITE>GRAY>BLACK"
+      }
+    },
+    {
+      "check_id": "MATERIAL_LAYERING_DECISION",
+      "status": "PASS",
+      "observed": {
+        "transmission_specular_required": true,
+        "method": "ERODED_ALPHA_INTERIOR_COVERAGE",
+        "interior_partial_alpha_ratio": 0.0,
+        "decision_threshold": 0.02,
+        "reason": "RGBA is a cutout matte without sufficient internal transmission; retain explicit Transmission/Specular layers"
+      }
+    },
+    {
+      "check_id": "HAND_LANDMARK",
+      "status": "PASS",
+      "observed": {
+        "trusted_report": true,
+        "case_count": 8,
+        "detected_count": 8,
+        "failed_assets": []
+      }
+    },
+    {
+      "check_id": "HAND_ANATOMY_QC",
+      "status": "PASS",
+      "observed": {
+        "trusted_report": true,
+        "reviewer_type": "MODEL_ASSISTED_VISUAL_INSPECTION",
+        "case_count": 8,
+        "formal_eligible": false
+      }
+    }
+  ],
+  "blocking_conditions": [],
+  "raw_measurements": {
+    "faces": [
+      {
+        "asset_id": "CHAR_MOCK_001_FRONT_00",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.304558,
+          0.244936,
+          0.397099,
+          0.529466
+        ],
+        "template_mouth_center_normalized": [
+          0.503108,
+          0.626151
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "CHAR_MOCK_001_LEFT45_00",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.265193,
+          0.243094,
+          0.390193,
+          0.520258
+        ],
+        "template_mouth_center_normalized": [
+          0.46029,
+          0.61768
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "CHAR_MOCK_001_RIGHT45_00",
+        "detected": true,
+        "candidate_count": 2,
+        "selected_face_box_normalized": [
+          0.403315,
+          0.254144,
+          0.362569,
+          0.483425
+        ],
+        "template_mouth_center_normalized": [
+          0.584599,
+          0.60221
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "MOUTH_DEV_001",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.304558,
+          0.242173,
+          0.399171,
+          0.532228
+        ],
+        "template_mouth_center_normalized": [
+          0.504144,
+          0.625378
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "NEAR_DEV_001",
+        "detected": true,
+        "candidate_count": 2,
+        "selected_face_box_normalized": [
+          0.320442,
+          0.219153,
+          0.321133,
+          0.428177
+        ],
+        "template_mouth_center_normalized": [
+          0.481008,
+          0.52744
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "HAND_DEV_001",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.399862,
+          0.158379,
+          0.254834,
+          0.339779
+        ],
+        "template_mouth_center_normalized": [
+          0.527279,
+          0.40302
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "HAND_DEV_002",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.390884,
+          0.199816,
+          0.290055,
+          0.38674
+        ],
+        "template_mouth_center_normalized": [
+          0.535912,
+          0.478269
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "HAND_DEV_003",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.310083,
+          0.201657,
+          0.308011,
+          0.410681
+        ],
+        "template_mouth_center_normalized": [
+          0.464088,
+          0.497348
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "HAND_DEV_004",
+        "detected": true,
+        "candidate_count": 2,
+        "selected_face_box_normalized": [
+          0.444061,
+          0.19337,
+          0.29489,
+          0.393186
+        ],
+        "template_mouth_center_normalized": [
+          0.591506,
+          0.476464
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "HAND_DEV_005",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.371547,
+          0.197974,
+          0.320442,
+          0.427256
+        ],
+        "template_mouth_center_normalized": [
+          0.531768,
+          0.505599
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "HAND_DEV_006",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.401243,
+          0.163904,
+          0.247238,
+          0.32965
+        ],
+        "template_mouth_center_normalized": [
+          0.524862,
+          0.401252
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "HAND_DEV_007",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.247928,
+          0.211786,
+          0.304558,
+          0.406077
+        ],
+        "template_mouth_center_normalized": [
+          0.400207,
+          0.504162
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      },
+      {
+        "asset_id": "HAND_DEV_008",
+        "detected": true,
+        "candidate_count": 1,
+        "selected_face_box_normalized": [
+          0.360497,
+          0.186924,
+          0.301796,
+          0.402394
+        ],
+        "template_mouth_center_normalized": [
+          0.511395,
+          0.476648
+        ],
+        "mouth_mode": "FACE_BOX_TEMPLATE"
+      }
+    ],
+    "products": [
+      {
+        "asset_id": "SKU_MOCK_FRONT_WHITE_00",
+        "channel_count": 3,
+        "alpha_nonopaque_ratio": 0.0,
+        "corner_luma": 254.0,
+        "declared_background": "WHITE"
+      },
+      {
+        "asset_id": "SKU_MOCK_FRONT_ALPHA_00",
+        "channel_count": 4,
+        "alpha_nonopaque_ratio": 0.591366,
+        "corner_luma": 0.0,
+        "declared_background": "TRANSPARENT"
+      },
+      {
+        "asset_id": "SKU_MOCK_RIGHT15_ALPHA_00",
+        "channel_count": 4,
+        "alpha_nonopaque_ratio": 0.594498,
+        "corner_luma": 0.0,
+        "declared_background": "TRANSPARENT"
+      },
+      {
+        "asset_id": "SKU_MOCK_RIGHT30_UP15_ALPHA_00",
+        "channel_count": 4,
+        "alpha_nonopaque_ratio": 0.595026,
+        "corner_luma": 0.0,
+        "declared_background": "TRANSPARENT"
+      },
+      {
+        "asset_id": "SKU_MOCK_RIGHT45_UP15_ALPHA_00",
+        "channel_count": 4,
+        "alpha_nonopaque_ratio": 0.590646,
+        "corner_luma": 0.0,
+        "declared_background": "TRANSPARENT"
+      },
+      {
+        "asset_id": "SKU_MOCK_LEFT30_UP15_ALPHA_00",
+        "channel_count": 4,
+        "alpha_nonopaque_ratio": 0.537606,
+        "corner_luma": 0.0,
+        "declared_background": "TRANSPARENT"
+      },
+      {
+        "asset_id": "SKU_MOCK_LEFT60_UP15_ALPHA_00",
+        "channel_count": 4,
+        "alpha_nonopaque_ratio": 0.675674,
+        "corner_luma": 0.0,
+        "declared_background": "TRANSPARENT"
+      },
+      {
+        "asset_id": "SKU_MOCK_LEFT45_WHITE_00",
+        "channel_count": 3,
+        "alpha_nonopaque_ratio": 0.0,
+        "corner_luma": 253.0,
+        "declared_background": "WHITE"
+      },
+      {
+        "asset_id": "SKU_MOCK_RIGHT45_WHITE_00",
+        "channel_count": 3,
+        "alpha_nonopaque_ratio": 0.0,
+        "corner_luma": 253.0,
+        "declared_background": "WHITE"
+      },
+      {
+        "asset_id": "SKU_MOCK_LEFT90_WHITE_00",
+        "channel_count": 3,
+        "alpha_nonopaque_ratio": 0.0,
+        "corner_luma": 254.0,
+        "declared_background": "WHITE"
+      },
+      {
+        "asset_id": "SKU_MOCK_RIGHT90_WHITE_00",
+        "channel_count": 3,
+        "alpha_nonopaque_ratio": 0.0,
+        "corner_luma": 254.0,
+        "declared_background": "WHITE"
+      },
+      {
+        "asset_id": "SKU_MOCK_BACK_WHITE_00",
+        "channel_count": 3,
+        "alpha_nonopaque_ratio": 0.0,
+        "corner_luma": 254.0,
+        "declared_background": "WHITE"
+      },
+      {
+        "asset_id": "SKU_MOCK_FRONT_GRAY_00",
+        "channel_count": 3,
+        "alpha_nonopaque_ratio": 0.0,
+        "corner_luma": 146.886,
+        "declared_background": "GRAY"
+      },
+      {
+        "asset_id": "SKU_MOCK_FRONT_BLACK_00",
+        "channel_count": 3,
+        "alpha_nonopaque_ratio": 0.0,
+        "corner_luma": 17.114,
+        "declared_background": "BLACK"
+      }
+    ],
+    "pairwise_residuals": [
+      {
+        "case_asset_id": "MOUTH_DEV_001",
+        "product_asset_id": "SKU_MOCK_FRONT_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": -0.77,
+        "target_pitch": -2.532,
+        "target_pose_source": "FACE_TRANSFORMATION_MATRIX",
+        "residual_yaw": 0.77,
+        "residual_pitch": 2.532,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      },
+      {
+        "case_asset_id": "NEAR_DEV_001",
+        "product_asset_id": "SKU_MOCK_RIGHT15_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": 13.656,
+        "target_pitch": 3.117,
+        "target_pose_source": "FACE_TRANSFORMATION_MATRIX",
+        "residual_yaw": 1.344,
+        "residual_pitch": 3.117,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      },
+      {
+        "case_asset_id": "HAND_DEV_001",
+        "product_asset_id": "SKU_MOCK_RIGHT45_UP15_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": 44.249,
+        "target_pitch": 19.539,
+        "target_pose_source": "HAND_PALM_NORMAL",
+        "residual_yaw": 0.751,
+        "residual_pitch": 4.539,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      },
+      {
+        "case_asset_id": "HAND_DEV_002",
+        "product_asset_id": "SKU_MOCK_RIGHT30_UP15_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": 35.295,
+        "target_pitch": 11.645,
+        "target_pose_source": "HAND_PALM_NORMAL",
+        "residual_yaw": 5.295,
+        "residual_pitch": 3.355,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      },
+      {
+        "case_asset_id": "HAND_DEV_003",
+        "product_asset_id": "SKU_MOCK_LEFT30_UP15_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": -26.502,
+        "target_pitch": 9.562,
+        "target_pose_source": "HAND_PALM_NORMAL",
+        "residual_yaw": 3.498,
+        "residual_pitch": 5.438,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      },
+      {
+        "case_asset_id": "HAND_DEV_004",
+        "product_asset_id": "SKU_MOCK_RIGHT30_UP15_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": 22.66,
+        "target_pitch": 15.226,
+        "target_pose_source": "HAND_PALM_NORMAL",
+        "residual_yaw": 7.34,
+        "residual_pitch": 0.226,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      },
+      {
+        "case_asset_id": "HAND_DEV_005",
+        "product_asset_id": "SKU_MOCK_RIGHT30_UP15_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": 29.41,
+        "target_pitch": 17.263,
+        "target_pose_source": "HAND_PALM_NORMAL",
+        "residual_yaw": 0.59,
+        "residual_pitch": 2.263,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      },
+      {
+        "case_asset_id": "HAND_DEV_006",
+        "product_asset_id": "SKU_MOCK_RIGHT15_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": 20.242,
+        "target_pitch": 6.517,
+        "target_pose_source": "HAND_PALM_NORMAL",
+        "residual_yaw": 5.242,
+        "residual_pitch": 6.517,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      },
+      {
+        "case_asset_id": "HAND_DEV_007",
+        "product_asset_id": "SKU_MOCK_LEFT30_UP15_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": -25.374,
+        "target_pitch": 8.825,
+        "target_pose_source": "HAND_PALM_NORMAL",
+        "residual_yaw": 4.626,
+        "residual_pitch": 6.175,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      },
+      {
+        "case_asset_id": "HAND_DEV_008",
+        "product_asset_id": "SKU_MOCK_LEFT60_UP15_ALPHA_00",
+        "product_pose_source": "GENERATION_TARGET_UNVERIFIED",
+        "target_yaw": -54.258,
+        "target_pitch": 15.283,
+        "target_pose_source": "HAND_PALM_NORMAL",
+        "residual_yaw": 5.742,
+        "residual_pitch": 0.283,
+        "max_residual_yaw": 12.0,
+        "max_residual_pitch": 8.0,
+        "within_gate": true
+      }
+    ],
+    "landmark_model_sha256": {
+      "hand_landmarker.task": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1",
+      "face_landmarker.task": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+    }
+  },
+  "gate_effect": "NONE",
+  "input_manifest": "mock_assets/v0/metadata/asset_manifest.json",
+  "input_manifest_sha256": "bdca61ee10f15c702d6b21a29a442a809025a993a9b8b353dd1b927f5983a65a"
+}

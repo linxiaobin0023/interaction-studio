@@ -1,0 +1,46 @@
+[
+  {
+    "width": 1912,
+    "clientWidth": 1912,
+    "height": 948,
+    "left": 736,
+    "top": 213.859375,
+    "cardWidth": 440,
+    "cardHeight": 520.28125,
+    "scrollWidth": 1912,
+    "columns": "1872px"
+  },
+  {
+    "width": 768,
+    "clientWidth": 768,
+    "height": 1024,
+    "left": 164,
+    "top": 251.859375,
+    "cardWidth": 440,
+    "cardHeight": 520.28125,
+    "scrollWidth": 768,
+    "columns": "728px"
+  },
+  {
+    "width": 390,
+    "clientWidth": 390,
+    "height": 844,
+    "left": 16,
+    "top": 171.203125,
+    "cardWidth": 358,
+    "cardHeight": 501.578125,
+    "scrollWidth": 390,
+    "columns": "358px"
+  },
+  {
+    "width": 320,
+    "clientWidth": 320,
+    "height": 640,
+    "left": 16,
+    "top": 42.46875,
+    "cardWidth": 288,
+    "cardHeight": 555.0625,
+    "scrollWidth": 320,
+    "columns": "288px"
+  }
+]

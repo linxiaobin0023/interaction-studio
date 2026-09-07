@@ -1,0 +1,136 @@
+{
+  "affine_source_to_base": [
+    [
+      0.36765625,
+      0.0,
+      642.428381625
+    ],
+    [
+      -0.0,
+      0.36765625,
+      577.459115625
+    ]
+  ],
+  "anchor_method": "MOUTH_CORNERS_MIDPOINT",
+  "artifacts": [
+    {
+      "bytes": 23706,
+      "path": "layers/depth.png",
+      "sha256": "62d73a06a293fd1ceb16cf9bbb89cc8b3160e101730f4c916c615c674c234637"
+    },
+    {
+      "bytes": 27224,
+      "path": "layers/normal.png",
+      "sha256": "b62f14602ebbc4111971fe336f9e52e3da65dd3f0513684ac52b4696e0113288"
+    },
+    {
+      "bytes": 31191,
+      "path": "layers/rgba.png",
+      "sha256": "64ea1495515a7544a78da6476c184fc3c5d2497024c0727300b126e9e054581c"
+    },
+    {
+      "bytes": 6560,
+      "path": "layers/specular.png",
+      "sha256": "ec8bc7f94cb2b6b840f72d499be4c9086f347d00c2e9c1a24e20ce3fb39b3f2d"
+    },
+    {
+      "bytes": 2865,
+      "path": "layers/transmission.png",
+      "sha256": "4b9b5a7961123ee5c710ca12412783b5d55516d80ccea867210810e5b61ff57f"
+    },
+    {
+      "bytes": 3300,
+      "path": "masks/M_contact.png",
+      "sha256": "9242c6b4b460df061788fa07fb40dea979ebd71beec70a1ebc059006b4b3c45c"
+    },
+    {
+      "bytes": 2692,
+      "path": "masks/M_core.png",
+      "sha256": "a335aa987ded87f0ba901dcd1cbf587093e819133b757f8e4c3e6ecd517ce5b6"
+    },
+    {
+      "bytes": 1605,
+      "path": "masks/M_occlusion.png",
+      "sha256": "08169aeed11109efa71293b7d15d501b49083a8748738feeab2678ea03e9677d"
+    },
+    {
+      "bytes": 2777,
+      "path": "masks/M_product.png",
+      "sha256": "0f46e6f0652b9bec038284ddbade1281a45913dda4f6f20618ee899464ed1f2e"
+    },
+    {
+      "bytes": 3232,
+      "path": "masks/M_transition.png",
+      "sha256": "9ed82615602df6725a433ef8ff9974e9be7c45e33af351e9adb2bd0406c2d810"
+    },
+    {
+      "bytes": 2692,
+      "path": "masks/M_visible_core.png",
+      "sha256": "a335aa987ded87f0ba901dcd1cbf587093e819133b757f8e4c3e6ecd517ce5b6"
+    },
+    {
+      "bytes": 1936431,
+      "path": "preview.png",
+      "sha256": "90174f3027170279f8b4f77aacd5f035c5fb9da26c7ded69586692c40d35d06c"
+    }
+  ],
+  "business_attempt_created": false,
+  "dataset": "DEVELOPMENT",
+  "formal_eligible": false,
+  "geometry_sha256": "5b133e10f2f56dcd76e3b143ae2976b9e4b9f5f91fe2d54d9323d5825ebe9019",
+  "height": 1086,
+  "implementation_sha256": "00ad989080bdeb592d8859771be3b68953328c7d435960911c0bedf46a0fc5c3",
+  "interaction": "MOUTH",
+  "limitations": [
+    "CONTACT_GEOMETRY_NOT_REPAIRED",
+    "MATERIAL_RELIGHTING_NOT_APPLIED",
+    "NORMAL_CHANNELS_RETAIN_SOURCE_FRAME",
+    "MASK_PARAMETERS_NOT_BENCHMARK_FROZEN",
+    "MANUAL_OCCLUSION_ONLY",
+    "PLACEMENT_ACCURACY_NOT_VALIDATED",
+    "CONTACT_BAND_IS_GEOMETRIC_NOT_ANATOMICAL",
+    "PROXIMITY_GATE_NOT_VALIDATED"
+  ],
+  "mask_semantics": "255=included; 0=excluded; M_contact is the editable band",
+  "preview_id": "f32f9beb61124826d4ecf3e9ee65999dd8b7ef82343acf871f2173863f04ee8e",
+  "provider_execution_performed": false,
+  "recipe_version": "local-placement-v1",
+  "request": {
+    "case_id": "DEV_MOUTH_001",
+    "contact_radius_px": 12,
+    "core_inset_px": 4,
+    "occlusion_polygons": [],
+    "placement": {
+      "center_x": 0.5088905,
+      "center_y": 0.6187975,
+      "rotation_degrees": 0.0,
+      "width_ratio": 0.13
+    },
+    "product_view_id": "FRONT_00"
+  },
+  "residual": {
+    "pitch": 2.532,
+    "within_gate": true,
+    "yaw": 0.77
+  },
+  "runtime": {
+    "numpy": "2.5.2",
+    "opencv": "4.14.0",
+    "pillow": "12.3.0"
+  },
+  "sources": {
+    "case_base_sha256": "bc27facdf6c7564eb08c6c27221a97387a510f5a9bd8914145c1e17fadb18bc0",
+    "dataset_manifest_sha256": "878e29472b49c9b665f1b6ba3ebf0b67f9400165436c4844f853b7e29dd9abf0",
+    "landmarks_sha256": "bb1e4bea7d51a3a9020c8a3bb8d685dd99bc82dffe645d81651916567f5b526a",
+    "product_layer_sha256": {
+      "DEPTH": "41f70945f9036371bef141e089ae2f12ee3d3349f7a8cb7cda1cce293cfd0c0c",
+      "NORMAL": "70da3cf089586123e19cdd49daa992e3936dd4bd2df296aa80c06cf5333cb6e9",
+      "RGBA": "ed1e06dab78f6889bf3fa0b9b097f10fed8553b6cd04b4a732bd1b494026e0a9",
+      "SPECULAR": "e63e0be022ed0a6c084718792d49077318c4995e1ba01983beae8c1d930f7693",
+      "TRANSMISSION": "eb9919d99375c049c61b9aca4660ea1f4538c5b2907a4ccec9e4f3f43f62aab3"
+    },
+    "product_master_sha256": "9012272388fa9bf17f462158fd610098a92270760d1036f631e3c69e109b5ea4"
+  },
+  "status": "LOCAL_PREVIEW_ONLY",
+  "width": 1448
+}

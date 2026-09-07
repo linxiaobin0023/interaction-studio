@@ -1,0 +1,14 @@
+{
+  "scope": "LOCAL_DEVELOPMENT_ONLY",
+  "isolated_project": "studio-cleanroom-aa86f092076b",
+  "source_hashes_verified": 375,
+  "fresh_volumes": true,
+  "fresh_accounts": true,
+  "catalog_cases": 30,
+  "separate_worker_succeeded": true,
+  "result_hash_verified": true,
+  "provider_execution_performed": false,
+  "formal_eligible": false,
+  "browser_acceptance_performed": false,
+  "temporary_resources_removed": true
+}

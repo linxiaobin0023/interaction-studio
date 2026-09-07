@@ -1,0 +1,185 @@
+{
+  "report_version": "1.0.0",
+  "manifest_sha256": "bdca61ee10f15c702d6b21a29a442a809025a993a9b8b353dd1b927f5983a65a",
+  "landmark_report_sha256": "b4b273df32fefded730c643f0b70480214e186c42449ee4d898bbf39619296f4",
+  "composite_count": 10,
+  "outputs": [
+    {
+      "case_asset_id": "MOUTH_DEV_001",
+      "product_asset_id": "SKU_MOCK_FRONT_ALPHA_00",
+      "output_path": "docs/preflight/composites/mouth_dev_001__sku_mock_front_alpha_00.png",
+      "output_sha256": "03733cad58c6aa2ffee5ede168bc0c152d8b465cad7cce8d01009a3e8adedc24",
+      "anchor_method": "MOUTH_CORNERS_MIDPOINT",
+      "center_normalized": [
+        0.508891,
+        0.618798
+      ],
+      "width_ratio": 0.13,
+      "residual": {
+        "yaw": 0.77,
+        "pitch": 2.532,
+        "within_gate": true
+      }
+    },
+    {
+      "case_asset_id": "NEAR_DEV_001",
+      "product_asset_id": "SKU_MOCK_RIGHT15_ALPHA_00",
+      "output_path": "docs/preflight/composites/near_dev_001__sku_mock_right15_alpha_00.png",
+      "output_sha256": "f7b65fc81c8d044f755c3f4ccdaff7113b6b927d2650723050859256bd011e8b",
+      "anchor_method": "MOUTH_CORNER_OFFSET",
+      "center_normalized": [
+        0.588555,
+        0.53618
+      ],
+      "width_ratio": 0.12,
+      "residual": {
+        "yaw": 1.344,
+        "pitch": 3.117,
+        "within_gate": true
+      }
+    },
+    {
+      "case_asset_id": "HAND_DEV_001",
+      "product_asset_id": "SKU_MOCK_RIGHT45_UP15_ALPHA_00",
+      "output_path": "docs/preflight/composites/hand_dev_001__sku_mock_right45_up15_alpha_00.png",
+      "output_sha256": "818aa425c5110462804335ff3a142fc21ffbfc3fe9e515289a46da2e89780cfa",
+      "anchor_method": "HAND_THUMB_INDEX_MIDPOINT",
+      "center_normalized": [
+        0.374613,
+        0.459198
+      ],
+      "width_ratio": 0.16,
+      "residual": {
+        "yaw": 0.751,
+        "pitch": 4.539,
+        "within_gate": true
+      }
+    },
+    {
+      "case_asset_id": "HAND_DEV_002",
+      "product_asset_id": "SKU_MOCK_RIGHT30_UP15_ALPHA_00",
+      "output_path": "docs/preflight/composites/hand_dev_002__sku_mock_right30_up15_alpha_00.png",
+      "output_sha256": "23e8dc8368a5666fc5600ed9130510a907f4e818167d39a6dbae144e1c4e816e",
+      "anchor_method": "HAND_THUMB_INDEX_MIDPOINT",
+      "center_normalized": [
+        0.347251,
+        0.520173
+      ],
+      "width_ratio": 0.16,
+      "residual": {
+        "yaw": 5.295,
+        "pitch": 3.355,
+        "within_gate": true
+      }
+    },
+    {
+      "case_asset_id": "HAND_DEV_003",
+      "product_asset_id": "SKU_MOCK_LEFT30_UP15_ALPHA_00",
+      "output_path": "docs/preflight/composites/hand_dev_003__sku_mock_left30_up15_alpha_00.png",
+      "output_sha256": "0b7b153cfb2c603ec3eeefe3cdb2c33db7c20afb8d3dddd2c651443f50b8ad1a",
+      "anchor_method": "HAND_THUMB_INDEX_MIDPOINT",
+      "center_normalized": [
+        0.692146,
+        0.455865
+      ],
+      "width_ratio": 0.16,
+      "residual": {
+        "yaw": 3.498,
+        "pitch": 5.438,
+        "within_gate": true
+      }
+    },
+    {
+      "case_asset_id": "HAND_DEV_004",
+      "product_asset_id": "SKU_MOCK_RIGHT30_UP15_ALPHA_00",
+      "output_path": "docs/preflight/composites/hand_dev_004__sku_mock_right30_up15_alpha_00.png",
+      "output_sha256": "2bb4634cbcd561e61637bf4fc4d083a5817b9d37e9cb310edf405d926267f754",
+      "anchor_method": "HAND_THUMB_INDEX_MIDPOINT",
+      "center_normalized": [
+        0.385618,
+        0.498244
+      ],
+      "width_ratio": 0.16,
+      "residual": {
+        "yaw": 7.34,
+        "pitch": 0.226,
+        "within_gate": true
+      }
+    },
+    {
+      "case_asset_id": "HAND_DEV_005",
+      "product_asset_id": "SKU_MOCK_RIGHT30_UP15_ALPHA_00",
+      "output_path": "docs/preflight/composites/hand_dev_005__sku_mock_right30_up15_alpha_00.png",
+      "output_sha256": "c2a1ccf9a274aa5efc3e6e383fa87964f254f42138b270f755218feff64fbdea",
+      "anchor_method": "HAND_THUMB_INDEX_MIDPOINT",
+      "center_normalized": [
+        0.33463,
+        0.59667
+      ],
+      "width_ratio": 0.16,
+      "residual": {
+        "yaw": 0.59,
+        "pitch": 2.263,
+        "within_gate": true
+      }
+    },
+    {
+      "case_asset_id": "HAND_DEV_006",
+      "product_asset_id": "SKU_MOCK_RIGHT15_ALPHA_00",
+      "output_path": "docs/preflight/composites/hand_dev_006__sku_mock_right15_alpha_00.png",
+      "output_sha256": "aaba6d5dcbc1d3aa473ad40a42f85e69eced1f126e273768ce15f603ea298419",
+      "anchor_method": "HAND_THUMB_INDEX_MIDPOINT",
+      "center_normalized": [
+        0.388396,
+        0.448937
+      ],
+      "width_ratio": 0.16,
+      "residual": {
+        "yaw": 5.242,
+        "pitch": 6.517,
+        "within_gate": true
+      }
+    },
+    {
+      "case_asset_id": "HAND_DEV_007",
+      "product_asset_id": "SKU_MOCK_LEFT30_UP15_ALPHA_00",
+      "output_path": "docs/preflight/composites/hand_dev_007__sku_mock_left30_up15_alpha_00.png",
+      "output_sha256": "ab0dc893031675a667fa213484a08d3c4e8cc43c1fad20ab8d202b3bdac9e047",
+      "anchor_method": "HAND_THUMB_INDEX_MIDPOINT",
+      "center_normalized": [
+        0.682746,
+        0.458284
+      ],
+      "width_ratio": 0.16,
+      "residual": {
+        "yaw": 4.626,
+        "pitch": 6.175,
+        "within_gate": true
+      }
+    },
+    {
+      "case_asset_id": "HAND_DEV_008",
+      "product_asset_id": "SKU_MOCK_LEFT60_UP15_ALPHA_00",
+      "output_path": "docs/preflight/composites/hand_dev_008__sku_mock_left60_up15_alpha_00.png",
+      "output_sha256": "58b58f7a82ea1e695740ed3a372165693322d5fa8b51b459f9ffc19f799f194f",
+      "anchor_method": "HAND_THUMB_INDEX_MIDPOINT",
+      "center_normalized": [
+        0.390568,
+        0.581767
+      ],
+      "width_ratio": 0.16,
+      "residual": {
+        "yaw": 5.742,
+        "pitch": 0.283,
+        "within_gate": true
+      }
+    }
+  ],
+  "material_decision": {
+    "transmission_specular_required": true,
+    "method": "ERODED_ALPHA_INTERIOR_COVERAGE",
+    "interior_partial_alpha_ratio": 0.0,
+    "decision_threshold": 0.02,
+    "reason": "RGBA is a cutout matte without sufficient internal transmission; retain explicit Transmission/Specular layers"
+  }
+}

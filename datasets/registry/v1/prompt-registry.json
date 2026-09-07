@@ -1,0 +1,36 @@
+{
+  "registry_version": "1.0.0",
+  "shared_invariants": {
+    "identity": "CHAR_PROD_001",
+    "product_absent_from_case_base": true,
+    "image_type": "PHOTOREALISTIC_STATIC",
+    "forbidden": ["TEXT", "LOGO", "WATERMARK", "KNOWN_PERSON_RESEMBLANCE"],
+    "target_resolution": [1536, 1024]
+  },
+  "families": [
+    {
+      "family_id": "DEV_SCENE_FAMILY_V1",
+      "purpose": "ITERATIVE_DEVELOPMENT",
+      "scene_pool": ["PLAYROOM", "NURSERY", "KITCHEN", "READING_CORNER", "PATIO"],
+      "lighting_pool": ["SOFT_WINDOW", "OPEN_SHADE", "DIFFUSE_MORNING"]
+    },
+    {
+      "family_id": "VAL_SCENE_FAMILY_V1",
+      "purpose": "SEALED_VALIDATION",
+      "scene_pool": ["DINING_NOOK", "BEDROOM_BENCH", "SUNROOM", "LIBRARY_CORNER"],
+      "lighting_pool": ["OVERCAST_WINDOW", "BOUNCE_DAYLIGHT"]
+    },
+    {
+      "family_id": "FORMAL_SCENE_FAMILY_V1",
+      "purpose": "HIDDEN_FORMAL_ACCEPTANCE",
+      "scene_pool": ["SEALED_AT_GENERATION_TIME"],
+      "lighting_pool": ["SEALED_AT_GENERATION_TIME"]
+    },
+    {
+      "family_id": "GEN_SCENE_FAMILY_V1",
+      "purpose": "POST_ACCEPTANCE_RISK_REVIEW",
+      "scene_pool": ["NOVEL_BACKGROUND", "NOVEL_LIGHTING"],
+      "lighting_pool": ["BOUNDARY_CONDITIONS"]
+    }
+  ]
+}

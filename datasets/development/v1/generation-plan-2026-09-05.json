@@ -1,0 +1,160 @@
+{
+  "version": "1.0.0",
+  "mode": "CODEX_BUILTIN",
+  "reference": "assets/production/character/v1/character_front_v1.png",
+  "jobs": [
+    {
+      "case_id": "DEV_MOUTH_004",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_004.png",
+      "prompt_id": "DEV_MOUTH_004_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC Development Case Base DEV_MOUTH_004_V1, one independent photograph. Reference image is the authoritative fictional toddler identity: preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue crew-neck shirt. Generate a fresh scene, not a background replacement: seated upright on a natural cork playroom floor, softly blurred low wooden toy shelf and muted rust wall behind. Landscape 1536x1024, chest-up, slightly left of center. Head turned about 15 degrees toward camera right, pitch within 5 degrees; relaxed closed lips entirely unobstructed, both hands below the crop. Soft window light, natural skin texture. No pacifier, product, food, bottle, other people, text, logo, watermark, teeth, open mouth, hand-face overlap. Output one full-frame image, no collage."
+    },
+    {
+      "case_id": "DEV_MOUTH_005",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_005.png",
+      "prompt_id": "DEV_MOUTH_005_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_MOUTH_005_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: on a low cushion in a nursery with a pale peach wall and blurred white cot. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing 20 degrees toward camera left, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, hands completely below crop, mouth region unobstructed and sharp. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_MOUTH_006",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_006.png",
+      "prompt_id": "DEV_MOUTH_006_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_MOUTH_006_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: beside a kitchen island with pale blue tiles and blurred wooden cabinets. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing 30 degrees toward camera right, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, hands completely below crop, mouth region unobstructed and sharp. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_MOUTH_007",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_007.png",
+      "prompt_id": "DEV_MOUTH_007_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_MOUTH_007_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: on a shaded patio bench with blurred terracotta pots and bamboo screen. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing 30 degrees toward camera left, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, hands completely below crop, mouth region unobstructed and sharp. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_MOUTH_008",
+      "interaction": "MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/mouth/dev_mouth_008.png",
+      "prompt_id": "DEV_MOUTH_008_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_MOUTH_008_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: in a reading corner with muted mustard beanbag and softly blurred upright books. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing straight ahead, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, hands completely below crop, mouth region unobstructed and sharp. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_MOUTH_009",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/mouth/dev_mouth_009.png",
+      "prompt_id": "DEV_MOUTH_009_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_MOUTH_009_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: in a playroom with forest-green storage baskets and a cream felt floor mat. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing 55 degrees toward camera left, a clear three-quarter profile; do not turn toward camera, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, hands completely below crop, mouth region unobstructed and sharp. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_MOUTH_010",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/mouth/dev_mouth_010.png",
+      "prompt_id": "DEV_MOUTH_010_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_MOUTH_010_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: in a nursery with lavender wall and pale oak changing cabinet far behind. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head rotated 55 degrees toward image right. Almost side profile: far eye is only a narrow sliver beside the nose bridge, near ear fully exposed, far ear completely hidden. Nose projects strongly sideways. Camera at eye level, pitch zero, no chin tilt. The child looks toward the side wall, never toward camera. The face must NOT be frontal or shallow three-quarter. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, hands completely below crop, mouth region unobstructed and sharp. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_MOUTH_011",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/mouth/dev_mouth_011.png",
+      "prompt_id": "DEV_MOUTH_011_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_MOUTH_011_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: beside a kitchen breakfast bench with a soft gray backsplash. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head rotated 55 degrees toward image left. Almost side profile: far eye is only a narrow sliver beside the nose bridge, near ear fully exposed, far ear completely hidden. Nose projects strongly sideways. Camera at eye level, pitch zero, no chin tilt. The child looks toward the side wall, never toward camera. The face must NOT be frontal or shallow three-quarter. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, hands completely below crop, mouth region unobstructed and sharp. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_MOUTH_012",
+      "interaction": "MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/mouth/dev_mouth_012.png",
+      "prompt_id": "DEV_MOUTH_012_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_MOUTH_012_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: on a patio with blurred climbing ivy and a red brick wall. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head rotated 55 degrees toward image right. Almost side profile: far eye is only a narrow sliver beside the nose bridge, near ear fully exposed, far ear completely hidden. Nose projects strongly sideways. Camera at eye level, pitch zero, no chin tilt. The child looks toward the side wall, never toward camera. The face must NOT be frontal or shallow three-quarter. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, hands completely below crop, mouth region unobstructed and sharp. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_NEAR_003",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/near_mouth/dev_near_003.png",
+      "prompt_id": "DEV_NEAR_003_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_NEAR_003_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: in a playroom with a blurred fabric tunnel and powder-blue wall. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing 10 degrees toward camera left, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, face slightly off center with clear empty space on BOTH sides of the mouth for later near-mouth product placement; hands completely below crop. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_NEAR_004",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/near_mouth/dev_near_004.png",
+      "prompt_id": "DEV_NEAR_004_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_NEAR_004_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: on a nursery rug with a mint storage trunk and white curtains behind. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing 25 degrees toward camera right, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, face slightly off center with clear empty space on BOTH sides of the mouth for later near-mouth product placement; hands completely below crop. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_NEAR_005",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/near_mouth/dev_near_005.png",
+      "prompt_id": "DEV_NEAR_005_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_NEAR_005_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: beside a pale wood kitchen table with butter-yellow cabinet doors behind. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing 25 degrees toward camera left, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, face slightly off center with clear empty space on BOTH sides of the mouth for later near-mouth product placement; hands completely below crop. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_NEAR_006",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "GREEN",
+      "path": "cases/near_mouth/dev_near_006.png",
+      "prompt_id": "DEV_NEAR_006_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_NEAR_006_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: on a shaded patio against pale stone with blurred ferns. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing straight ahead, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Chest-up, face slightly off center with clear empty space on BOTH sides of the mouth for later near-mouth product placement; hands completely below crop. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_NEAR_007",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/near_mouth/dev_near_007.png",
+      "prompt_id": "DEV_NEAR_007_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_NEAR_007_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: in a reading corner with a dusty-pink wall and low white book ledge. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head rotated 70 degrees toward image left. Almost side profile: far eye is only a narrow sliver beside the nose bridge, near ear fully exposed, far ear completely hidden. Nose projects strongly sideways. Camera at eye level, pitch zero, no chin tilt. The child looks toward the side wall, never toward camera. The face must NOT be frontal or shallow three-quarter. Calm expression, lips closed and fully visible from this angle. Far eye almost fully hidden, near eye fully visible. Chest-up, face slightly off center with clear empty space on BOTH sides of the mouth for later near-mouth product placement; hands completely below crop. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_NEAR_008",
+      "interaction": "NEAR_MOUTH",
+      "pose_zone": "YELLOW",
+      "path": "cases/near_mouth/dev_near_008.png",
+      "prompt_id": "DEV_NEAR_008_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_NEAR_008_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: in a playroom with a muted teal wall and woven storage bins. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head rotated 70 degrees toward image right. Almost side profile: far eye is only a narrow sliver beside the nose bridge, near ear fully exposed, far ear completely hidden. Nose projects strongly sideways. Camera at eye level, pitch zero, no chin tilt. The child looks toward the side wall, never toward camera. The face must NOT be frontal or shallow three-quarter. Calm expression, lips closed and fully visible from this angle. Far eye almost fully hidden, near eye fully visible. Chest-up, face slightly off center with clear empty space on BOTH sides of the mouth for later near-mouth product placement; hands completely below crop. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_HAND_009",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "path": "cases/hand/dev_hand_009.png",
+      "prompt_id": "DEV_HAND_009_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_HAND_009_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: on a nursery seat with a blurred ochre quilt and pale wall. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing 10 degrees toward camera left, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Waist-up composition with one empty hand raised at chest level, large and sharp, palm nearly facing camera, thumb and index separated by a clear 2 cm gap for later ring placement, other three fingers naturally curved and visibly distinct; exactly five anatomically correct fingers, wrist visible; other hand below crop; no hand overlapping face. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    },
+    {
+      "case_id": "DEV_HAND_010",
+      "interaction": "HAND_HELD",
+      "pose_zone": "GREEN",
+      "path": "cases/hand/dev_hand_010.png",
+      "prompt_id": "DEV_HAND_010_V1",
+      "prompt_family": "DEV_SCENE_FAMILY_V1",
+      "prompt": "Use case: photorealistic-natural. Asset type: PROJECT_OWNED_SYNTHETIC DEVELOPMENT Case Base DEV_HAND_010_V1. Input image: authoritative fictional toddler identity reference only; preserve exact face shape, hazel eyes, warm brown curls, age, skin tone and muted-blue shirt. Create one independent photograph in a NEW composition: on a shaded patio chair with a blurred beige awning and lavender pots. Landscape 1536x1024, natural diffuse daylight, realistic skin and fabric. Head facing 10 degrees toward camera right, head level with pitch under 8 degrees and roll under 3 degrees. Calm expression, lips closed and fully visible, both eyes visible even in three-quarter view. Waist-up composition with one empty hand raised at chest level, large and sharp, palm nearly facing camera, thumb and index separated by a clear 2 cm gap for later ring placement, other three fingers naturally curved and visibly distinct; exactly five anatomically correct fingers, wrist visible; other hand below crop; no hand overlapping face. No pacifier, product, food, bottle, text, logo, watermark, other person, open mouth, teeth, tongue, extra fingers, fused fingers or cropped hand. One full-frame image, no collage. Do not copy reference background or crop."
+    }
+  ]
+}
